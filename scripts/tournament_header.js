@@ -39,7 +39,7 @@ export function injectHeader(targetSelector, { active = "" } = {}) {
 
         <!-- Brand -->
         <div class="flex items-center gap-3">
-          <a href="${BASE_PATH}/tournaments/independence_cup_2025.html"
+          <a href="${BASE_PATH}/tournaments/independence_cup_2025/independence_cup_2025.html"
              class="flex items-center gap-2">
             <img
               src="${BASE_PATH}/assets/images/independence_cup_logo.jpg"
