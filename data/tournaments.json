@@ -11,13 +11,13 @@
       "tags": ["6 teams", "One-day"]
     },
     {
-      "id": "winter-carnival-cup-2025",
-      "name": "Winter Carnival Cup 2025",
-      "start": "2025-12-05",
-      "end": "2025-12-28",
-      "venue": "Arena Pro",
-      "href": "tournaments/winter_league_2025.html",
-      "cover": "assets/independence-cup-25/gallery-4.jpg",
+      "id": "winter-carnival-cup-2026",
+      "name": "Winter Carnival Cup 2026",
+      "start": "2026-01-05",
+      "end": "2026-01-06",
+      "venue": "GODs Turf",
+      "href": "../tournaments/winter-carnival-cup-2026/winter-carnival-2026.html",
+      "cover": "../assets/winter-carnival-2026/winter-carnival-2026.jpeg",
       "tags": ["League", "Refereed"]
     },
     {
