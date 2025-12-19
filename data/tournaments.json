@@ -6,8 +6,8 @@
       "start": "2025-08-24",
       "end": "2025-08-24",
       "venue": "Turf XL",
-      "href": "independence_cup_2025.html",
-      "cover": "independence_cup_poster.jpg",
+      "href": "tournaments/independence_cup_2025.html",
+      "cover": "assets/independence-cup-25/independence_cup_poster.jpg",
       "tags": ["6 teams", "One-day"]
     },
     {
@@ -16,28 +16,28 @@
       "start": "2025-12-05",
       "end": "2025-12-28",
       "venue": "Arena Pro",
-      "href": "/winter_league_2025.html",
-      "cover": "/assets/img/gallery-4.jpg",
+      "href": "tournaments/winter_league_2025.html",
+      "cover": "assets/independence-cup-25/gallery-4.jpg",
       "tags": ["League", "Refereed"]
     },
     {
       "id": "independence-2024",
-      "name": "Independence-2024",
+      "name": "Independence Cup 2024",
       "start": "2024-08-17",
       "end": "2024-08-17",
       "venue": "Turf XL",
-      "href": "/summer_showdown_2025.html",
-      "cover": "independence_cup_logo_2024.jpg",
+      "href": "tournaments/summer_showdown_2024.html",
+      "cover": "assets/independence-cup-24/independence_cup_logo_2024.jpg",
       "tags": ["6 teams", "One-day"]
     },
     {
       "id": "independence-2026",
-      "name": "Independence-2026",
+      "name": "Independence Cup 2026",
       "start": "2026-08-17",
       "end": "2026-08-17",
       "venue": "City Sports Hub",
-      "href": "/new_year_cup_2026.html",
-      "cover": "independence_cup_logo_2026.jpg",
+      "href": "tournaments/new_year_cup_2026.html",
+      "cover": "assets/independence-cup-26/independence_cup_logo_2026.jpg",
       "tags": ["6 teams", "One-day"]
     }
   ]
