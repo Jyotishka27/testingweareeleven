@@ -12,7 +12,7 @@ export function injectHeader(targetSelector, { active = "" } = {}) {
     {
       key: "tournaments",
       label: "Independence Cup",
-      href: `${BASE_PATH}/tournaments/independence_cup_2025.html`,
+      // href: `${BASE_PATH}/tournaments/independence_cup_2025/independence_cup_2025.html`,
     },
     {
       key: "tournament_photos",
