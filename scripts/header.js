@@ -7,7 +7,7 @@ export function injectHeader(targetSelector, { active = "" } = {}) {
 
   const nav = [
     { key: "home", label: "Home", href: `${BASE_PATH}/index.html` },
-    { key: "tournaments", label: "Tournaments", href: `${BASE_PATH}/tournament.html` },
+    { key: "tournaments", label: "Tournaments", href: `${BASE_PATH}/pages/tournament.html` },
     { key: "about", label: "About Us", href: `${BASE_PATH}/pages/about_us.html` },
     { key: "login", label: "Login", href: `${BASE_PATH}/pages/login.html` },
     { key: "photos", label: "Photos", href: `${BASE_PATH}/pages/gallery.html` }
@@ -33,7 +33,7 @@ export function injectHeader(targetSelector, { active = "" } = {}) {
         <div class="flex items-center gap-3">
           <a href="${BASE_PATH}/index.html" class="flex items-center gap-2">
             <img
-              src="${BASE_PATH}/assets/images/We_are_eleven_logo.jpg"
+              src="${BASE_PATH}/assets/group-logo/we_are_eleven_logo.jpg"
               alt="We Are Eleven logo"
               class="h-8 w-8 rounded-full object-cover"
             />
