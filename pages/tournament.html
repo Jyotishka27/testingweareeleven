@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tournaments - We Are Eleven</title>
+  <title>Tournaments — We Are Eleven</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -13,11 +15,13 @@
     }
   </style>
 </head>
-<body>
+
+<body class="min-h-screen flex flex-col">
+
   <!-- Header -->
   <div id="site-header"></div>
 
-  <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+  <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
     <header class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
       <div>
         <h1 class="text-3xl font-extrabold tracking-tight">Tournaments</h1>
@@ -38,11 +42,13 @@
           <span class="absolute right-3 top-2.5 text-slate-400">⌘K</span>
         </label>
 
-        <select id="yearFilter" class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
+        <select id="yearFilter"
+          class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
           <option value="">All years</option>
         </select>
 
-        <select id="sortBy" class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
+        <select id="sortBy"
+          class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
           <option value="start-asc">Start date ↑</option>
           <option value="start-desc">Start date ↓</option>
           <option value="name-asc">Name A–Z</option>
@@ -62,83 +68,87 @@
 
     <!-- Error state -->
     <div id="error" class="hidden rounded-2xl border bg-rose-50 p-6 text-rose-700 mt-6">
-      Couldn’t load tournaments. Make sure <code>/data/tournaments.json</code> exists and you’re serving the site over HTTP (not opening the HTML file directly).
+      Couldn’t load tournaments. Make sure
+      <code>/data/tournaments.json</code> exists and the site is served via HTTP.
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-400 mt-12">
-    <p>© 2025 Football Community. All Rights Reserved.</p>
+  <footer class="bg-gray-950 py-6 text-center text-gray-400">
+    <p>© 2025 We Are Eleven. All Rights Reserved.</p>
   </footer>
 
   <script type="module">
-    // Import your header (adjust the path if your file lives elsewhere)
-    import { injectHeader } from "./header.js";
+    /* ---------- Header ---------- */
+    import { injectHeader } from "../scripts/header.js";
     injectHeader("#site-header", { active: "tournaments" });
 
-    // ---- Fetch tournaments JSON ----
+    /* ---------- Fetch data ---------- */
     async function getTournaments() {
-      const url = "./tournaments.json"; // cache-bust with ?v=
-      const res = await fetch(url, { headers: { "Accept": "application/json" } });
+      const res = await fetch("../data/tournaments.json", {
+        headers: { "Accept": "application/json" }
+      });
       if (!res.ok) throw new Error("HTTP " + res.status);
       return await res.json();
     }
 
-    // ---- Utilities ----
+    /* ---------- Utils ---------- */
     const today = new Date(); today.setHours(0,0,0,0);
-    const parseISO = (d) => { const dt = new Date(d); dt.setHours(0,0,0,0); return dt; };
-    const fmt = (d) => (d instanceof Date ? d : parseISO(d))
-      .toLocaleDateString(undefined, { year:"numeric", month:"short", day:"numeric" });
+    const parseISO = d => { const x = new Date(d); x.setHours(0,0,0,0); return x; };
+    const fmt = d => parseISO(d).toLocaleDateString(undefined, {
+      year: "numeric", month: "short", day: "numeric"
+    });
 
     function statusFor(t) {
-      const s = parseISO(t.start), e = parseISO(t.end || t.start);
+      const s = parseISO(t.start);
+      const e = parseISO(t.end || t.start);
       if (today < s) return "upcoming";
       if (today > e) return "past";
       return "ongoing";
     }
-    function uniqueYears(list){
-      const y = new Set();
-      list.forEach(t => y.add(parseISO(t.start).getFullYear()));
-      return [...y].sort((a,b)=>a-b);
+
+    function uniqueYears(list) {
+      return [...new Set(list.map(t => parseISO(t.start).getFullYear()))].sort();
     }
 
-    // ---- DOM refs ----
+    /* ---------- DOM ---------- */
     const grid = document.getElementById("grid");
     const empty = document.getElementById("empty");
     const error = document.getElementById("error");
-    const tabButtons = [...document.querySelectorAll(".tab-btn")];
+    const tabs = [...document.querySelectorAll(".tab-btn")];
     const searchInput = document.getElementById("search");
     const yearFilter = document.getElementById("yearFilter");
     const sortBy = document.getElementById("sortBy");
 
-    // ---- State ----
+    /* ---------- State ---------- */
     const state = {
-      tab: (new URL(location.href)).hash.replace("#","") || "upcoming",
+      tab: location.hash.replace("#", "") || "upcoming",
       query: "",
       year: "",
       sort: "start-asc",
-      raw: [] // loaded tournaments
+      raw: []
     };
 
-    function paintTabs(){
-      tabButtons.forEach(btn=>{
-        const active = btn.dataset.tab === state.tab;
-        btn.className = "tab-btn px-4 py-2 text-sm font-medium " +
+    function paintTabs() {
+      tabs.forEach(b => {
+        const active = b.dataset.tab === state.tab;
+        b.className =
+          "tab-btn px-4 py-2 text-sm font-medium " +
           (active ? "bg-gray-900 text-white" : "bg-white text-slate-700 hover:bg-slate-50");
       });
     }
 
-    function compute(){
+    function compute() {
       let list = state.raw
-        .map(t => ({ ...t, _status: t.statusOverride || statusFor(t) }))
+        .map(t => ({ ...t, _status: statusFor(t) }))
         .filter(t => t._status === state.tab);
 
       if (state.query) {
         const q = state.query.toLowerCase();
         list = list.filter(t =>
-          (t.name||"").toLowerCase().includes(q) ||
-          (t.venue||"").toLowerCase().includes(q) ||
-          (t.tags||[]).some(tag => (tag||"").toLowerCase().includes(q))
+          (t.name || "").toLowerCase().includes(q) ||
+          (t.venue || "").toLowerCase().includes(q) ||
+          (t.tags || []).some(tag => tag.toLowerCase().includes(q))
         );
       }
 
@@ -147,101 +157,97 @@
       }
 
       switch (state.sort) {
-        case "start-asc":  list.sort((a,b)=> parseISO(a.start) - parseISO(b.start)); break;
-        case "start-desc": list.sort((a,b)=> parseISO(b.start) - parseISO(a.start)); break;
-        case "name-asc":   list.sort((a,b)=> (a.name||"").localeCompare(b.name||"")); break;
-        case "name-desc":  list.sort((a,b)=> (b.name||"").localeCompare(a.name||"")); break;
+        case "start-asc":  list.sort((a,b)=>parseISO(a.start)-parseISO(b.start)); break;
+        case "start-desc": list.sort((a,b)=>parseISO(b.start)-parseISO(a.start)); break;
+        case "name-asc":   list.sort((a,b)=>(a.name||"").localeCompare(b.name||"")); break;
+        case "name-desc":  list.sort((a,b)=>(b.name||"").localeCompare(a.name||"")); break;
       }
 
       return list;
     }
 
-    function render(){
+    function render() {
       const list = compute();
       grid.innerHTML = "";
-      if (!list.length){
+
+      if (!list.length) {
         grid.classList.add("hidden");
         empty.classList.remove("hidden");
         return;
       }
+
       grid.classList.remove("hidden");
       empty.classList.add("hidden");
 
-      for (const t of list){
+      list.forEach(t => {
         const badge =
           t._status === "upcoming" ? "bg-emerald-100 text-emerald-700" :
           t._status === "ongoing"  ? "bg-amber-100 text-amber-700" :
                                      "bg-slate-200 text-slate-700";
 
-        const dateStr = (t.end && t.end !== t.start)
+        const dateStr = t.end && t.end !== t.start
           ? `${fmt(t.start)} – ${fmt(t.end)}`
           : fmt(t.start);
 
-        const tags = (t.tags || []).map(tag =>
-          `<span class="inline-flex items-center rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-700">${tag}</span>`
-        ).join("");
-
         const cover = t.cover
-          ? `<img src="${t.cover}" alt="${t.name}" class="h-40 w-full object-cover rounded-xl">`
-          : `<div class="h-40 w-full rounded-xl bg-slate-100 flex items-center justify-center text-slate-400">No Image</div>`;
+          ? `<img src="${t.cover}" class="h-40 w-full object-cover rounded-xl">`
+          : `<div class="h-40 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400">No Image</div>`;
 
-        const a = document.createElement("a");
-        a.href = t.href || "#";
-        a.className = "group block rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition";
-        a.innerHTML = `
+        const card = document.createElement("a");
+        card.href = t.href || "#";
+        card.className = "group block rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition";
+        card.innerHTML = `
           <div class="relative">
             ${cover}
-            <span class="absolute left-3 top-3 inline-flex items-center rounded-full ${badge} px-2 py-0.5 text-xs font-medium">
-              ${t._status.charAt(0).toUpperCase() + t._status.slice(1)}
+            <span class="absolute left-3 top-3 rounded-full ${badge} px-2 py-0.5 text-xs font-medium">
+              ${t._status.toUpperCase()}
             </span>
           </div>
           <div class="p-3">
-            <h3 class="text-lg font-semibold group-hover:underline">${t.name || "Untitled Tournament"}</h3>
-            <p class="mt-1 text-sm text-slate-600"><strong>${dateStr}</strong></p>
-            <p class="mt-0.5 text-sm text-slate-600">${t.venue || ""}</p>
-            <div class="mt-3 flex flex-wrap gap-2">${tags}</div>
+            <h3 class="text-lg font-semibold group-hover:underline">${t.name}</h3>
+            <p class="text-sm text-slate-600 mt-1"><strong>${dateStr}</strong></p>
+            <p class="text-sm text-slate-600">${t.venue || ""}</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              ${(t.tags||[]).map(tag =>
+                `<span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs">${tag}</span>`
+              ).join("")}
+            </div>
           </div>
         `;
-        grid.appendChild(a);
-      }
+        grid.appendChild(card);
+      });
     }
 
-    // Events
-    tabButtons.forEach(btn=>{
-      btn.addEventListener("click", ()=>{
-        state.tab = btn.dataset.tab;
-        history.replaceState(null, "", `#${state.tab}`);
-        paintTabs(); render();
-      });
-    });
+    /* ---------- Events ---------- */
+    tabs.forEach(btn => btn.addEventListener("click", () => {
+      state.tab = btn.dataset.tab;
+      history.replaceState(null, "", `#${state.tab}`);
+      paintTabs(); render();
+    }));
 
-    document.addEventListener("keydown", (e)=>{
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        searchInput.focus(); searchInput.select();
+    searchInput.addEventListener("input", e => { state.query = e.target.value.trim(); render(); });
+    yearFilter.addEventListener("change", e => { state.year = e.target.value; render(); });
+    sortBy.addEventListener("change", e => { state.sort = e.target.value; render(); });
+
+    document.addEventListener("keydown", e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault(); searchInput.focus(); searchInput.select();
       }
     });
 
-    searchInput.addEventListener("input", (e)=>{ state.query = e.target.value.trim(); render(); });
-    yearFilter.addEventListener("change", (e)=>{ state.year = e.target.value; render(); });
-    sortBy.addEventListener("change", (e)=>{ state.sort = e.target.value; render(); });
-
-    // Init
-    (async function init(){
+    /* ---------- Init ---------- */
+    (async () => {
       paintTabs();
       try {
         const data = await getTournaments();
-        // Expect either { tournaments: [...] } or a raw array [...]
-        state.raw = Array.isArray(data) ? data : (data.tournaments || []);
-        // Seed year filter
-        uniqueYears(state.raw).forEach(y=>{
-          const opt = document.createElement("option");
-          opt.value = String(y); opt.textContent = y; yearFilter.appendChild(opt);
+        state.raw = Array.isArray(data) ? data : data.tournaments || [];
+        uniqueYears(state.raw).forEach(y => {
+          const o = document.createElement("option");
+          o.value = y; o.textContent = y; yearFilter.appendChild(o);
         });
-        if (!["upcoming","ongoing","past"].includes(state.tab)) state.tab = "upcoming";
         render();
-      } catch (e) {
-        console.warn("Failed to load tournaments.json:", e);
+      } catch (err) {
+        console.error(err);
         error.classList.remove("hidden");
         grid.classList.add("hidden");
         empty.classList.add("hidden");
@@ -250,6 +256,3 @@
   </script>
 </body>
 </html>
-
-
-
