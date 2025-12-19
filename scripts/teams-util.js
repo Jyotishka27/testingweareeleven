@@ -1,15 +1,27 @@
+import { BASE_PATH } from './basePath.js';
 
-// /assets/js/teams-util.js
-export async function loadTeams(url = "teams.json") {
+// Load teams data
+export async function loadTeams(url = `${BASE_PATH}/assets/data/teams.json`) {
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) throw new Error(`Failed to load teams: ${res.status}`);
   const teams = await res.json();
+
+  // Normalize logo paths to always include BASE_PATH
+  teams.forEach((t) => {
+    if (t.logo && !t.logo.startsWith("http")) {
+      // remove leading ./ or /
+      t.logo = t.logo.replace(/^\.?\//, "");
+      t.logo = `${BASE_PATH}/${t.logo}`;
+    }
+  });
+
   const byId = new Map(teams.map((t) => [t.id, t]));
   const byName = new Map(teams.map((t) => [t.name.toLowerCase().trim(), t]));
 
   const aliases = {
     "amingos fc": "amigos fc",
   };
+
   Object.entries(aliases).forEach(([alias, canonical]) => {
     const t = byName.get(canonical);
     if (t) byName.set(alias, t);
@@ -24,15 +36,12 @@ export function findTeamByName(name, maps) {
 }
 
 /**
- * Hydrate logos in multiple patterns:
- * 1) Containers with [data-team] and an inner <img class="team-logo">
- * 2) Fixture rows with [data-home][data-away] and <img data-role="home-logo|away-logo">
- * 3) Generic <img class="team-logo" alt="Team Name"> OR next to a sibling <span>Team Name</span>
+ * Hydrate logos in multiple patterns
  */
 export function hydrateTeamLogos(root, maps) {
   const scope = root || document;
 
-  // 1) Generic team cards with data-team
+  // 1) data-team containers
   scope.querySelectorAll("[data-team]").forEach((el) => {
     const t = findTeamByName(el.getAttribute("data-team"), maps);
     const img = el.querySelector("img.team-logo");
@@ -52,6 +61,7 @@ export function hydrateTeamLogos(root, maps) {
     const away = findTeamByName(row.getAttribute("data-away"), maps);
     const hImg = row.querySelector('img[data-role="home-logo"]');
     const aImg = row.querySelector('img[data-role="away-logo"]');
+
     if (home && hImg) {
       hImg.src = home.logo;
       hImg.alt = `${home.name} logo`;
@@ -66,24 +76,25 @@ export function hydrateTeamLogos(root, maps) {
     }
   });
 
-  // 3) Fallback: plain <img class="team-logo"> next to text OR with alt text
+  // 3) Fallback logos
   scope.querySelectorAll("img.team-logo").forEach((img) => {
     const nameFromAlt = (img.getAttribute("alt") || "").trim();
     let guessName = nameFromAlt;
+
     if (!guessName) {
-      // look for sibling span text
       const parent = img.parentElement;
       if (parent) {
         const span = parent.querySelector("span, .team-name, [data-team-name]");
         if (span) guessName = (span.textContent || "").trim();
       }
     }
+
     const t = findTeamByName(guessName, maps);
     if (t) {
       img.src = t.logo;
       img.alt = `${t.name} logo`;
       if (img.nextElementSibling && img.nextElementSibling.textContent) {
-        img.nextElementSibling.textContent = t.name; // normalize text label
+        img.nextElementSibling.textContent = t.name;
       }
       img.loading = "lazy";
       img.decoding = "async";
