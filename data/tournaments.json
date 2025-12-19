@@ -7,7 +7,7 @@
       "end": "2025-08-24",
       "venue": "Turf XL",
       "href": "../tournaments/independence_cup_2025/independence_cup_2025.html",
-      "cover": "assets/independence-cup-25/gallery/independence_cup_poster.jpg",
+      "cover": "../assets/independence-cup-25/gallery/independence_cup_poster.jpg",
       "tags": ["6 teams", "One-day"]
     },
     {
@@ -36,8 +36,8 @@
       "start": "2026-08-17",
       "end": "2026-08-17",
       "venue": "City Sports Hub",
-      "href": "tournaments/new_year_cup_2026.html",
-      "cover": "assets/independence-cup-26/independence_cup_logo_2026.jpg",
+      "href": "../tournaments/winter-carnival-cup-2026/winter-carnival-2026.html",
+      "cover": "../assets/winter-carnival-2026/winter-carnival-2026.jpeg",
       "tags": ["6 teams", "One-day"]
     }
   ]
