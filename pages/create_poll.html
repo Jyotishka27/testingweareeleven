@@ -1,48 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Match Poll - Admin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Match Poll — Admin</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
 
-  <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-lg">
-    <h1 class="text-2xl font-bold text-green-400 mb-6">Create Match Poll</h1>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
 
-    <form id="pollForm" class="space-y-4">
-      <div>
-        <label class="block text-gray-300 mb-1">Match Details</label>
-        <input type="text" id="pollQuestion" placeholder="Match on Saturday TurfXL at 11pm"
-               class="w-full p-3 rounded-lg text-black" required>
-      </div>
+  <!-- Shared Header -->
+  <div id="site-header"></div>
 
-      <div>
-        <label class="block text-gray-300 mb-1">Status</label>
-        <select id="pollStatus" class="w-full p-3 rounded-lg text-black">
-          <option value="ACTIVE">Active</option>
-          <option value="CLOSED">Closed</option>
-        </select>
-      </div>
+  <main class="flex-grow flex items-center justify-center px-4">
+    <div class="bg-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-lg">
 
-      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 py-3 rounded-lg font-semibold">
-        Release Poll
+      <h1 class="text-2xl font-bold text-green-400 mb-6">
+        Create Match Poll
+      </h1>
+
+      <form id="pollForm" class="space-y-4">
+        <div>
+          <label class="block text-gray-300 mb-1">
+            Match Details
+          </label>
+          <input
+            type="text"
+            id="pollQuestion"
+            placeholder="Match on Saturday at Turf XL, 11 PM"
+            class="w-full p-3 rounded-lg text-black"
+            required />
+        </div>
+
+        <div>
+          <label class="block text-gray-300 mb-1">
+            Status
+          </label>
+          <select
+            id="pollStatus"
+            class="w-full p-3 rounded-lg text-black">
+            <option value="ACTIVE">Active</option>
+            <option value="CLOSED">Closed</option>
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-green-500 hover:bg-green-600 py-3 rounded-lg font-semibold">
+          Release Poll
+        </button>
+      </form>
+
+      <button
+        type="button"
+        id="closePollBtn"
+        class="w-full bg-red-500 hover:bg-red-600 py-3 rounded-lg font-semibold mt-3">
+        Close Current Poll
       </button>
-    </form>
 
-    <button type="button" id="closePollBtn" 
-      class="w-full bg-red-500 hover:bg-red-600 py-3 rounded-lg font-semibold mt-3">
-      Close Current Poll
-    </button>
+      <p
+        id="statusMsg"
+        class="mt-4 text-sm text-gray-400 min-h-[1.5rem]">
+      </p>
+    </div>
+  </main>
 
-    <p id="statusMsg" class="mt-4 text-sm text-gray-400"></p>
-  </div>
+  <footer class="bg-gray-950 py-6 text-center text-gray-400">
+    © 2025 We Are Eleven. All Rights Reserved.
+  </footer>
 
-  <!-- Firebase -->
+  <!-- Firebase Logic -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getFirestore, doc, setDoc, getDoc, addDoc, collection, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import {
+      getFirestore,
+      doc,
+      setDoc,
+      getDoc,
+      addDoc,
+      collection,
+      deleteDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyB0DaaYB1hZLY8h23QOpT7Ok4sX5ACkHTM",
@@ -56,61 +96,71 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    // Create poll form handler
+    const statusMsg = document.getElementById("statusMsg");
+
+    // Create poll
     document.getElementById("pollForm").addEventListener("submit", async (e) => {
       e.preventDefault();
+
       const question = document.getElementById("pollQuestion").value.trim();
       const status = document.getElementById("pollStatus").value;
 
+      if (!question) {
+        statusMsg.textContent = "❌ Please enter match details.";
+        return;
+      }
+
       try {
-        // Save as current poll
         await setDoc(doc(db, "polls", "current"), {
           question,
           status,
           createdAt: serverTimestamp()
         });
 
-        // Save into history
         await addDoc(collection(db, "polls"), {
           question,
           status,
           createdAt: serverTimestamp()
         });
 
-        document.getElementById("statusMsg").textContent = "✅ Poll released successfully!";
+        statusMsg.textContent = "✅ Poll released successfully!";
+        e.target.reset();
       } catch (err) {
         console.error(err);
-        document.getElementById("statusMsg").textContent = "❌ Failed to release poll.";
+        statusMsg.textContent = "❌ Failed to release poll.";
       }
     });
 
-    // Close poll handler
+    // Close poll
     document.getElementById("closePollBtn").addEventListener("click", async () => {
       const pollRef = doc(db, "polls", "current");
       const snap = await getDoc(pollRef);
+
       if (!snap.exists()) {
-        document.getElementById("statusMsg").textContent = "❌ No active poll to close.";
+        statusMsg.textContent = "❌ No active poll to close.";
         return;
       }
 
-      const data = snap.data();
       try {
-        // Archive poll into history with CLOSED status
         await addDoc(collection(db, "polls"), {
-          ...data,
+          ...snap.data(),
           status: "CLOSED",
           closedAt: serverTimestamp()
         });
 
-        // Delete current poll
         await deleteDoc(pollRef);
-
-        document.getElementById("statusMsg").textContent = "✅ Poll closed and moved to history.";
+        statusMsg.textContent = "✅ Poll closed and archived.";
       } catch (err) {
         console.error(err);
-        document.getElementById("statusMsg").textContent = "❌ Failed to close poll.";
+        statusMsg.textContent = "❌ Failed to close poll.";
       }
     });
+  </script>
+
+  <!-- Shared Header Injection -->
+  <script type="module">
+    import { injectHeader } from "../scripts/header.js";
+    injectHeader("#site-header", { active: "admin" });
   </script>
 
 </body>
