@@ -57,6 +57,7 @@ section[data-tab].active{display:block}
     <button class="pill" data-btn="teams">Teams</button>
     <button class="pill" data-btn="fixtures">Fixtures</button>
     <button class="pill" data-btn="results">Results</button>
+    <button class="pill" data-btn="stats">Stats</button>
     <button class="pill" data-btn="gallery">Gallery</button>
   </div>
 </nav>
@@ -403,28 +404,410 @@ section[data-tab].active{display:block}
 
 <!-- ================= RESULTS ================= -->
 <section data-tab="results">
-  <div class="bg-white rounded-2xl shadow p-8 space-y-8">
-    <h2 class="text-3xl font-bold text-center">Final Results</h2>
+  <div class="bg-white rounded-2xl shadow p-8 space-y-12">
 
-    <div class="bg-amber-100 border-2 border-amber-400 rounded-xl p-6 text-center">
-      <h3 class="text-2xl font-extrabold">🏆 Champion</h3>
-      <p class="text-xl font-bold mt-1">Messiah FC</p>
-    </div>
-
-    <div class="bg-slate-100 rounded-xl p-4 text-center">
-      <h3 class="font-bold">🥈 Runner-up</h3>
-      <p class="text-lg">Strawhat Pirates</p>
-    </div>
-
-    <div class="border rounded-xl p-4">
-      <div class="flex justify-between font-semibold">
-        <span>Thunderbolt</span>
-        <span>1 – 3</span>
-        <span>Messiah FC</span>
-      </div>
-      <p class="text-sm text-slate-600 mt-2">
-        Scorers: Tintin • Rishov (2) • Biswajit
+    <!-- TITLE -->
+    <div class="text-center">
+      <h2 class="text-3xl font-bold">Results</h2>
+      <p class="text-sm text-slate-600 mt-1">
+        Group stage & knockout stage results
       </p>
+    </div>
+
+    <!-- ================= GROUP STAGE ================= -->
+    <div class="space-y-6">
+      <h3 class="text-xl font-semibold">Group Stage</h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+
+        <!-- Matchday 1 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 1</span>
+          <div class="flex justify-between font-medium">
+            <span>Thunderbolt</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">1 – 3</span>
+            <span>Messiah FC</span>
+          </div>
+          <p class="text-xs text-slate-500">
+            Tintin · Rishov (2) · Biswajit
+          </p>
+        </div>
+
+        <!-- Matchday 2 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 2</span>
+          <div class="flex justify-between font-medium">
+            <span>Amigos FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 1</span>
+            <span>Strawhat Pirates</span>
+          </div>
+        </div>
+
+        <!-- Matchday 3 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 3</span>
+          <div class="flex justify-between font-medium">
+            <span>White Panthers</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 1</span>
+            <span>Thunderbolt</span>
+          </div>
+        </div>
+
+        <!-- Matchday 4 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 4</span>
+          <div class="flex justify-between font-medium">
+            <span>Red Bulls Eleven</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 1</span>
+            <span>Amigos FC</span>
+          </div>
+        </div>
+
+        <!-- Matchday 5 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 5</span>
+          <div class="flex justify-between font-medium">
+            <span>Messiah FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">1 – 1</span>
+            <span>White Panthers</span>
+          </div>
+          <p class="text-xs text-slate-500">
+            Biswajit · Soumik
+          </p>
+        </div>
+
+        <!-- Matchday 6 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 6</span>
+          <div class="flex justify-between font-medium">
+            <span>Strawhat Pirates</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">2 – 2</span>
+            <span>Red Bulls Eleven</span>
+          </div>
+        </div>
+
+        <!-- Matchday 7 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 7</span>
+          <div class="flex justify-between font-medium">
+            <span>Messiah FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 0</span>
+            <span>Thunderbolt</span>
+          </div>
+        </div>
+
+        <!-- Matchday 8 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 8</span>
+          <div class="flex justify-between font-medium">
+            <span>Strawhat Pirates</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 0</span>
+            <span>Amigos FC</span>
+          </div>
+        </div>
+
+        <!-- Matchday 9 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 9</span>
+          <div class="flex justify-between font-medium">
+            <span>Thunderbolt</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 1</span>
+            <span>White Panthers</span>
+          </div>
+        </div>
+
+        <!-- Matchday 10 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 10</span>
+          <div class="flex justify-between font-medium">
+            <span>Amigos FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">2 – 0</span>
+            <span>Red Bulls Eleven</span>
+          </div>
+        </div>
+
+        <!-- Matchday 11 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 11</span>
+          <div class="flex justify-between font-medium">
+            <span>White Panthers</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 0</span>
+            <span>Messiah FC</span>
+          </div>
+        </div>
+
+        <!-- Matchday 12 -->
+        <div class="border rounded-xl p-4 space-y-2">
+          <span class="text-xs bg-slate-100 px-2 py-0.5 rounded-full">Matchday 12</span>
+          <div class="flex justify-between font-medium">
+            <span>Red Bulls Eleven</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">2 – 2</span>
+            <span>Strawhat Pirates</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= KNOCKOUTS ================= -->
+    <div class="space-y-6">
+      <h3 class="text-xl font-semibold">Knockout Stage</h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+
+        <div class="border rounded-xl p-4">
+          <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Semi Final</span>
+          <div class="flex justify-between font-medium mt-2">
+            <span>Messiah FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">0 – 0</span>
+            <span>Strawhat Pirates</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-1">Penalties: Strawhat Pirates win</p>
+        </div>
+
+        <div class="border rounded-xl p-4">
+          <span class="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Semi Final</span>
+          <div class="flex justify-between font-medium mt-2">
+            <span>Amigos FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">3 – 0</span>
+            <span>White Panthers</span>
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4">
+          <span class="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full">Third Place</span>
+          <div class="flex justify-between font-medium mt-2">
+            <span>Messiah FC</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">4 – 1</span>
+            <span>White Panthers</span>
+          </div>
+        </div>
+
+        <div class="border rounded-xl p-4 ring-2 ring-green-400">
+          <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Final</span>
+          <div class="flex justify-between font-semibold mt-2">
+            <span>Strawhat Pirates</span>
+            <span class="bg-slate-900 text-white px-3 py-1 rounded-lg">1 – 2</span>
+            <span>Amigos FC</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= PODIUM ================= -->
+    <div class="grid sm:grid-cols-3 gap-6 text-center pt-6 border-t">
+
+      <div class="bg-amber-100 border border-amber-300 rounded-xl p-5">
+        <p class="text-sm font-semibold">🏆 Champion</p>
+        <p class="text-lg font-bold mt-1">Amigos FC</p>
+      </div>
+
+      <div class="bg-slate-100 rounded-xl p-5">
+        <p class="text-sm font-semibold">🥈 Runner-up</p>
+        <p class="text-lg font-bold mt-1">Strawhat Pirates</p>
+      </div>
+
+      <div class="bg-orange-50 rounded-xl p-5">
+        <p class="text-sm font-semibold">🥉 Third Place</p>
+        <p class="text-lg font-bold mt-1">Messiah FC</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section data-tab="stats">
+  <div class="bg-white rounded-2xl shadow p-8 space-y-8">
+
+    <!-- TITLE -->
+    <div>
+      <h2 class="text-3xl font-bold">Player Stats</h2>
+      <p class="text-sm text-slate-600 mt-1">
+        Top performers of Independence Cup 2025
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 text-sm">
+
+      <!-- ================= TOP SCORERS ================= -->
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <div class="bg-slate-50 px-5 py-3 font-semibold">
+          Top Scorers
+        </div>
+
+        <table class="w-full">
+          <thead>
+            <tr class="text-slate-600">
+              <th class="px-4 py-2 text-left">#</th>
+              <th class="px-4 py-2 text-left">Player</th>
+              <th class="px-4 py-2 text-left">Team</th>
+              <th class="px-4 py-2 text-right">Goals</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+
+            <tr>
+              <td class="px-4 py-2">1</td>
+              <td class="px-4 py-2 font-medium">Monty</td>
+              <td class="px-4 py-2">Strawhat Pirates</td>
+              <td class="px-4 py-2 text-right font-semibold">3</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">2</td>
+              <td class="px-4 py-2 font-medium">Ritam</td>
+              <td class="px-4 py-2">Messiah FC</td>
+              <td class="px-4 py-2 text-right font-semibold">3</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">3</td>
+              <td class="px-4 py-2 font-medium">Biswajit</td>
+              <td class="px-4 py-2">Messiah FC</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">4</td>
+              <td class="px-4 py-2 font-medium">Jeff</td>
+              <td class="px-4 py-2">Red Bulls Eleven</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">5</td>
+              <td class="px-4 py-2 font-medium">Rishov</td>
+              
+              <td class="px-4 py-2">Messiah FC</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">6</td>
+              <td class="px-4 py-2 font-medium">Tintin</td>
+              <td class="px-4 py-2">Thunderbolt</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">7</td>
+              <td class="px-4 py-2 font-medium">Vasu</td>
+              <td class="px-4 py-2">Amigos FC</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">8</td>
+              <td class="px-4 py-2 font-medium">Dibba</td>
+              <td class="px-4 py-2">Strawhat Pirates</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">9</td>
+              <td class="px-4 py-2 font-medium">Kaustav</td>
+              <td class="px-4 py-2">Amigos FC</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">10</td>
+              <td class="px-4 py-2 font-medium">Pulak</td>
+              <td class="px-4 py-2">White Panthers</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ================= TOP ASSISTS ================= -->
+      <div class="border border-slate-200 rounded-xl overflow-hidden">
+        <div class="bg-slate-50 px-5 py-3 font-semibold">
+          Top Assists
+        </div>
+
+        <table class="w-full">
+          <thead>
+            <tr class="text-slate-600">
+              <th class="px-4 py-2 text-left">#</th>
+              <th class="px-4 py-2 text-left">Player</th>
+              <th class="px-4 py-2 text-left">Team</th>
+              <th class="px-4 py-2 text-right">Assists</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+
+            <tr>
+              <td class="px-4 py-2">1</td>
+              <td class="px-4 py-2 font-medium">Ritam</td>
+              <td class="px-4 py-2">Messiah FC</td>
+              <td class="px-4 py-2 text-right font-semibold">3</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">2</td>
+              <td class="px-4 py-2 font-medium">Subhanjan</td>
+              <td class="px-4 py-2">White Panthers</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">3</td>
+              <td class="px-4 py-2 font-medium">Supratim</td>
+              <td class="px-4 py-2">Strawhat Pirates</td>
+              <td class="px-4 py-2 text-right">2</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">4</td>
+              <td class="px-4 py-2 font-medium">Akash</td>
+              <td class="px-4 py-2">Thunderbolt</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">5</td>
+              <td class="px-4 py-2 font-medium">Akash M</td>
+              <td class="px-4 py-2">Red Bulls Eleven</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">6</td>
+              <td class="px-4 py-2 font-medium">Kaustav</td>
+              <td class="px-4 py-2">Amigos FC</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">7</td>
+              <td class="px-4 py-2 font-medium">Krishnendu</td>
+              <td class="px-4 py-2">Amigos FC</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">8</td>
+              <td class="px-4 py-2 font-medium">Monty</td>
+              <td class="px-4 py-2">Strawhat Pirates</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+            <tr>
+              <td class="px-4 py-2">9</td>
+              <td class="px-4 py-2 font-medium">Rahul</td>
+              <td class="px-4 py-2">Amigos FC</td>
+              <td class="px-4 py-2 text-right">1</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </section>
