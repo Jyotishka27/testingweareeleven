@@ -16,12 +16,16 @@ body {
 
 /* Sticky pill nav */
 .pillbar{
-  position:sticky; top:0; z-index:50;
+  position:sticky;
+  top:0;
+  z-index:50;
   background:rgba(248,250,252,.96);
   backdrop-filter:blur(6px);
   border-bottom:1px solid #e2e8f0;
 }
+
 .pill{
+  position:relative;
   padding:.45rem 1.1rem;
   border-radius:9999px;
   font-weight:600;
@@ -29,17 +33,48 @@ body {
   white-space:nowrap;
   transition:.2s;
 }
+
+.pill:hover{
+  background:#e2e8f0;
+}
+
 .pill.active{
   background:#0f172a;
   color:#fff;
   box-shadow:0 8px 20px rgba(15,23,42,.3);
-  transform:scale(1.05);
 }
-.pill:hover{background:#e2e8f0}
 
+.pill.active::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:22px;
+  height:3px;
+  border-radius:999px;
+  background:#0f172a;
+}
+
+/* Tabs */
 section[data-tab]{display:none}
 section[data-tab].active{display:block}
+
+/* Accent bar */
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+
+.section-bar{
+  width:6px;
+  height:26px;
+  border-radius:999px;
+  background:#0f172a;
+}
 </style>
+
 </head>
 
 <body class="min-h-screen">
@@ -62,7 +97,7 @@ section[data-tab].active{display:block}
   </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 py-10 space-y-16">
+<main class="max-w-7xl mx-auto px-4 py-12 space-y-20">
 
 <!-- ================= OVERVIEW ================= -->
 <section data-tab="overview" class="active">
@@ -213,7 +248,10 @@ section[data-tab].active{display:block}
 <section data-tab="teams">
   <div class="bg-white rounded-2xl shadow p-8 space-y-8">
     <div>
-      <h2 class="text-3xl font-bold">Teams</h2>
+      <div class="section-title">
+        <div class="section-bar"></div>
+        <h2 class="text-3xl font-extrabold">Teams</h2>
+      </div>
       <p class="text-slate-600 mt-1 text-sm">
         Squad lists for Independence Cup 2025
       </p>
@@ -222,7 +260,7 @@ section[data-tab].active{display:block}
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- TEAM CARD -->
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">Thunderbolt</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -240,7 +278,7 @@ section[data-tab].active{display:block}
         </ul>
       </div>
 
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">Red Bulls Eleven</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -259,7 +297,7 @@ section[data-tab].active{display:block}
         </ul>
       </div>
 
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">Messiah FC</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -277,7 +315,7 @@ section[data-tab].active{display:block}
         </ul>
       </div>
 
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">White Panthers</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -295,7 +333,7 @@ section[data-tab].active{display:block}
         </ul>
       </div>
 
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">Strawhat Pirates</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -314,7 +352,7 @@ section[data-tab].active{display:block}
         </ul>
       </div>
 
-      <div class="rounded-xl border border-slate-200 p-5 hover:shadow-md transition">
+      <div class="rounded-xl bg-white shadow-sm hover:shadow-md transition p-5 hover:shadow-md transition">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-semibold text-lg">Amigos FC</h3>
           <span class="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
@@ -647,7 +685,7 @@ section[data-tab].active{display:block}
               <th class="px-4 py-2 text-right">Goals</th>
             </tr>
           </thead>
-          <tbody class="divide-y">
+          <tbody class="divide-y [&>tr:nth-child(even)]:bg-slate-50">
 
               <tr>
                 <td class="px-4 py-2">1</td>
@@ -787,7 +825,7 @@ section[data-tab].active{display:block}
               <th class="px-4 py-2 text-right">Assists</th>
             </tr>
           </thead>
-          <tbody class="divide-y">
+          <tbody class="divide-y [&>tr:nth-child(even)]:bg-slate-50">
 
               <tr>
                 <td class="px-4 py-2">1</td>
@@ -880,10 +918,31 @@ section[data-tab].active{display:block}
   <div class="bg-white rounded-2xl shadow p-8">
     <h2 class="text-3xl font-bold mb-6">Tournament Gallery</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-      <img src="Messiah FC Team.jpg" class="rounded-xl object-cover">
-      <img src="White Panthers Team.jpg" class="rounded-xl object-cover">
-      <img src="Thunderbolt Team.jpg" class="rounded-xl object-cover">
-      <img src="Amingos FC Team.jpg" class="rounded-xl object-cover">
+      
+      <div class="relative group overflow-hidden rounded-xl">
+        <img
+          src="Messiah FC Team.jpg"
+          class="aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-xl">
+        <img
+          src="White Panthers Team.jpg.jpg"
+          class="aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></div>
+      </div>
+
+      <div class="relative group overflow-hidden rounded-xl">
+        <img
+          src="White Panthers Team.jpg.jpg"
+          class="aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition"></div>
+      </div>
+      
     </div>
   </div>
 </section>
