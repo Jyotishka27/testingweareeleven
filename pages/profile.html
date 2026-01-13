@@ -25,7 +25,7 @@
   <!-- Toast -->
   <div id="toast" class="fixed right-4 bottom-4 z-50 hidden max-w-sm"></div>
 
-  <!-- Cover -->
+  <!-- ================= COVER ================= -->
   <div id="coverBanner"
        class="relative h-56 sm:h-64 bg-gradient-to-r from-gray-700 to-gray-900 cover-ghost overflow-hidden">
 
@@ -57,7 +57,7 @@
 
   <main class="max-w-6xl mx-auto mt-20 px-6">
 
-    <!-- Profile Card -->
+    <!-- ================= PROFILE CARD ================= -->
     <section class="bg-white shadow-md rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
       <div class="flex-1 text-center lg:text-left">
         <h2 id="displayName" class="text-3xl font-extrabold">Loading…</h2>
@@ -78,17 +78,28 @@
         </div>
       </div>
 
+      <!-- ACTION BUTTONS -->
       <div class="flex flex-col gap-3">
         <button id="editBtn" class="bg-green-600 text-white px-5 py-2 rounded-lg">
           Edit Profile
         </button>
+
         <button id="logoutBtn" class="bg-red-500 text-white px-5 py-2 rounded-lg">
           Logout
+        </button>
+
+        <!-- ADMIN ONLY -->
+        <button
+          id="auctionBtn"
+          class="hidden bg-slate-900 text-white px-5 py-2 rounded-lg hover:bg-slate-800 smooth"
+          onclick="window.location.href='../pages/football_auctioneer.html'"
+        >
+          ⚽ Football Auction
         </button>
       </div>
     </section>
 
-    <!-- Polls -->
+    <!-- ================= POLLS ================= -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
 
       <section class="bg-white rounded-2xl shadow-md p-6">
@@ -114,18 +125,14 @@
     </div>
   </main>
 
-  <!-- Header + Firebase -->
+  <!-- ================= HEADER INJECTION ================= -->
   <script type="module">
     import { injectHeader } from "../scripts/header.js";
     injectHeader("#site-header", { active: "profile" });
   </script>
 
-  <!-- 🔐 Firebase logic UNCHANGED -->
-  <!-- (your entire Firebase block remains exactly the same below) -->
-
+  <!-- ================= FIREBASE AUTH ================= -->
   <script type="module">
-    /* YOUR EXISTING FIREBASE CODE — UNCHANGED */
-
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
@@ -135,12 +142,20 @@
       projectId: "we-are-eleven"
     };
 
+    const ADMIN_EMAIL = "jyotishka27@org.com";
+
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         window.location.href = "../pages/login.html";
+        return;
+      }
+
+      // Show auction button only for admin
+      if (user.email === ADMIN_EMAIL) {
+        document.getElementById("auctionBtn")?.classList.remove("hidden");
       }
     });
 
