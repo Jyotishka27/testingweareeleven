@@ -1,221 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Winter Carnival Cup 2026 - We Are Eleven</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: #f9fafb;
-      color: #1e293b;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Winter Carnival Cup 2026 — We Are Eleven</title>
 
-    .nav-link {
-      color: #4b5563;
-      font-weight: 500;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
+<script src="https://cdn.tailwindcss.com"></script>
 
-    .nav-link:hover {
-      color: #374151;
-    }
+<style>
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:#f8fafc;
+  color:#0f172a;
+}
 
-    .nav-link.active {
-      color: #dc2626;
-    }
+/* Sticky pill nav */
+.pillbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(248,250,252,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #e2e8f0;
+}
 
-    h2.section-title {
-      @apply text-xl font-semibold text-red-600 border-b pb-1 mb-3;
-    }
-  </style>
+.pill{
+  position:relative;
+  padding:.45rem 1.1rem;
+  border-radius:9999px;
+  font-weight:600;
+  font-size:.9rem;
+  white-space:nowrap;
+  transition:.2s;
+}
+.pill:hover{ background:#e2e8f0; }
+
+.pill.active{
+  background:#0f172a;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(15,23,42,.3);
+}
+.pill.active::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:22px;
+  height:3px;
+  border-radius:999px;
+  background:#0f172a;
+}
+
+/* Tabs */
+section[data-tab]{display:none}
+section[data-tab].active{display:block}
+
+/* Accent bar */
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+}
+.section-bar{
+  width:6px;
+  height:26px;
+  border-radius:999px;
+  background:#0f172a;
+}
+
+/* Coming Soon Card */
+.coming-soon{
+  min-height:260px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Mobile-first improvements */
+@media (max-width:640px){
+  .mobile-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+  }
+  .mobile-pills span{
+    background:#e2e8f0;
+    padding:.35rem .75rem;
+    border-radius:9999px;
+    font-size:.75rem;
+    font-weight:600;
+  }
+  .rule-list li{
+    line-height:1.6;
+    margin-bottom:.4rem;
+  }
+}
+</style>
 </head>
-<body class="text-black">
 
-  <!-- ✅ Header -->
-  <div id="site-header"></div>
+<body class="min-h-screen">
 
-  <!-- ✅ Main layout -->
-  <main class="container mx-auto px-4 md:px-0 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- ================= HEADER ================= -->
+<header class="bg-white shadow-sm text-center py-10">
+  <h1 class="text-4xl md:text-5xl font-extrabold">❄️ Winter Carnival Cup 2026</h1>
+  <p class="mt-2 text-slate-600">We Are Eleven — Tournament Overview</p>
+</header>
 
-    <!-- Main content -->
-    <section class="md:col-span-2 bg-white rounded-2xl shadow p-8">
-      <h1 class="text-3xl font-extrabold mb-6 text-gray-900">🏆 Winter Carnival Cup 2026</h1>
+<!-- ================= STICKY PILLS ================= -->
+<nav class="pillbar">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex gap-2 overflow-x-auto">
+    <button class="pill active" data-btn="overview">Overview</button>
+    <button class="pill" data-btn="teams">Teams</button>
+    <button class="pill" data-btn="fixtures">Fixtures</button>
+    <button class="pill" data-btn="results">Results</button>
+    <button class="pill" data-btn="stats">Stats</button>
+    <button class="pill" data-btn="gallery">Gallery</button>
+  </div>
+</nav>
 
-      <!-- Event Details -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-sm text-slate-700">
-        <p><strong>📅 Event Date:</strong><br>26 December 2026</p>
-        <p><strong>📍 Venue:</strong><br><a href="https://maps.app.goo.gl/1aMXNvbHJBS5QxwT7" target="_blank" class="text-red-600 hover:underline">Turf XL</a></p>
-        <p><strong>⏰ Time:</strong><br>9:00 AM – 6:00 PM</p>
-        <p><strong>👥 Organizers:</strong><br>Debayan, Gourav &amp; Jyotishka</p>
-        <p><strong>👥 Captains:</strong><br>Subhojit, Ritam, Monty, Subhamoy, Shubanjan &amp; Akash Jr</p>
-        <p><strong>⚽ Number of Teams:</strong><br>6</p>
+<main class="max-w-7xl mx-auto px-4 py-12 space-y-20">
+
+<!-- ================= OVERVIEW ================= -->
+<section data-tab="overview" class="active">
+  <div class="bg-white rounded-2xl shadow p-8 space-y-10">
+
+    <div>
+      <h2 class="text-3xl font-extrabold">🏆 Winter Carnival Cup 2026</h2>
+      <p class="text-slate-600 mt-1">
+        A spirited football carnival at GOD’s TURF
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+      <div><p class="font-semibold">📅 Event Date</p><p>18 January 2026</p></div>
+      <div><p class="font-semibold">📍 Venue</p><p>GOD'S TURF</p></div>
+      <div><p class="font-semibold">⏰ Time</p><p>9:00 AM – 6:00 PM</p></div>
+      <div><p class="font-semibold">👥 Organizers</p><p>Debayan, Gourav & Jyotishka</p></div>
+
+      <div>
+        <p class="font-semibold">👥 Captains</p>
+        <p class="hidden sm:block text-slate-700">
+          Aakash Singh, Thomas Joseph, Yash Agarwal,<br/>
+          Arghyadeep Das, Subhamoy Das, Arkadip Rath,<br/>
+          Ankit Aich, Aritra Adhikari
+        </p>
+        <div class="mobile-pills sm:hidden">
+          <span>Aakash Singh</span><span>Thomas Joseph</span>
+          <span>Yash Agarwal</span><span>Arghyadeep Das</span>
+          <span>Subhamoy Das</span><span>Arkadip Rath</span>
+          <span>Ankit Aich</span><span>Aritra Adhikari</span>
+        </div>
       </div>
 
-      <!-- Guidelines -->
-      <h2 class="section-title">Tournament Guidelines</h2>
-      <article class="space-y-6 text-slate-700 leading-relaxed text-sm">
-        
-        <section>
-          <h3 class="font-semibold mb-1">Event Overview</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Celebrating Independence Day with a spirited football tournament at Turf XL.</li>
-            <li>An opportunity to enjoy competitive play, sportsmanship, and camaraderie.</li>
-          </ul>
-        </section>
+      <div><p class="font-semibold">⚽ Number of Teams</p><p>8</p></div>
+    </div>
 
-        <section class="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-          <h3 class="font-semibold mb-1 text-red-700">Important Notice</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Organizers will not be liable for injuries, property loss, or death of any player.</li>
-            <li>Teams must carry their own medical kits and individual water bottles.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Field & Equipment</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Field Size: 70 x 110 ft, clearly marked boundaries.</li>
-            <li>Ball: Regulation Size 5 football.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Team Composition</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Minimum 7 players (including 1 goalkeeper).</li>
-            <li>Maximum 1 substitute allowed.</li>
-            <li>Players may represent only one team.</li>
-            <li>Maximum 6 players on the field at once; rolling substitutions.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Attire & Equipment</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Teams must wear identical or similar-colored jerseys (pre-assigned, no changes).</li>
-            <li>Footwear: Spikes or joggers only.</li>
-            <li>No sharp accessories; nails must be trimmed.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Match Format</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Match Duration: 16 minutes (8 per half) + 2 min half-time.</li>
-            <li>Final duration will be announced at venue.</li>
-            <li>Each player must play at least 15 minutes in group stage.</li>
-            <li>Strict timing; no postponements.</li>
-            <li>Teams with fewer than 6 players must play short.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Competition Structure</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>2 groups of 3 teams each.</li>
-            <li>Round-robin format (2 matches per pairing).</li>
-            <li>Points: Win – 3, Draw – 1.</li>
-            <li>Tie-breakers: Goal Difference → Goals Scored → Coin Toss.</li>
-            <li>Knockouts: Semi-finals, 3rd place match, and Final.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Kick-off & Restarts</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Coin toss decides ends and first kick-off.</li>
-            <li>After goals, restart from center spot by opponents.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Fouls & Misconduct</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>2 yellows in one match → Red card for that match.</li>
-            <li>2 yellows across matches → 12-min ban in next match.</li>
-            <li>3 yellows in tournament → Ban from next match.</li>
-            <li>Direct red → Ban current + next match.</li>
-            <li>Referee’s decision is final.</li>
-            <li>Violent conduct may lead to disqualification.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Free Kicks, Corners & Throw-ins</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>Referee decides direct/indirect free kicks.</li>
-            <li>Indirect must touch another player.</li>
-            <li>1m minimum distance for free kicks.</li>
-            <li>Standard corner and throw-in rules apply.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Tie-breakers (Knockout Stage)</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>3 penalty kicks per team.</li>
-            <li>If tied → Sudden death penalties (2 rounds).</li>
-            <li>If still tied → Goal Difference → Goals Scored → Coin Toss.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Awards & Recognition</h3>
-          <ul class="list-disc list-inside space-y-1">
-            <li>🏆 Winner: Trophy + Gold Medals</li>
-            <li>🥈 Runner-up: Trophy + Silver Medals</li>
-            <li>🥉 Third Place: Bronze Medals</li>
-            <li>🎯 Individual Awards: Top Goal Scorer, Best Goalkeeper, Playmaker, Best Defender, Man of the Match</li>
-          </ul>
-        </section>
-
-        <section>
-          <h3 class="font-semibold mb-1">Closing Ceremony</h3>
-          <p>Award distribution begins post 5:00 PM.</p>
-        </section>
-      </article>
-    </section>
-
-    <!-- Sidebar / Notice Board -->
-    <aside class="bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 border-l-4 border-blue-500 rounded-xl p-5 shadow-md">
-      <div class="flex items-center gap-3">
-        <span class="text-blue-600 text-2xl animate-bounce">📢</span>
-        <h2 class="text-2xl font-bold text-blue-800">Notice Board</h2>
-      </div>
-      <p class="mt-3 text-base text-blue-700 leading-relaxed">
-        ✅ <strong>The team fixtures have been released!</strong><br>
-        All players and teams are requested to check the 
-        <span class="font-semibold text-blue-900">Fixtures Tab</span> for details.
+    <div>
+      <h3 class="text-xl font-bold mb-3">Event Overview</h3>
+      <p class="text-sm text-slate-700">
+        Competitive football, sportsmanship, and camaraderie at GOD’s TURF.
       </p>
-      <p class="mt-4 text-base text-blue-700 leading-relaxed">
-        🔴 <strong>Track matches in real-time!</strong><br>
-        Visit the 
-        <a href="live_score.html" class="text-blue-800 font-semibold underline hover:text-blue-900">
-          Live Score Page
-        </a> 
-        for live updates, scorers, standings & knockouts.
-      </p>
-    </aside>
-  </main>
+    </div>
 
-  <!-- ✅ Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-400 mt-12">
-    <p>© 2026 Football Community. All Rights Reserved.</p>
-  </footer>
+    <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-sm">
+      <p class="font-semibold text-red-700 mb-1">⚠ Important Notice</p>
+      <ul class="list-disc pl-5 text-red-700 rule-list">
+        <li>Organizers are not liable for injuries or property loss.</li>
+        <li>Teams must carry their own medical kits and water bottles.</li>
+      </ul>
+    </div>
 
-  <script type="module">
-    import { injectHeader } from "./tournament_header.js";
-    import { loadTeams, hydrateTeamLogos } from "./teams-util.js";
-    injectHeader("#site-header", { active: "tournaments" });
-    try {
-      const maps = await loadTeams();
-      hydrateTeamLogos(document, maps);
-    } catch (e) {
-      console.warn("Teams JSON load failed:", e);
-    }
-  </script>
+    <div>
+      <h3 class="text-xl font-bold mb-3">Field & Equipment</h3>
+      <ul class="list-disc pl-6 text-sm text-slate-700 rule-list">
+        <li>Field size: 70 × 110 ft</li>
+        <li>Ball: Regulation Size 5</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-3">Team Composition</h3>
+      <ul class="list-disc pl-6 text-sm text-slate-700 rule-list">
+        <li>Minimum 5 players (including goalkeeper)</li>
+        <li>No substitutes allowed</li>
+        <li>Players may represent only one team</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-3">Match Format</h3>
+      <ul class="list-disc pl-6 text-sm text-slate-700 rule-list">
+        <li>16 minutes (8 per half) + 2 min break</li>
+        <li>Strict match timing</li>
+        <li>Teams must play short if fewer than 5 players</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-3">Competition Structure</h3>
+      <p class="italic text-slate-600 text-sm">Yet to be decided.</p>
+    </div>
+
+    <div>
+      <h3 class="text-xl font-bold mb-3">Awards & Recognition</h3>
+      <ul class="list-disc pl-6 text-sm text-slate-700 rule-list">
+        <li>🏆 Winner – Trophy + Gold Medals</li>
+        <li>🥈 Runner-up – Trophy + Silver Medals</li>
+        <li>🥉 Third Place – Bronze Medals</li>
+      </ul>
+    </div>
+
+    <div class="border-t pt-6 text-sm text-slate-600">
+      <p class="font-semibold">Closing Ceremony</p>
+      <p>Award distribution begins post 5:00 PM.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= COMING SOON TABS ================= -->
+<section data-tab="teams">
+  <div class="bg-white rounded-2xl shadow p-8 coming-soon text-center">
+    <div><div class="text-4xl mb-3">👥</div><h3 class="text-xl font-bold">Teams</h3><p class="text-sm text-slate-600">Coming soon</p></div>
+  </div>
+</section>
+
+<section data-tab="fixtures">
+  <div class="bg-white rounded-2xl shadow p-8 coming-soon text-center">
+    <div><div class="text-4xl mb-3">📅</div><h3 class="text-xl font-bold">Fixtures</h3><p class="text-sm text-slate-600">Coming soon</p></div>
+  </div>
+</section>
+
+<section data-tab="results">
+  <div class="bg-white rounded-2xl shadow p-8 coming-soon text-center">
+    <div><div class="text-4xl mb-3">🏆</div><h3 class="text-xl font-bold">Results</h3><p class="text-sm text-slate-600">Coming soon</p></div>
+  </div>
+</section>
+
+<section data-tab="stats">
+  <div class="bg-white rounded-2xl shadow p-8 coming-soon text-center">
+    <div><div class="text-4xl mb-3">📊</div><h3 class="text-xl font-bold">Stats</h3><p class="text-sm text-slate-600">Coming soon</p></div>
+  </div>
+</section>
+
+<section data-tab="gallery">
+  <div class="bg-white rounded-2xl shadow p-8 coming-soon text-center">
+    <div><div class="text-4xl mb-3">📸</div><h3 class="text-xl font-bold">Gallery</h3><p class="text-sm text-slate-600">Coming soon</p></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="text-center py-8 text-sm text-slate-500">
+© 2026 We Are Eleven • Winter Carnival Cup
+</footer>
+
+<script>
+const pills=document.querySelectorAll('.pill');
+const tabs=document.querySelectorAll('[data-tab]');
+pills.forEach(p=>{
+  p.onclick=()=>{
+    pills.forEach(x=>x.classList.remove('active'));
+    tabs.forEach(t=>t.classList.remove('active'));
+    p.classList.add('active');
+    document.querySelector(`[data-tab="${p.dataset.btn}"]`).classList.add('active');
+  }
+});
+</script>
+
 </body>
 </html>
