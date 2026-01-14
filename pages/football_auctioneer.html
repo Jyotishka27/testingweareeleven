@@ -269,7 +269,7 @@
   let AUCTION_DATA = null;
 
     async function loadAuctionData() {
-      const res = await fetch('./data/auction-data.json');
+      const res = await fetch('../data/auction-data.json');
       if (!res.ok) {
         throw new Error('Failed to load auction-data.json');
       }
