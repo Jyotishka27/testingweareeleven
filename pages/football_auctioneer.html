@@ -95,10 +95,29 @@
         <div class="flex items-center gap-2">
           <span class="text-sm text-slate-600">Category:</span>
           <div class="inline-flex rounded-xl overflow-hidden border border-slate-200" role="tablist" aria-label="Player categories">
-            <button data-cat="GK" class="catBtn px-3 py-1.5 text-sm bg-slate-900 text-white" role="tab">BP: 4</button>
-            <button data-cat="A" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">BP: 6</button>
-            <button data-cat="B" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">BP: 3 & 5</button>
-            <button data-cat="UNSOLD" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">UnSold</button>
+            <button data-cat="X" class="catBtn px-3 py-1.5 text-sm bg-slate-900 text-white" role="tab">
+              Goalkeepers
+            </button>
+            
+            <button data-cat="P" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">
+              Prime
+            </button>
+            
+            <button data-cat="A" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">
+              Elite
+            </button>
+            
+            <button data-cat="B" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">
+              Core
+            </button>
+            
+            <button data-cat="C" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">
+              Developing
+            </button>
+            
+            <button data-cat="UNSOLD" class="catBtn px-3 py-1.5 text-sm hover:bg-slate-100" role="tab">
+              UnSold
+            </button>
           </div>
         </div>
         <div class="flex items-center gap-2">
@@ -212,76 +231,25 @@
     bidStepInput: document.getElementById('bidStep'),
   };
 
-  // -- Constants --
-  const CATEGORY_LABELS = {
-    A: 'BP: 6',
-    B: 'BP: 3 & 5',
-    UNSOLD: 'UnSold',
-    GK: 'BP: 4',
-  };
-
-  // -- Data you can edit --
-  const TEAMS = [
-    { name: 'Dipanjan majumder', budget: 4000000 },
-    { name: 'THOMAS JOSEPH', budget: 4000000 },
-    { name: 'Yash Agarwal', budget: 4000000 },
-    { name: 'Ankit Aich', budget: 4000000 },
-    { name: 'Sourav Acharjee', budget: 4000000 },
-    { name: 'Arghyadeep Das', budget: 4000000 },
-    { name: 'Subhamoy Das', budget: 4000000 },
-    { name: 'Hrishi', budget: 4000000 },
-  ];
-
-  const PLAYERS = {
-    GK: [
-      { id: 'gk1', name: 'Srinjoy Kundu', basePrice: 400000, img: '../assets/players/srinjoy_kundu.jpg', position: 'Goalkeeper' },
-      { id: 'gk2', name: 'Aditya Chakraborty', basePrice: 400000, img: '../assets/players/adi.jpg', position: 'Goalkeeper' },
-      { id: 'gk3', name: 'Arnab Talukdar', basePrice: 400000, img: '../assets/players/arnab_talukdar.jpg', position: 'Goalkeeper' },
-      { id: 'gk4', name: 'Rupayan Chakravarty', basePrice: 400000, img: '../assets/players/rupayan_chakravarty.jpg', position: 'Goalkeeper' },
-      { id: 'gk5', name: 'Arka Dutta', basePrice: 400000, img: '../assets/players/arka_dutta.jpg', position: 'Goalkeeper' },
-      { id: 'gk6', name: 'Kinjal Bhattacharyya', basePrice: 400000, img: '../assets/players/kinjal_bhattacharyya.jpg', position: 'Goalkeeper' },
-      { id: 'gk7', name: 'Shrish Mukherjee', basePrice: 400000, img: '../assets/players/shrish_mukherjee.jpg', position: 'Goalkeeper' },
-    ],
-   A: [
-      { id: 'a1', name: 'Ritam Chowdhury', basePrice: 600000, img: './assets/players/ritam_chowdhury.jpg', position: 'Defence' },
-      { id: 'a2', name: 'Aditya Sen', basePrice: 600000, img: './assets/players/aditya_sen.jpg', position: 'Midfield' },
-      { id: 'a3', name: 'Vasu Gupta', basePrice: 600000, img: './assets/players/vasu_gupta.jpg', position: 'Striker' },
-      { id: 'a4', name: 'Kaustav Guha Mazumdar', basePrice: 600000, img: './assets/players/kaustav_guha_mazumdar.jpg', position: 'Midfield' },
-      { id: 'a5', name: 'Supratim Sengupta', basePrice: 600000, img: './assets/players/supratim_sengupta.jpg', position: 'Striker' },
-      { id: 'a6', name: 'Soumik Mukherjee', basePrice: 600000, img: './assets/players/soumik_mukherjee.jpg', position: 'Defence' },
-      { id: 'a7', name: 'Subhayan Banerjee', basePrice: 600000, img: './assets/players/subhayan_banerjee.jpg', position: 'Defence' },
-    ],
-   B: [
-      { id: 'b1', name: 'Aritra Adhikari', position: 'Striker', basePrice: 500000, img: './assets/players/aritra_adhikari.jpg' },
-      { id: 'b2', name: 'Rahul Sarkar', position: 'Defence', basePrice: 500000, img: './assets/players/rahul_sarkar.jpg' },
-      { id: 'b3', name: 'Aakash Singh', position: 'Midfield', basePrice: 500000, img: './assets/players/aakash_singh.jpg' },
-      { id: 'b4', name: 'Arkadip Rath', position: 'Defence', basePrice: 300000, img: './assets/players/arkadip_rath.jpg' },
-      { id: 'b5', name: 'Aman Pandey', position: 'Defence', basePrice: 500000, img: './assets/players/aman_pandey.jpg' },
-      { id: 'b6', name: 'Reet Karmakar', position: 'Midfield', basePrice: 300000, img: './assets/players/reet_karmakar.jpg' },
-      { id: 'b7', name: 'Satyaki Das', position: 'Defence', basePrice: 300000, img: './assets/players/satyaki_das.jpg' },
-      { id: 'b8', name: 'Sankhaneel Roychowdhury', position: 'Midfield', basePrice: 500000, img: './assets/players/sankhaneel_roychowdhury.jpg' },
-      { id: 'b9', name: 'Akash Mukherjee', position: 'Midfield', basePrice: 500000, img: './assets/players/akash_mukherjee.jpg' },
-      { id: 'b10', name: 'Prashnik Dey', position: 'Midfield', basePrice: 300000, img: './assets/players/prashnik_dey.jpg' },
-      { id: 'b11', name: 'Mayank Dutta', position: 'Defence', basePrice: 300000, img: './assets/players/mayank_dutta.jpg' },
-      { id: 'b12', name: 'Subhojit Manna (Bony)', position: 'Midfield', basePrice: 500000, img: './assets/players/subhojit_manna.jpg' },
-      { id: 'b13', name: 'Anish Biswas', position: 'Defence', basePrice: 300000, img: './assets/players/anish_biswas.jpg' },
-      { id: 'b14', name: 'Arindam Rakshit', position: 'Defence', basePrice: 300000, img: './assets/players/arindam_rakshit.jpg' },
-      { id: 'b15', name: 'Arjobroto Das (Arjo)', position: 'Midfield', basePrice: 500000, img: './assets/players/arjobroto_das.jpg' },
-      { id: 'b16', name: 'Moinak Dwarik', position: 'Midfield', basePrice: 300000, img: './assets/players/moinak_dwarik.jpg' },
-      { id: 'b17', name: 'Kaustav Samanta', position: 'Striker', basePrice: 500000, img: './assets/players/kaustav_samanta.jpg' },
-    ],
-  };
-
+    const CATEGORY_LABELS = {
+      X: 'Goalkeepers (₹4L)',
+      P: 'Prime (₹6L)',
+      A: 'Elite (₹5L)',
+      B: 'Core (₹4L)',
+      C: 'Developing (₹3L)',
+      UNSOLD: 'UnSold'
+    };
+  
   // -- State --
-  const state = {
-    category: 'GK',
-    pools: { GK: [], A: [], B: [], UNSOLD: [] },
-    skipped: { GK: [], A: [], B: [], UNSOLD: [] },
-    current: null,
-    teams: [],
-    sales: [],
-    timer: { handle: null, left: 0, running: false },
-  };
+    const state = {
+      pools: { X: [], P: [], A: [], B: [], C: [], UNSOLD: [] },
+      skipped: { X: [], P: [], A: [], B: [], C: [], UNSOLD: [] },
+      category: 'X',
+      current: null,
+      teams: [],
+      sales: [],
+      timer: { handle: null, left: 0, running: false },
+    };
 
   // -- Utility Functions --
   function fmt(num) {
@@ -291,20 +259,43 @@
     return CATEGORY_LABELS[cat] || 'Unknown';
   }
 
+  let AUCTION_DATA = null;
+
+    async function loadAuctionData() {
+      const res = await fetch('./data/auction-data.json');
+      if (!res.ok) {
+        throw new Error('Failed to load auction-data.json');
+      }
+      AUCTION_DATA = await res.json();
+    }
+    
   // -- Clone initial data to state --
-  function cloneData() {
-    state.teams = TEAMS.map((t) => ({ ...t }));
-    state.pools.GK = PLAYERS.GK.map((p) => ({ ...p }));
-    state.pools.A = PLAYERS.A.map((p) => ({ ...p }));
-    state.pools.B = PLAYERS.B.map((p) => ({ ...p }));
-    state.pools.UNSOLD = [];
-    state.skipped = { GK: [], A: [], B: [], UNSOLD: [] };
-    state.category = 'GK';
-    state.current = null;
-    state.sales = [];
-    cancelTimer();
-    renderAll();
-  }
+    function cloneData() {
+      if (!AUCTION_DATA) {
+        alert('Auction data not loaded');
+        return;
+      }
+    
+      // Captains → Teams
+      state.teams = AUCTION_DATA.captains.map(c => ({ ...c }));
+    
+      // Players → Auction pools
+      state.pools.X = AUCTION_DATA.players.X.map(p => ({ ...p }));
+      state.pools.P = AUCTION_DATA.players.P.map(p => ({ ...p }));
+      state.pools.A = AUCTION_DATA.players.A.map(p => ({ ...p }));
+      state.pools.B = AUCTION_DATA.players.B.map(p => ({ ...p }));
+      state.pools.C = AUCTION_DATA.players.C.map(p => ({ ...p }));
+    
+      state.pools.UNSOLD = [];
+      state.skipped = { X: [], P: [], A: [], B: [], C: [], UNSOLD: [] };
+    
+      state.category = 'X';
+      state.current = null;
+      state.sales = [];
+    
+      cancelTimer();
+      renderAll();
+    }
 
   // -- Rendering --
   function renderAll() {
@@ -582,9 +573,10 @@
     }
     renderAll();
   }
-  function findPlayerInMaster(id, cat) {
-    return (PLAYERS[cat] || []).find((p) => p.id === id) || null;
-  }
+    
+    function findPlayerInMaster(id, cat) {
+      return (AUCTION_DATA.players[cat] || []).find(p => p.id === id) || null;
+    }
 
   // -- Timer Management --
   function startOrResetTimer() {
