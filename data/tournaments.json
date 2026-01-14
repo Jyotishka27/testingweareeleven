@@ -17,7 +17,7 @@
       "end": "2026-01-18",
       "venue": "GODs Turf",
       "href": "../tournaments/winter-carnival-cup-2026/winter-carnival-cup-2026.html",
-      "cover": "../assets/winter-carnival-2026/winter-carnival-2026.jpeg",
+      "cover": "../assets/winter-carnival-2026/winter_carnival_poster_logo.jpeg",
       "tags": ["League", "Refereed"]
     },
     {
@@ -28,16 +28,6 @@
       "venue": "Turf XL",
       "href": "tournaments/summer_showdown_2024.html",
       "cover": "assets/independence-cup-24/independence_cup_logo_2024.jpg",
-      "tags": ["6 teams", "One-day"]
-    },
-    {
-      "id": "independence-2026",
-      "name": "Independence Cup 2026",
-      "start": "2026-08-17",
-      "end": "2026-08-17",
-      "venue": "City Sports Hub",
-      "href": "../tournaments/winter-carnival-cup-2026/winter-carnival-2026.html",
-      "cover": "../assets/winter-carnival-2026/winter-carnival-2026.jpeg",
       "tags": ["6 teams", "One-day"]
     }
   ]
