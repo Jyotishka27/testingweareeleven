@@ -719,8 +719,16 @@
     renderResults();
   });
 
-  // -- Initialize App --
-  cloneData();
+    // -- Initialize App --
+    (async () => {
+      try {
+        await loadAuctionData();
+        cloneData();
+      } catch (err) {
+        alert(err.message);
+        console.error(err);
+      }
+    })();
 })();
 </script>
 </body>
