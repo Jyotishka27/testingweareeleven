@@ -82,7 +82,14 @@
       <div class="mt-3 text-sm text-slate-700 space-y-2">
         <p> Base price is the minimum starting bid. </p>
         <ul class="list-disc pl-6">
-          <li>Categories: <strong>BP: 4</strong>, <strong>BP: 6</strong>, <strong>BP: 3 & 5</strong></li>
+            <li>
+              Categories:
+              X (Goalkeepers – ₹4L),
+              P (Prime – ₹6L),
+              A (Elite – ₹5L),
+              B (Core – ₹4L),
+              C (Developing – ₹3L)
+            </li>
           <li>Only the auctioneer uses this page. Teams call bids verbally.</li>
           <li>Timer starts at the <em>first</em> bid and resets to 45s after every new bid.</li>
           <li>When the timer hits 0, the player is sold to the highest bidder (if any).</li>
@@ -500,7 +507,6 @@
       return;
     }
     if (state.current.bidder === null) {
-      state.current.player.basePrice = 50000;
       state.pools.UNSOLD.push(state.current.player);
     } else {
       state.skipped[state.current.category].push(state.current.player);
@@ -575,6 +581,7 @@
   }
     
     function findPlayerInMaster(id, cat) {
+      if (cat === 'UNSOLD') return null;
       return (AUCTION_DATA.players[cat] || []).find(p => p.id === id) || null;
     }
 
