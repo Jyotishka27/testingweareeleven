@@ -11,12 +11,12 @@
 
   "players": {
     "X": [
-      { "id": "x1", "name": "Aditya Chakraborty", "position": "GK", "basePrice": 400000, "img": "../assets/players/aditya_chakraborty.jpg" },
-      { "id": "x2", "name": "Arka Dutta", "position": "GK", "basePrice": 400000, "img": "../assets/players/arka_dutta.jpg" },
+      { "id": "x1", "name": "Aditya Chakraborty", "position": "GK", "basePrice": 400000, "img": "../assets/players/adi.jpg" },
+      { "id": "x2", "name": "Arka Dutta", "position": "GK", "basePrice": 400000, "img": "../assets/players/arka_dutta_amity.jpg.jpg" },
       { "id": "x3", "name": "Arnab Talukdar", "position": "GK", "basePrice": 400000, "img": "../assets/players/arnab_talukdar.jpg" },
       { "id": "x4", "name": "Ayon Roy", "position": "GK", "basePrice": 400000, "img": "../assets/players/ayon_roy.jpg" },
       { "id": "x5", "name": "Srinjoy Kundu", "position": "GK", "basePrice": 400000, "img": "../assets/players/srinjoy_kundu.jpg" },
-      { "id": "x6", "name": "Rupayan Chakravarty", "position": "GK", "basePrice": 400000, "img": "../assets/players/rupayan_chakravarty.jpg" },
+      { "id": "x6", "name": "Rupayan Chakravarty", "position": "GK", "basePrice": 400000, "img": "../assets/players/rupayan_chakrabarty.jpg" },
       { "id": "x7", "name": "Shrish Mukherjee", "position": "GK", "basePrice": 400000, "img": "../assets/players/shrish_mukherjee.jpg" }
     ],
 
