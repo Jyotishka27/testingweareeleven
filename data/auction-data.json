@@ -27,7 +27,7 @@
     ],
 
     "A": [
-      { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000, "img": "../assets/players/kaustav_guha_mazumdar.jpg.jpg" },
+      { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000, "img": "../assets/players/kaustav_guha_mazumdar.jpg" },
       { "id": "a2", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000, "img": "../assets/players/ritam_chowdhury.jpeg" }
     ],
 
