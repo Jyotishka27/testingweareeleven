@@ -21,35 +21,35 @@
     ],
 
     "P": [
-      { "id": "p1", "name": "Soumik Mukherjee", "position": "CM", "basePrice": 600000 },
-      { "id": "p2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 600000 },
-      { "id": "p3", "name": "Vasu Gupta", "position": "ST", "basePrice": 600000 }
+      { "id": "p1", "name": "Soumik Mukherjee", "position": "CM", "basePrice": 600000, "img": "../assets/players/soumik_mukherjee.jpg" },
+      { "id": "p2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/supratim_sengupta.jpg" },
+      { "id": "p3", "name": "Vasu Gupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/vasu.jpg" }
     ],
 
     "A": [
-      { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000 },
-      { "id": "a2", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000 }
+      { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000, "img": "../assets/players/kaustav_guha_mazumdar.jpg.jpg" },
+      { "id": "a2", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000, "img": "../assets/players/ritam_chowdhury.jpeg" }
     ],
 
     "B": [
-      { "id": "b1", "name": "Akash Mukherjee", "position": "CM", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b2", "name": "Aman Pandey", "position": "CM", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b3", "name": "Arjobroto Das (Arjo)", "position": "ST", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b4", "name": "Hrishi", "position": "ST", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b5", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b6", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" },
-      { "id": "b7", "name": "Satyaki Das", "position": "CM", "basePrice": 400000, "img": "../assets/players/subhojit_manna.jpg" }
+      { "id": "b1", "name": "Akash Mukherjee", "position": "CM", "basePrice": 400000, "img": "../assets/players/akash_mukherjee.jpg" },
+      { "id": "b2", "name": "Aman Pandey", "position": "CM", "basePrice": 400000, "img": "../assets/players/aman_kumar_pandey.jpg" },
+      { "id": "b3", "name": "Arjobroto Das (Arjo)", "position": "ST", "basePrice": 400000, "img": "../assets/players/arjobroto_das.jpg" },
+      { "id": "b4", "name": "Hrishi", "position": "ST", "basePrice": 400000, "img": "../assets/players/hrishi.jpg" },
+      { "id": "b5", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000, "img": "../assets/players/moinak_dwarik.jpg" },
+      { "id": "b6", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000, "img": "../assets/players/rahul_sarkar.jpg" },
+      { "id": "b7", "name": "Satyaki Das", "position": "CM", "basePrice": 400000, "img": "../assets/players/satyaki_das.jpg" }
     ],
 
     "C": [
-      { "id": "c1", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000 },
-      { "id": "c2", "name": "Aritra Adhikari", "position": "CM", "basePrice": 300000 },
-      { "id": "c3", "name": "Arkadip Rath", "position": "CD", "basePrice": 300000 },
-      { "id": "c4", "name": "Prashnik Dey", "position": "ST", "basePrice": 300000 },
-      { "id": "c5", "name": "Reet Karmakar", "position": "CM", "basePrice": 300000 },
-      { "id": "c6", "name": "Sourav Acharjee", "position": "CD", "basePrice": 300000 },
-      { "id": "c7", "name": "Subhayan Banerjee", "position": "CD", "basePrice": 300000 },
-      { "id": "c8", "name": "Subhojit Manna (Bony)", "position": "CD", "basePrice": 300000 }
+      { "id": "c1", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000, "img": "../assets/players/arindam_rakshit.jpg" },
+      { "id": "c2", "name": "Aritra Adhikari", "position": "CM", "basePrice": 300000, "img": "../assets/players/aritra_adhikari.jpg" },
+      { "id": "c3", "name": "Arkadip Rath", "position": "CD", "basePrice": 300000, "img": "../assets/players/arkadip_rath.jpg" },
+      { "id": "c4", "name": "Prashnik Dey", "position": "ST", "basePrice": 300000, "img": "../assets/players/prashnik_dey.jpg" },
+      { "id": "c5", "name": "Reet Karmakar", "position": "CM", "basePrice": 300000, "img": "../assets/players/reet_karmakar.jpg.jpg" },
+      { "id": "c6", "name": "Sourav Acharjee", "position": "CD", "basePrice": 300000, "img": "../assets/players/sourav_acharjee.jpg" },
+      { "id": "c7", "name": "Subhayan Banerjee", "position": "CD", "basePrice": 300000, "img": "../assets/players/subhayan_banerjee.jpg" },
+      { "id": "c8", "name": "Subhojit Manna (Bony)", "position": "CD", "basePrice": 300000, "img": "../assets/players/subhojit_manna.jpg" }
     ]
   }
 }
