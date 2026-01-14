@@ -1,4 +1,14 @@
 {
+  "captains": [
+    { "name": "Aakash Singh", "budget": 4000000 },
+    { "name": "Ankit Aich", "budget": 4000000 },
+    { "name": "Dipanjan Majumder", "budget": 4000000 },
+    { "name": "Sankhaneel Roychowdhury", "budget": 4000000 },
+    { "name": "Subhamoy Das", "budget": 4000000 },
+    { "name": "Thomas Joseph", "budget": 4000000 },
+    { "name": "Yash Agarwal", "budget": 4000000 }
+  ],
+
   "players": {
     "X": [
       { "id": "x1", "name": "Aditya Chakraborty", "position": "GK", "basePrice": 400000 },
@@ -22,31 +32,24 @@
     ],
 
     "B": [
-      { "id": "b1", "name": "Aakash Singh", "position": "ST", "basePrice": 400000 },
-      { "id": "b2", "name": "Akash Mukherjee", "position": "CM", "basePrice": 400000 },
-      { "id": "b3", "name": "Aman Pandey", "position": "CM", "basePrice": 400000 },
-      { "id": "b4", "name": "Arjobroto Das (Arjo)", "position": "ST", "basePrice": 400000 },
-      { "id": "b5", "name": "Hrishi", "position": "ST", "basePrice": 400000 },
-      { "id": "b6", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000 },
-      { "id": "b7", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000 },
-      { "id": "b8", "name": "Sankhaneel Roychowdhury", "position": "CD", "basePrice": 400000 },
-      { "id": "b9", "name": "Satyaki Das", "position": "CM", "basePrice": 400000 },
-      { "id": "b10", "name": "Subhamoy Das", "position": "CM", "basePrice": 400000 }
+      { "id": "b1", "name": "Akash Mukherjee", "position": "CM", "basePrice": 400000 },
+      { "id": "b2", "name": "Aman Pandey", "position": "CM", "basePrice": 400000 },
+      { "id": "b3", "name": "Arjobroto Das (Arjo)", "position": "ST", "basePrice": 400000 },
+      { "id": "b4", "name": "Hrishi", "position": "ST", "basePrice": 400000 },
+      { "id": "b5", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000 },
+      { "id": "b6", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000 },
+      { "id": "b7", "name": "Satyaki Das", "position": "CM", "basePrice": 400000 }
     ],
 
     "C": [
-      { "id": "c1", "name": "Ankit Aich", "position": "CD", "basePrice": 300000 },
-      { "id": "c2", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000 },
-      { "id": "c3", "name": "Aritra Adhikari", "position": "CM", "basePrice": 300000 },
-      { "id": "c4", "name": "Arkadip Rath", "position": "CD", "basePrice": 300000 },
-      { "id": "c5", "name": "Dipanjan Majumder", "position": "CD", "basePrice": 300000 },
-      { "id": "c6", "name": "Prashnik Dey", "position": "ST", "basePrice": 300000 },
-      { "id": "c7", "name": "Reet Karmakar", "position": "CM", "basePrice": 300000 },
-      { "id": "c8", "name": "Sourav Acharjee", "position": "CD", "basePrice": 300000 },
-      { "id": "c9", "name": "Subhayan Banerjee", "position": "CD", "basePrice": 300000 },
-      { "id": "c10", "name": "Subhojit Manna (Bony)", "position": "CD", "basePrice": 300000 },
-      { "id": "c11", "name": "Thomas Joseph", "position": "ST", "basePrice": 300000 },
-      { "id": "c12", "name": "Yash Agarwal", "position": "CD", "basePrice": 300000 }
+      { "id": "c1", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000 },
+      { "id": "c2", "name": "Aritra Adhikari", "position": "CM", "basePrice": 300000 },
+      { "id": "c3", "name": "Arkadip Rath", "position": "CD", "basePrice": 300000 },
+      { "id": "c4", "name": "Prashnik Dey", "position": "ST", "basePrice": 300000 },
+      { "id": "c5", "name": "Reet Karmakar", "position": "CM", "basePrice": 300000 },
+      { "id": "c6", "name": "Sourav Acharjee", "position": "CD", "basePrice": 300000 },
+      { "id": "c7", "name": "Subhayan Banerjee", "position": "CD", "basePrice": 300000 },
+      { "id": "c8", "name": "Subhojit Manna (Bony)", "position": "CD", "basePrice": 300000 }
     ]
   }
 }
