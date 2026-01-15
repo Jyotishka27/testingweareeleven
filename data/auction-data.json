@@ -8,7 +8,6 @@
     { "name": "Thomas Joseph", "budget": 3000000 },
     { "name": "Yash Agarwal", "budget": 3000000 }
   ],
-
   "players": {
     "X": [
       { "id": "x1", "name": "Aditya Chakraborty", "position": "GK", "basePrice": 400000, "img": "../assets/players/adi.jpg" },
@@ -19,20 +18,17 @@
       { "id": "x6", "name": "Rupayan Chakravarty", "position": "GK", "basePrice": 400000, "img": "../assets/players/rupayan_chakrabarty.jpg" },
       { "id": "x7", "name": "Shrish Mukherjee", "position": "GK", "basePrice": 400000, "img": "../assets/players/shrish_mukherjee.jpg" }
     ],
-
     "P": [
       { "id": "p1", "name": "Soumik Mukherjee", "position": "CM", "basePrice": 600000, "img": "../assets/players/soumik_mukherjee.jpg" },
       { "id": "p2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/supratim_sengupta.jpg" },
       { "id": "p3", "name": "Vasu Gupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/vasu.jpg" },
       { "id": "p4", "name": "China", "position": "CM", "basePrice": 600000, "img": "../assets/players/china.jpg" }
     ],
-
     "A": [
       { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000, "img": "../assets/players/kaustav_guha_mazumdar.jpg" },
       { "id": "a2", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000, "img": "../assets/players/rahul_sarkar.jpg" },
       { "id": "a3", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000, "img": "../assets/players/ritam_chowdhury.jpeg" }
     ],
-
     "B": [
       { "id": "b1", "name": "Akash Mukherjee", "position": "CM", "basePrice": 400000, "img": "../assets/players/akash_mukherjee.jpg" },
       { "id": "b2", "name": "Aman Pandey", "position": "CM", "basePrice": 400000, "img": "../assets/players/aman_kumar_pandey.jpg" },
@@ -40,8 +36,7 @@
       { "id": "b4", "name": "Hrishi", "position": "ST", "basePrice": 400000, "img": "../assets/players/hrishi.jpg" },
       { "id": "b5", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000, "img": "../assets/players/moinak_dwarik.jpg" },
       { "id": "b6", "name": "Satyaki Das", "position": "CM", "basePrice": 400000, "img": "../assets/players/satyaki_das.jpg" }
-    ],      
-
+    ],
     "C": [
       { "id": "c1", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000, "img": "../assets/players/arindam_rakshit.jpg" },
       { "id": "c2", "name": "Aritra Adhikari", "position": "CM", "basePrice": 300000, "img": "../assets/players/aritra_adhikari.jpg" },
