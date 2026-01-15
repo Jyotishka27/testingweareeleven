@@ -29,7 +29,8 @@
 
     "A": [
       { "id": "a1", "name": "Kaustav Guha Mazumdar", "position": "CM", "basePrice": 500000, "img": "../assets/players/kaustav_guha_mazumdar.jpg" },
-      { "id": "a2", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000, "img": "../assets/players/ritam_chowdhury.jpeg" }
+      { "id": "a2", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000, "img": "../assets/players/rahul_sarkar.jpg" },
+      { "id": "a3", "name": "Ritam Chowdhury", "position": "CM", "basePrice": 500000, "img": "../assets/players/ritam_chowdhury.jpeg" }
     ],
 
     "B": [
@@ -38,9 +39,8 @@
       { "id": "b3", "name": "Arjobroto Das (Arjo)", "position": "ST", "basePrice": 400000, "img": "../assets/players/arjobroto_das.jpg" },
       { "id": "b4", "name": "Hrishi", "position": "ST", "basePrice": 400000, "img": "../assets/players/hrishi.jpg" },
       { "id": "b5", "name": "Moinak Dwarik", "position": "CD", "basePrice": 400000, "img": "../assets/players/moinak_dwarik.jpg" },
-      { "id": "b6", "name": "Rahul Sarkar", "position": "CD", "basePrice": 400000, "img": "../assets/players/rahul_sarkar.jpg" },
-      { "id": "b7", "name": "Satyaki Das", "position": "CM", "basePrice": 400000, "img": "../assets/players/satyaki_das.jpg" }
-    ],
+      { "id": "b6", "name": "Satyaki Das", "position": "CM", "basePrice": 400000, "img": "../assets/players/satyaki_das.jpg" }
+    ],      
 
     "C": [
       { "id": "c1", "name": "Arindam Rakshit", "position": "ST", "basePrice": 300000, "img": "../assets/players/arindam_rakshit.jpg" },
