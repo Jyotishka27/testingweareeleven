@@ -1,12 +1,12 @@
 {
   "captains": [
-    { "name": "Aakash Singh", "budget": 2500000 },
-    { "name": "Ankit Aich", "budget": 2500000 },
-    { "name": "Dipanjan Majumder", "budget": 2500000 },
-    { "name": "Sankhaneel Roychowdhury", "budget": 2500000 },
-    { "name": "Subhamoy Das", "budget": 2500000 },
-    { "name": "Thomas Joseph", "budget": 2500000 },
-    { "name": "Yash Agarwal", "budget": 2500000 }
+    { "name": "Aakash Singh", "budget": 3000000 },
+    { "name": "Ankit Aich", "budget": 3000000 },
+    { "name": "Dipanjan Majumder", "budget": 3000000 },
+    { "name": "Sankhaneel Roychowdhury", "budget": 3000000 },
+    { "name": "Subhamoy Das", "budget": 3000000 },
+    { "name": "Thomas Joseph", "budget": 3000000 },
+    { "name": "Yash Agarwal", "budget": 3000000 }
   ],
 
   "players": {
