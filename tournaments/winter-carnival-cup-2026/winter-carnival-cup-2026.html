@@ -377,104 +377,184 @@ section[data-tab].active{display:block}
 </section>
 
 <!-- PLAYERS -->
-<section data-tab="players">
+<section data-tab="players" class="space-y-20">
 
-  <div class="section-title mb-12">
+  <div class="section-title">
     <div class="section-bar"></div>
     <h2 class="text-4xl font-black">🧑‍🤝‍🧑 Players List</h2>
   </div>
 
   <!-- GK -->
-  <div class="mb-16">
-    <h3 class="text-3xl font-black mb-4">🧤 Goalkeepers (GK)</h3>
-    <div class="overflow-x-auto rounded-2xl border">
-      <table class="min-w-full bg-white">
-        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
-        <tbody>
-          <tr><td>Aditya Chakraborty</td><td>22</td><td>₹4L</td></tr>
-          <tr><td>Arka Dutta</td><td>25</td><td>₹4L</td></tr>
-          <tr><td>Arnab Talukdar</td><td>29</td><td>₹4L</td></tr>
-          <tr><td>Ayon Roy</td><td>22</td><td>₹4L</td></tr>
-          <tr><td>Rupayan Chakravarty</td><td>32</td><td>₹4L</td></tr>
-          <tr><td>Shrish Mukherjee</td><td>19</td><td>₹4L</td></tr>
-          <tr><td>Srinjoy Kundu</td><td>24</td><td>₹4L</td></tr>
-        </tbody>
-      </table>
+  <div class="bg-white rounded-3xl shadow-xl p-8 border">
+    <h3 class="text-3xl font-black mb-6">🧤 Goalkeepers (GK)</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Aditya Chakraborty</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 22</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Arka Dutta</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 25</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Arnab Talukdar</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 29</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Ayon Roy</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 22</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Rupayan Chakravarty</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 32</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Shrish Mukherjee</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 19</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Srinjoy Kundu</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 24</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- ST -->
-  <div class="mb-16">
-    <h3 class="text-3xl font-black mb-4">⚔️ Strikers (ST)</h3>
-    <div class="overflow-x-auto rounded-2xl border">
-      <table class="min-w-full bg-white">
-        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
-        <tbody>
-          <tr><td>Supratim Sengupta</td><td>27</td><td>₹6L</td></tr>
-          <tr><td>Vasu Gupta</td><td>25</td><td>₹6L</td></tr>
-          <tr><td>Arjobroto Das (Arjo)</td><td>21</td><td>₹4L</td></tr>
-          <tr><td>Arindam Rakshit</td><td>31</td><td>₹3L</td></tr>
-          <tr><td>Prashnik Dey</td><td>29</td><td>₹3L</td></tr>
-        </tbody>
-      </table>
+  <div class="bg-white rounded-3xl shadow-xl p-8 border">
+    <h3 class="text-3xl font-black mb-6">⚔️ Strikers (ST)</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Supratim Sengupta</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 27</span><span class="font-black text-emerald-600">₹6L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Vasu Gupta</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 25</span><span class="font-black text-emerald-600">₹6L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Arjobroto Das (Arjo)</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 21</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Arindam Rakshit</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 31</span><span class="font-black text-emerald-600">₹3L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg">
+        <p class="text-xl font-black">Prashnik Dey</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 29</span><span class="font-black text-emerald-600">₹3L</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- CM -->
-  <div class="mb-16">
-    <h3 class="text-3xl font-black mb-4">🧠 Central Midfielders (CM)</h3>
-    <div class="overflow-x-auto rounded-2xl border">
-      <table class="min-w-full bg-white">
-        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
-        <tbody>
-          <tr><td>China</td><td>28</td><td>₹6L</td></tr>
-          <tr><td>Soumik Mukherjee</td><td>29</td><td>₹6L</td></tr>
-          <tr><td>Kaustav Guha Mazumdar</td><td>29</td><td>₹5L</td></tr>
-          <tr><td>Ritam Chowdhury</td><td>28</td><td>₹5L</td></tr>
-          <tr><td>Akash Mukherjee</td><td>28</td><td>₹4L</td></tr>
-          <tr><td>Aman Pandey</td><td>24</td><td>₹4L</td></tr>
-          <tr><td>Satyaki Das</td><td>25</td><td>₹4L</td></tr>
-          <tr><td>Aritra Adhikari</td><td>28</td><td>₹3L</td></tr>
-          <tr><td>Reet Karmakar</td><td>29</td><td>₹3L</td></tr>
-        </tbody>
-      </table>
+  <div class="bg-slate-50 rounded-3xl shadow-xl p-8 border">
+    <h3 class="text-3xl font-black mb-6">🧠 Central Midfielders (CM)</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">China</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 28</span><span class="font-black text-emerald-600">₹6L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Soumik Mukherjee</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 29</span><span class="font-black text-emerald-600">₹6L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Kaustav Guha Mazumdar</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 29</span><span class="font-black text-emerald-600">₹5L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Ritam Chowdhury</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 28</span><span class="font-black text-emerald-600">₹5L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Akash Mukherjee</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 28</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Aman Pandey</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 24</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Satyaki Das</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 25</span><span class="font-black text-emerald-600">₹4L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Aritra Adhikari</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 28</span><span class="font-black text-emerald-600">₹3L</span>
+        </div>
+      </div>
+      <div class="p-6 rounded-2xl bg-white border hover:shadow-lg">
+        <p class="text-xl font-black">Reet Karmakar</p>
+        <div class="flex justify-between mt-3 text-sm">
+          <span>Age 29</span><span class="font-black text-emerald-600">₹3L</span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- CD -->
-  <div class="mb-16">
-    <h3 class="text-3xl font-black mb-4">🛡️ Central Defenders (CD)</h3>
-    <div class="overflow-x-auto rounded-2xl border">
-      <table class="min-w-full bg-white">
-        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
-        <tbody>
-          <tr><td>Rahul Sarkar</td><td>23</td><td>₹5L</td></tr>
-          <tr><td>Moinak Dwarik</td><td>24</td><td>₹4L</td></tr>
-          <tr><td>Arkadip Rath</td><td>27</td><td>₹3L</td></tr>
-          <tr><td>Sourav Acharjee</td><td>28</td><td>₹3L</td></tr>
-          <tr><td>Subhayan Banerjee</td><td>29</td><td>₹3L</td></tr>
-          <tr><td>Subhojit Manna (Bony)</td><td>27</td><td>₹3L</td></tr>
-        </tbody>
-      </table>
+  <div class="bg-white rounded-3xl shadow-xl p-8 border">
+    <h3 class="text-3xl font-black mb-6">🛡️ Central Defenders (CD)</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Rahul Sarkar</p><div class="flex justify-between mt-3 text-sm"><span>Age 23</span><span class="font-black text-emerald-600">₹5L</span></div></div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Moinak Dwarik</p><div class="flex justify-between mt-3 text-sm"><span>Age 24</span><span class="font-black text-emerald-600">₹4L</span></div></div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Arkadip Rath</p><div class="flex justify-between mt-3 text-sm"><span>Age 27</span><span class="font-black text-emerald-600">₹3L</span></div></div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Sourav Acharjee</p><div class="flex justify-between mt-3 text-sm"><span>Age 28</span><span class="font-black text-emerald-600">₹3L</span></div></div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Subhayan Banerjee</p><div class="flex justify-between mt-3 text-sm"><span>Age 29</span><span class="font-black text-emerald-600">₹3L</span></div></div>
+      <div class="p-6 rounded-2xl border hover:shadow-lg"><p class="text-xl font-black">Subhojit Manna (Bony)</p><div class="flex justify-between mt-3 text-sm"><span>Age 27</span><span class="font-black text-emerald-600">₹3L</span></div></div>
     </div>
   </div>
 
   <!-- CAPTAINS -->
-  <div>
-    <h3 class="text-3xl font-black mb-4">👑 Captains (Not in Auction)</h3>
-    <div class="overflow-x-auto rounded-2xl border">
-      <table class="min-w-full bg-amber-50">
-        <thead><tr><th>Name</th><th>Age</th><th>Position</th><th>Base Price</th></tr></thead>
-        <tbody>
-          <tr><td>Aakash Singh</td><td>29</td><td>ST</td><td>—</td></tr>
-          <tr><td>Ankit Aich</td><td>28</td><td>CD</td><td>—</td></tr>
-          <tr><td>Dipanjan Majumder</td><td>25</td><td>CD</td><td>—</td></tr>
-          <tr><td>Sankhaneel Roychowdhury</td><td>28</td><td>CD</td><td>—</td></tr>
-          <tr><td>Subhamoy Das</td><td>28</td><td>CM</td><td>—</td></tr>
-          <tr><td>Thomas Joseph</td><td>36</td><td>ST</td><td>—</td></tr>
-          <tr><td>Yash Agarwal</td><td>24</td><td>CD</td><td>—</td></tr>
-        </tbody>
-      </table>
+  <div class="bg-gradient-to-br from-amber-50 to-yellow-100 rounded-3xl shadow-2xl p-10 border border-amber-200">
+    <h3 class="text-3xl font-black mb-6">👑 Captains (Not in Auction)</h3>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Aakash Singh</p><p class="text-sm mt-2">ST • Age 29</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Ankit Aich</p><p class="text-sm mt-2">CD • Age 28</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Dipanjan Majumder</p><p class="text-sm mt-2">CD • Age 25</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Sankhaneel Roychowdhury</p><p class="text-sm mt-2">CD • Age 28</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Subhamoy Das</p><p class="text-sm mt-2">CM • Age 28</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Thomas Joseph</p><p class="text-sm mt-2">ST • Age 36</p></div>
+      <div class="p-6 rounded-2xl bg-white border"><p class="text-xl font-black">Yash Agarwal</p><p class="text-sm mt-2">CD • Age 24</p></div>
     </div>
   </div>
 
