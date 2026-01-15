@@ -189,6 +189,7 @@ section[data-tab].active{display:block}
 <nav class="pillbar">
   <div class="max-w-7xl mx-auto px-6 py-4 flex gap-3 overflow-x-auto pb-2">
     <button class="pill active" data-btn="overview">🏆 Overview</button>
+    <button class="pill" data-btn="players">🧑‍🤝‍🧑 Players</button>
     <button class="pill" data-btn="teams">👥 Teams</button>
     <button class="pill" data-btn="fixtures">📅 Fixtures</button>
     <button class="pill" data-btn="results">📊 Results</button>
@@ -375,6 +376,110 @@ section[data-tab].active{display:block}
 
 </section>
 
+<!-- PLAYERS -->
+<section data-tab="players">
+
+  <div class="section-title mb-12">
+    <div class="section-bar"></div>
+    <h2 class="text-4xl font-black">🧑‍🤝‍🧑 Players List</h2>
+  </div>
+
+  <!-- GK -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-black mb-4">🧤 Goalkeepers (GK)</h3>
+    <div class="overflow-x-auto rounded-2xl border">
+      <table class="min-w-full bg-white">
+        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
+        <tbody>
+          <tr><td>Aditya Chakraborty</td><td>22</td><td>₹4L</td></tr>
+          <tr><td>Arka Dutta</td><td>25</td><td>₹4L</td></tr>
+          <tr><td>Arnab Talukdar</td><td>29</td><td>₹4L</td></tr>
+          <tr><td>Ayon Roy</td><td>22</td><td>₹4L</td></tr>
+          <tr><td>Rupayan Chakravarty</td><td>32</td><td>₹4L</td></tr>
+          <tr><td>Shrish Mukherjee</td><td>19</td><td>₹4L</td></tr>
+          <tr><td>Srinjoy Kundu</td><td>24</td><td>₹4L</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ST -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-black mb-4">⚔️ Strikers (ST)</h3>
+    <div class="overflow-x-auto rounded-2xl border">
+      <table class="min-w-full bg-white">
+        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
+        <tbody>
+          <tr><td>Supratim Sengupta</td><td>27</td><td>₹6L</td></tr>
+          <tr><td>Vasu Gupta</td><td>25</td><td>₹6L</td></tr>
+          <tr><td>Arjobroto Das (Arjo)</td><td>21</td><td>₹4L</td></tr>
+          <tr><td>Arindam Rakshit</td><td>31</td><td>₹3L</td></tr>
+          <tr><td>Prashnik Dey</td><td>29</td><td>₹3L</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CM -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-black mb-4">🧠 Central Midfielders (CM)</h3>
+    <div class="overflow-x-auto rounded-2xl border">
+      <table class="min-w-full bg-white">
+        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
+        <tbody>
+          <tr><td>China</td><td>28</td><td>₹6L</td></tr>
+          <tr><td>Soumik Mukherjee</td><td>29</td><td>₹6L</td></tr>
+          <tr><td>Kaustav Guha Mazumdar</td><td>29</td><td>₹5L</td></tr>
+          <tr><td>Ritam Chowdhury</td><td>28</td><td>₹5L</td></tr>
+          <tr><td>Akash Mukherjee</td><td>28</td><td>₹4L</td></tr>
+          <tr><td>Aman Pandey</td><td>24</td><td>₹4L</td></tr>
+          <tr><td>Satyaki Das</td><td>25</td><td>₹4L</td></tr>
+          <tr><td>Aritra Adhikari</td><td>28</td><td>₹3L</td></tr>
+          <tr><td>Reet Karmakar</td><td>29</td><td>₹3L</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CD -->
+  <div class="mb-16">
+    <h3 class="text-3xl font-black mb-4">🛡️ Central Defenders (CD)</h3>
+    <div class="overflow-x-auto rounded-2xl border">
+      <table class="min-w-full bg-white">
+        <thead><tr><th>Name</th><th>Age</th><th>Base Price</th></tr></thead>
+        <tbody>
+          <tr><td>Rahul Sarkar</td><td>23</td><td>₹5L</td></tr>
+          <tr><td>Moinak Dwarik</td><td>24</td><td>₹4L</td></tr>
+          <tr><td>Arkadip Rath</td><td>27</td><td>₹3L</td></tr>
+          <tr><td>Sourav Acharjee</td><td>28</td><td>₹3L</td></tr>
+          <tr><td>Subhayan Banerjee</td><td>29</td><td>₹3L</td></tr>
+          <tr><td>Subhojit Manna (Bony)</td><td>27</td><td>₹3L</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CAPTAINS -->
+  <div>
+    <h3 class="text-3xl font-black mb-4">👑 Captains (Not in Auction)</h3>
+    <div class="overflow-x-auto rounded-2xl border">
+      <table class="min-w-full bg-amber-50">
+        <thead><tr><th>Name</th><th>Age</th><th>Position</th><th>Base Price</th></tr></thead>
+        <tbody>
+          <tr><td>Aakash Singh</td><td>29</td><td>ST</td><td>—</td></tr>
+          <tr><td>Ankit Aich</td><td>28</td><td>CD</td><td>—</td></tr>
+          <tr><td>Dipanjan Majumder</td><td>25</td><td>CD</td><td>—</td></tr>
+          <tr><td>Sankhaneel Roychowdhury</td><td>28</td><td>CD</td><td>—</td></tr>
+          <tr><td>Subhamoy Das</td><td>28</td><td>CM</td><td>—</td></tr>
+          <tr><td>Thomas Joseph</td><td>36</td><td>ST</td><td>—</td></tr>
+          <tr><td>Yash Agarwal</td><td>24</td><td>CD</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</section>
+  
 <!-- ================= COMING SOON SECTIONS (Enhanced) ================= -->
 <section data-tab="teams">
   <div class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-3xl shadow-2xl p-16 text-center border border-slate-200/50 coming-soon min-h-[400px]">
