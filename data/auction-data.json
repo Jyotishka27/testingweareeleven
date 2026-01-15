@@ -24,6 +24,7 @@
       { "id": "p1", "name": "Soumik Mukherjee", "position": "CM", "basePrice": 600000, "img": "../assets/players/soumik_mukherjee.jpg" },
       { "id": "p2", "name": "Supratim Sengupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/supratim_sengupta.jpg" },
       { "id": "p3", "name": "Vasu Gupta", "position": "ST", "basePrice": 600000, "img": "../assets/players/vasu.jpg" }
+      { "id": "p4", "name": "China", "position": "CM", "basePrice": 600000, "img": "../assets/players/china.jpg" }
     ],
 
     "A": [
