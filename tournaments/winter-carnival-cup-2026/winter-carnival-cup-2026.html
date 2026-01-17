@@ -8,245 +8,289 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  background:#f8fafc;
-  color:#0f172a;
-}
-
-/* Enhanced Sticky pill nav */
-.pillbar{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(255,255,255,.98);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid #e2e8f0;
-  box-shadow:0 2px 20px rgba(0,0,0,0.05);
-}
-
-.pill{
-  position:relative;
-  padding:.5rem 1.5rem;
-  border-radius:50px;
-  font-weight:600;
-  font-size:.95rem;
-  white-space:nowrap;
-  transition:all .25s cubic-bezier(0.4, 0, 0.2, 1);
-  border:1px solid transparent;
-}
-.pill:hover{ 
-  background:#f1f5f9; 
-  transform:translateY(-1px);
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-.pill.active{
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  color:#fff;
-  box-shadow:0 10px 25px rgba(15,23,42,0.3);
-  border-color:#0f172a;
-}
-.pill.active::after{
-  content:"";
-  position:absolute;
-  bottom:-8px;
-  left:50%;
-  transform:translateX(-50%);
-  width:24px;
-  height:4px;
-  border-radius:999px;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-}
-
-/* Tabs */
-section[data-tab]{display:none}
-section[data-tab].active{display:block}
-
-/* Enhanced section title */
-.section-title{
-  display:flex;
-  align-items:center;
-  gap:1rem;
-}
-.section-bar{
-  width:8px;
-  height:32px;
-  border-radius:4px;
-  background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  box-shadow:0 2px 8px rgba(15,23,42,0.3);
-}
-
-/* Hero gradient background */
-.hero-section {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #334155 100%);
-}
-
-/* Card enhancements */
-.info-grid > div {
-  background: white;
-  border-radius:20px;
-  padding:2rem;
-  box-shadow:0 4px 20px rgba(0,0,0,0.08);
-  transition:all .3s ease;
-  border:1px solid #f1f5f9;
-}
-.info-grid > div:hover {
-  transform:translateY(-4px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.12);
-}
-
-/* Captain badges */
-.captain-badge {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  backdrop-filter:blur(10px);
-  transition:all .2s ease;
-}
-.captain-badge:hover {
-  transform:translateY(-2px);
-  box-shadow:0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Rule cards */
-.rule-card {
-  background: linear-gradient(135deg, #fefefe 0%, #fafbfc 100%);
-  border-left:4px solid #0f172a;
-  transition:all .2s ease;
-}
-.rule-card:hover {
-  box-shadow:0 8px 25px rgba(0,0,0,0.1);
-}
-
-/* Mobile optimizations */
-@media (max-width:640px){
-  .mobile-pills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:.75rem;
-    justify-content:center;
+  body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    background:#f8fafc;
+    color:#0f172a;
   }
-  .mobile-pills span{
-    background:linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%);
-    padding:.4rem 1rem;
-    border-radius:25px;
-    font-size:.8rem;
+
+  /* Enhanced Sticky pill nav */
+  .pillbar{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid #e2e8f0;
+    box-shadow:0 2px 20px rgba(0,0,0,0.05);
+  }
+
+  .pill{
+    position:relative;
+    padding:.5rem 1.5rem;
+    border-radius:50px;
     font-weight:600;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    font-size:.95rem;
+    white-space:nowrap;
+    transition:all .25s cubic-bezier(0.4, 0, 0.2, 1);
+    border:1px solid transparent;
   }
-  .rule-list li{
-    line-height:1.7;
-    margin-bottom:.5rem;
+  .pill:hover{ 
+    background:#f1f5f9; 
+    transform:translateY(-1px);
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
   }
-  .info-grid {
-    grid-template-columns:1fr;
+  
+  .pill.active{
+    background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color:#fff;
+    box-shadow:0 10px 25px rgba(15,23,42,0.3);
+    border-color:#0f172a;
+  }
+  .pill.active::after{
+    content:"";
+    position:absolute;
+    bottom:-8px;
+    left:50%;
+    transform:translateX(-50%);
+    width:24px;
+    height:4px;
+    border-radius:999px;
+    background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  /* Tabs */
+  section[data-tab]{display:none}
+  section[data-tab].active{display:block}
+
+  /* Enhanced section title */
+  .section-title{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+  }
+  .section-bar{
+    width:8px;
+    height:32px;
+    border-radius:4px;
+    background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    box-shadow:0 2px 8px rgba(15,23,42,0.3);
+  }
+  
+  /* Hero gradient background */
+  .hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%, #334155 100%);
+  }
+
+  /* Card enhancements */
+  .info-grid > div {
+    background: white;
+    border-radius:20px;
+    padding:2rem;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+    transition:all .3s ease;
+    border:1px solid #f1f5f9;
+  }
+  .info-grid > div:hover {
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+  }
+  
+  /* Captain badges */
+  .captain-badge {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    backdrop-filter:blur(10px);
+    transition:all .2s ease;
+  }
+  .captain-badge:hover {
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  }
+  
+  /* Rule cards */
+  .rule-card {
+    background: linear-gradient(135deg, #fefefe 0%, #fafbfc 100%);
+    border-left:4px solid #0f172a;
+    transition:all .2s ease;
+  }
+  .rule-card:hover {
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  /* Mobile optimizations */
+  @media (max-width:640px){
+    .mobile-pills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem;
+      justify-content:center;
+    }
+    .mobile-pills span{
+      background:linear-gradient(135deg, #e2e8f0 0%, #f1f5f9 100%);
+      padding:.4rem 1rem;
+      border-radius:25px;
+      font-size:.8rem;
+      font-weight:600;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    .rule-list li{
+      line-height:1.7;
+      margin-bottom:.5rem;
+    }
+    .info-grid {
+      grid-template-columns:1fr;
+      gap:1.5rem;
+    }
+  }
+
+  /* Custom scrollbar for pill nav */
+  .pillbar::-webkit-scrollbar {
+    height:4px;
+  }
+  .pillbar::-webkit-scrollbar-track {
+    background:#f1f5f9;
+    border-radius:2px;
+  }
+  .pillbar::-webkit-scrollbar-thumb {
+    background:#cbd5e1;
+    border-radius:2px;
+  }
+  .pillbar::-webkit-scrollbar-thumb:hover {
+    background:#94a3b8;
+  }
+  
+  <!---fixtures--->
+  
+  section[data-tab]{
+    width:100%;
+  }
+    
+   .round-card{
+    background:#ffffff;
+    border-radius:1.5rem;
+    border:1px solid rgba(16,185,129,.25);
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
+    overflow:hidden;
+  }
+  
+  .round-header{
+    background:#059669;
+    color:#ffffff;
+    padding:1rem 1.5rem;
+    font-weight:800;
+    font-size:1.05rem;
+  }
+  
+  .round-body{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:1.5rem;
+    padding:1.5rem;
   }
-}
-
-/* Custom scrollbar for pill nav */
-.pillbar::-webkit-scrollbar {
-  height:4px;
-}
-.pillbar::-webkit-scrollbar-track {
-  background:#f1f5f9;
-  border-radius:2px;
-}
-.pillbar::-webkit-scrollbar-thumb {
-  background:#cbd5e1;
-  border-radius:2px;
-}
-.pillbar::-webkit-scrollbar-thumb:hover {
-  background:#94a3b8;
-}
   
-<!---fixtures--->
-
-section[data-tab]{
-  width:100%;
-}
+  .round-rest{
+    background:#ecfdf5;
+    padding:.75rem 1.5rem;
+    font-weight:700;
+    color:#065f46;
+  }
   
- .round-card{
-  background:#ffffff;
-  border-radius:1.5rem;
-  border:1px solid rgba(16,185,129,.25);
-  box-shadow:0 20px 40px rgba(0,0,0,.08);
-  overflow:hidden;
-}
+  .match-card{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:1rem;
+    padding:1rem;
+    box-shadow:0 1px 3px rgba(0,0,0,.08);
+  }
+  
+  .match-meta{
+    display:block;
+    font-size:.85rem;
+    font-weight:700;
+    color:#64748b;
+    margin-bottom:.75rem;
+  }
+  
+  .teams{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+  
+  .team{
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    font-weight:700;
+    color:#0f172a;
+    min-width:0;
+  }
+  
+  .team span{
+    white-space:nowrap;
+  }
+  
+  .team img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    background:#ffffff;
+    border-radius:999px;
+    border:1px solid #e5e7eb;
+  }
+  
+  .vs{
+    font-size:.7rem;
+    font-weight:900;
+    color:#94a3b8;
+  }
 
-.round-header{
-  background:#059669;
-  color:#ffffff;
-  padding:1rem 1.5rem;
-  font-weight:800;
-  font-size:1.05rem;
-}
-
-.round-body{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.5rem;
-  padding:1.5rem;
-}
-
-.round-rest{
-  background:#ecfdf5;
-  padding:.75rem 1.5rem;
-  font-weight:700;
-  color:#065f46;
-}
-
-.match-card{
-  background:#f8fafc;
-  border:1px solid #e5e7eb;
-  border-radius:1rem;
-  padding:1rem;
-  box-shadow:0 1px 3px rgba(0,0,0,.08);
-}
-
-.match-meta{
-  display:block;
-  font-size:.85rem;
-  font-weight:700;
-  color:#64748b;
-  margin-bottom:.75rem;
-}
-
-.teams{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:.75rem;
-}
-
-.team{
-  display:flex;
-  align-items:center;
-  gap:.6rem;
-  font-weight:700;
-  color:#0f172a;
-  min-width:0;
-}
-
-.team span{
-  white-space:nowrap;
-}
-
-.team img{
-  width:40px;
-  height:40px;
-  object-fit:contain;
-  background:#ffffff;
-  border-radius:999px;
-  border:1px solid #e5e7eb;
-}
-
-.vs{
-  font-size:.7rem;
-  font-weight:900;
-  color:#94a3b8;
-}
-
-}
+  /* =========================
+   MOBILE FIXES (ADD AT END)
+   ========================= */
+  @media (max-width: 640px){
+  
+    .round-body{
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  
+    .teams{
+      flex-direction: column;
+      gap: .5rem;
+    }
+  
+    .round-header{
+      font-size: .95rem;
+      padding: .75rem 1rem;
+    }
+  
+    .match-card{
+      padding: .75rem;
+    }
+  
+    .match-meta{
+      font-size: .75rem;
+      opacity: .85;
+    }
+  
+    .team span{
+      font-size: .9rem;
+      text-align: center;
+    }
+  
+    .round-card{
+      border-radius: 1.25rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+  
+    .vs{
+      font-size: .65rem;
+      opacity: .6;
+    }
+  }
   
 </style>
 </head>
