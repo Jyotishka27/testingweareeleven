@@ -158,36 +158,94 @@ section[data-tab].active{display:block}
 .pillbar::-webkit-scrollbar-thumb:hover {
   background:#94a3b8;
 }
+  
+<!---fixtures--->
 
-.round-card{
-  @apply bg-white rounded-3xl shadow-2xl border border-emerald-200/60 overflow-hidden;
+section[data-tab]{
+  width:100%;
 }
+  
+ .round-card{
+  background:#ffffff;
+  border-radius:1.5rem;
+  border:1px solid rgba(16,185,129,.25);
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+
 .round-header{
-  @apply bg-emerald-600 text-white px-6 py-4 font-black text-lg;
+  background:#059669;
+  color:#ffffff;
+  padding:1rem 1.5rem;
+  font-weight:800;
+  font-size:1.05rem;
 }
+
 .round-body{
-  @apply grid md:grid-cols-2 gap-6 p-6;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;
+  padding:1.5rem;
 }
+
 .round-rest{
-  @apply bg-emerald-50 px-6 py-3 font-bold text-emerald-800;
+  background:#ecfdf5;
+  padding:.75rem 1.5rem;
+  font-weight:700;
+  color:#065f46;
 }
+
 .match-card{
-  @apply bg-slate-50 rounded-2xl border border-slate-200 p-4 shadow-sm;
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:1rem;
+  padding:1rem;
+  box-shadow:0 1px 3px rgba(0,0,0,.08);
 }
+
 .match-meta{
-  @apply block text-sm font-bold text-slate-500 mb-3;
+  display:block;
+  font-size:.85rem;
+  font-weight:700;
+  color:#64748b;
+  margin-bottom:.75rem;
 }
+
 .teams{
-  @apply flex items-center justify-between gap-3;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.75rem;
 }
+
 .team{
-  @apply flex items-center gap-3 font-bold text-slate-800;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-weight:700;
+  color:#0f172a;
+  min-width:0;
 }
+
+.team span{
+  white-space:nowrap;
+}
+
 .team img{
-  @apply w-10 h-10 rounded-full object-contain bg-white border;
+  width:40px;
+  height:40px;
+  object-fit:contain;
+  background:#ffffff;
+  border-radius:999px;
+  border:1px solid #e5e7eb;
 }
+
 .vs{
-  @apply text-xs font-black text-slate-400;
+  font-size:.7rem;
+  font-weight:900;
+  color:#94a3b8;
+}
+
 }
   
 </style>
