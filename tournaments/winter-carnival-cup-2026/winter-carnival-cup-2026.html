@@ -158,6 +158,38 @@ section[data-tab].active{display:block}
 .pillbar::-webkit-scrollbar-thumb:hover {
   background:#94a3b8;
 }
+
+.round-card{
+  @apply bg-white rounded-3xl shadow-2xl border border-emerald-200/60 overflow-hidden;
+}
+.round-header{
+  @apply bg-emerald-600 text-white px-6 py-4 font-black text-lg;
+}
+.round-body{
+  @apply grid md:grid-cols-2 gap-6 p-6;
+}
+.round-rest{
+  @apply bg-emerald-50 px-6 py-3 font-bold text-emerald-800;
+}
+.match-card{
+  @apply bg-slate-50 rounded-2xl border border-slate-200 p-4 shadow-sm;
+}
+.match-meta{
+  @apply block text-sm font-bold text-slate-500 mb-3;
+}
+.teams{
+  @apply flex items-center justify-between gap-3;
+}
+.team{
+  @apply flex items-center gap-3 font-bold text-slate-800;
+}
+.team img{
+  @apply w-10 h-10 rounded-full object-contain bg-white border;
+}
+.vs{
+  @apply text-xs font-black text-slate-400;
+}
+  
 </style>
 </head>
 
@@ -565,8 +597,10 @@ section[data-tab].active{display:block}
   </div>
 
 </section>
+  
+<!-- Teams -->
 
-<section data-tab="teams" class="space-y-20">
+  <section data-tab="teams" class="space-y-20">
 
   <div class="section-title">
     <div class="section-bar"></div>
@@ -882,13 +916,277 @@ section[data-tab].active{display:block}
   </div>
   
 </section>
+
+<!-- Fixtures -->
   
-<!-- ================= COMING SOON SECTIONS (Enhanced) ================= -->
 <section data-tab="fixtures">
-  <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-3xl shadow-2xl p-16 text-center border border-emerald-200/50 coming-soon min-h-[400px]">
-    <div><div class="text-7xl mb-8">📅</div><h3 class="text-4xl font-black text-emerald-800 mb-2">Fixtures</h3><p class="text-2xl text-emerald-700 font-bold">Coming Soon</p></div>
+  <div class="space-y-12">
+
+    <!-- Header -->
+    <div class="text-center">
+      <h3 class="text-4xl font-black text-emerald-800 mb-2">📅 Match Fixtures</h3>
+      <p class="text-emerald-700 font-semibold">League Stage — All teams play each other once</p>
+    </div>
+
+    <!-- ROUND 1 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 1 · 09:00–09:20</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M1 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M2 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/frost_five.png"><span>Frost Five</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Inferno FC</div>
+    </div>
+
+    <!-- ROUND 2 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 2 · 09:20–09:40</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M3 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/terminators.png"><span>Terminators</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M4 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Black Bulls</div>
+    </div>
+
+    <!-- ROUND 3 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 3 · 09:40–10:00</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M5 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M6 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/frost_five.png"><span>Frost Five</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Terminators</div>
+    </div>
+
+    <!-- ROUND 4 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 4 · 10:00–10:20</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M7 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/terminators.png"><span>Terminators</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M8 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Frost Five</div>
+    </div>
+
+    <!-- ROUND 5 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 5 · 10:20–10:40</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M9 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/frost_five.png"><span>Frost Five</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M10 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Five Madmen</div>
+    </div>
+
+    <!-- ROUND 6 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 6 · 10:40–11:00</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M11 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/frost_five.png"><span>Frost Five</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M12 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/terminators.png"><span>Terminators</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Inferno FC</div>
+    </div>
+
+    <!-- ROUND 7 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 7 · 11:00–11:20</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M13 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M14 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/frost_five.png"><span>Frost Five</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Blue Sparks</div>
+    </div>
+
+    <!-- ROUND 8 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 8 · 11:20–11:40</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M15 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M16 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/terminators.png"><span>Terminators</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Yellow Lions</div>
+    </div>
+
+    <!-- ROUND 9 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 9 · 11:40–12:00</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M17 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/five_madmen.png"><span>Five Madmen</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/terminators.png"><span>Terminators</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M18 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Frost Five</div>
+    </div>
+
+    <!-- ROUND 10 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 10 · 12:00–12:20</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M19 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/inferno_fc.png"><span>Inferno FC</span></div>
+          </div>
+        </div>
+        <div class="match-card">
+          <span class="match-meta">M20 · Pitch B</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/yellow_lions.png"><span>Yellow Lions</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="round-rest">Rest: Five Madmen</div>
+    </div>
+
+    <!-- ROUND 11 -->
+    <div class="round-card">
+      <div class="round-header">🟦 Round 11 · 12:20–12:40</div>
+      <div class="round-body">
+        <div class="match-card">
+          <span class="match-meta">M21 · Pitch A</span>
+          <div class="teams">
+            <div class="team"><img src="../../assets/teams/blue_sparks.png"><span>Blue Sparks</span></div>
+            <span class="vs">VS</span>
+            <div class="team"><img src="../../assets/teams/black_bulls.png"><span>Black Bulls</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+  
+<!-- ================= COMING SOON SECTIONS (Enhanced) ================= -->
 
 <section data-tab="results">
   <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-3xl shadow-2xl p-16 text-center border border-amber-200/50 coming-soon min-h-[400px]">
