@@ -7,65 +7,6 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 
-<script>
-  const images = [
-    "picture (1 of 1).jpg",
-    "picture (1 of 41).jpg",
-    "picture (2 of 41).jpg",
-    "picture (3 of 41).jpg",
-    "picture (4 of 41).jpg",
-    "picture (5 of 41).jpg",
-    "picture (6 of 41).jpg",
-    "picture (7 of 41).jpg",
-    "picture (8 of 41).jpg",
-    "picture (9 of 41).jpg",
-    "picture (10 of 41).jpg",
-    "picture (11 of 41).jpg",
-    "picture (12 of 41).jpg",
-    "picture (13 of 41).jpg",
-    "picture (14 of 41).jpg",
-    "picture (15 of 41).jpg",
-    "picture (16 of 41).jpg",
-    "picture (17 of 41).jpg",
-    "picture (18 of 41).jpg",
-    "picture (19 of 41).jpg",
-    "picture (20 of 41).jpg",
-    "picture (21 of 41).jpg",
-    "picture (22 of 41).jpg",
-    "picture (23 of 41).jpg",
-    "picture (24 of 41).jpg",
-    "picture (25 of 41).jpg",
-    "picture (26 of 41).jpg",
-    "picture (27 of 41).jpg",
-    "picture (28 of 41).jpg",
-    "picture (29 of 41).jpg",
-    "picture (30 of 41).jpg",
-    "picture (31 of 41).jpg",
-    "picture (32 of 41).jpg",
-    "picture (33 of 41).jpg",
-    "picture (34 of 41).jpg",
-    "picture (35 of 41).jpg",
-    "picture (36 of 41).jpg",
-    "picture (37 of 41).jpg",
-    "picture (38 of 41).jpg",
-    "picture (39 of 41).jpg",
-    "picture (40 of 41).jpg",
-    "picture (41 of 41).jpg"
-  ];
-
-  const galleryGrid = document.getElementById("gallery-grid");
-
-  galleryImages.forEach(file => {
-    const img = document.createElement("img");
-    img.src = `exports/${file}`;
-    img.alt = "Winter Carnival Trophy";
-    img.className =
-      "rounded-2xl shadow-xl hover:scale-105 transition duration-300 cursor-pointer";
-
-    galleryGrid.appendChild(img);
-  });
-</script>
-
 <style>
   body {
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -1574,5 +1515,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 </script>
 
+<script>
+  const images = [
+    "picture (1 of 1).jpg",
+    "picture (1 of 41).jpg",
+    "picture (2 of 41).jpg",
+    "picture (3 of 41).jpg",
+    "picture (4 of 41).jpg",
+    "picture (5 of 41).jpg",
+    "picture (6 of 41).jpg",
+    "picture (7 of 41).jpg",
+    "picture (8 of 41).jpg",
+    "picture (9 of 41).jpg",
+    "picture (10 of 41).jpg",
+    "picture (11 of 41).jpg",
+    "picture (12 of 41).jpg",
+    "picture (13 of 41).jpg",
+    "picture (14 of 41).jpg",
+    "picture (15 of 41).jpg",
+    "picture (16 of 41).jpg",
+    "picture (17 of 41).jpg",
+    "picture (18 of 41).jpg",
+    "picture (19 of 41).jpg",
+    "picture (20 of 41).jpg",
+    "picture (21 of 41).jpg",
+    "picture (22 of 41).jpg",
+    "picture (23 of 41).jpg",
+    "picture (24 of 41).jpg",
+    "picture (25 of 41).jpg",
+    "picture (26 of 41).jpg",
+    "picture (27 of 41).jpg",
+    "picture (28 of 41).jpg",
+    "picture (29 of 41).jpg",
+    "picture (30 of 41).jpg",
+    "picture (31 of 41).jpg",
+    "picture (32 of 41).jpg",
+    "picture (33 of 41).jpg",
+    "picture (34 of 41).jpg",
+    "picture (35 of 41).jpg",
+    "picture (36 of 41).jpg",
+    "picture (37 of 41).jpg",
+    "picture (38 of 41).jpg",
+    "picture (39 of 41).jpg",
+    "picture (40 of 41).jpg",
+    "picture (41 of 41).jpg"
+  ];
+
+  const gallery = document.getElementById("gallery-grid");
+
+  images.forEach(name => {
+    const img = document.createElement("img");
+
+    // IMPORTANT: encode filename
+    img.src = "exports/" + encodeURIComponent(name);
+
+    img.alt = "Winter Carnival Cup 2026";
+    img.loading = "lazy";
+    img.className =
+      "rounded-2xl shadow-xl hover:scale-105 transition duration-300 cursor-pointer";
+
+    img.onclick = () => window.open(img.src, "_blank");
+
+    gallery.appendChild(img);
+  });
+</script>
+  
 </body>
 </html>
