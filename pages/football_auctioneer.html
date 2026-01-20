@@ -266,6 +266,17 @@
     return CATEGORY_LABELS[cat] || 'Unknown';
   }
 
+// 🔻 Reduce base price when player goes UNSOLD
+function applyUnsoldReduction(player) {
+  const REDUCTION_FACTOR = 0.8; // 80% of previous price
+  const MIN_PRICE = 50000; // ₹50k floor (safety)
+
+  player.unsoldCount = (player.unsoldCount || 0) + 1;
+
+  const reduced = Math.floor(player.basePrice * REDUCTION_FACTOR);
+  player.basePrice = Math.max(reduced, MIN_PRICE);
+}
+    
   let AUCTION_DATA = null;
 
     async function loadAuctionData() {
@@ -287,11 +298,11 @@
       state.teams = AUCTION_DATA.captains.map(c => ({ ...c }));
     
       // Players → Auction pools
-      state.pools.X = AUCTION_DATA.players.X.map(p => ({ ...p }));
-      state.pools.P = AUCTION_DATA.players.P.map(p => ({ ...p }));
-      state.pools.A = AUCTION_DATA.players.A.map(p => ({ ...p }));
-      state.pools.B = AUCTION_DATA.players.B.map(p => ({ ...p }));
-      state.pools.C = AUCTION_DATA.players.C.map(p => ({ ...p }));
+        state.pools.X = AUCTION_DATA.players.X.map(p => ({ ...p, unsoldCount: 0 }));
+        state.pools.P = AUCTION_DATA.players.P.map(p => ({ ...p, unsoldCount: 0 }));
+        state.pools.A = AUCTION_DATA.players.A.map(p => ({ ...p, unsoldCount: 0 }));
+        state.pools.B = AUCTION_DATA.players.B.map(p => ({ ...p, unsoldCount: 0 }));
+        state.pools.C = AUCTION_DATA.players.C.map(p => ({ ...p, unsoldCount: 0 }));
     
       state.pools.UNSOLD = [];
       state.skipped = { X: [], P: [], A: [], B: [], C: [], UNSOLD: [] };
@@ -417,6 +428,11 @@
       dom.currentPlayerCard.hidden = true;
       return;
     }
+
+      if (player.unsoldCount > 0) {
+          dom.playerName.textContent += ` (↓${player.unsoldCount})`;
+        }
+      
     dom.currentPlayerCard.hidden = false;
     const { player, category, bid } = state.current;
     dom.playerImg.src =
@@ -502,19 +518,25 @@
     renderAll();
   }
   function skipPlayer() {
-    if (!state.current) {
-      alert('No active player to skip.');
-      return;
+      if (!state.current) {
+        alert('No active player to skip.');
+        return;
+      }
+    
+      const player = state.current.player;
+    
+      // 🔻 No bids → UNSOLD → reduce valuation
+      if (state.current.bidder === null) {
+        applyUnsoldReduction(player);
+        state.pools.UNSOLD.push(player);
+      } else {
+        state.skipped[state.current.category].push(player);
+      }
+    
+      state.current = null;
+      cancelTimer();
+      renderAll();
     }
-    if (state.current.bidder === null) {
-      state.pools.UNSOLD.push(state.current.player);
-    } else {
-      state.skipped[state.current.category].push(state.current.player);
-    }
-    state.current = null;
-    cancelTimer();
-    renderAll();
-  }
   function placeBid(teamIndex) {
     if (!state.current) {
       alert('No active player. Click Next Player.');
