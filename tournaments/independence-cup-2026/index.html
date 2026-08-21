@@ -1162,7 +1162,20 @@
           <div id="ownGoalsList" class="space-y-2.5 text-xs">
             <!-- Rendered dynamically -->
           </div>
-        </div>
+
+          <!-- Individual Tournament Awards -->
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+              <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <span>🏆</span> Individual Awards
+              </h3>
+              <span class="text-[11px] text-slate-400 font-semibold">2026</span>
+            </div>
+          
+            <div id="individualAwardsList" class="space-y-3">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
 
       </div>
     </section>
@@ -1673,6 +1686,29 @@
           `).join('');
         }
 
+        const individualAwards = [
+          {
+            award: "Golden Glove",
+            player: "Suman Kumir",
+            icon: "🧤"
+          },
+          {
+            award: "Best Defender",
+            player: "Rahul",
+            icon: "🛡️"
+          },
+          {
+            award: "Top Scorer",
+            player: "Arjo",
+            icon: "⚽"
+          },
+          {
+            award: "Player of the Tournament",
+            player: "Rohan",
+            icon: "🏆"
+          }
+        ];
+        
         const ownGoalsList = document.getElementById("ownGoalsList");
         if (ownGoalsList && statsData.ownGoals) {
           ownGoalsList.innerHTML = statsData.ownGoals.map(o => `
