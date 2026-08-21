@@ -1708,6 +1708,27 @@
             icon: "🏆"
           }
         ];
+        const individualAwardsList = document.getElementById("individualAwardsList");
+        if (individualAwardsList) {
+          individualAwardsList.innerHTML = individualAwards.map(award => `
+            <div class="bg-slate-50 rounded-xl border border-slate-100 p-3 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="text-lg">
+                  ${award.icon}
+                </div>
+        
+                <div>
+                  <div class="text-xs font-bold text-slate-900">
+                    ${award.award}
+                  </div>
+                  <div class="text-[11px] text-slate-500 mt-0.5">
+                    ${award.player}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `).join("");
+        }
         
         const ownGoalsList = document.getElementById("ownGoalsList");
         if (ownGoalsList && statsData.ownGoals) {
