@@ -1,0 +1,38 @@
+{
+  "id": "independence-cup-2026",
+  "slug": "independence-cup-2026",
+  "name": "Independence Cup 2026",
+  "tagline": "We Are Eleven — Official Tournament Center & Match Details",
+  "date": "16th August 2026",
+  "startDate": "2026-08-16",
+  "endDate": "2026-08-16",
+  "venue": "GODs Turf",
+  "format": "6 Teams (2 Groups of 3) • 12 Double Round-Robin Matches • 2 Semifinals • 1 Grand Final",
+  "status": "Completed",
+  "champion": {
+    "name": "Japan FC",
+    "badge": "🇯🇵",
+    "color": "emerald"
+  },
+  "runnerUp": {
+    "name": "8zilla",
+    "badge": "🦖",
+    "color": "indigo"
+  },
+  "stats": {
+    "totalTeams": 6,
+    "totalMatches": 15,
+    "leagueMatches": 12,
+    "knockoutMatches": 3,
+    "totalGoals": 18,
+    "totalCaptains": 6,
+    "totalAuctionBudget": 2100000,
+    "totalAuctionSpend": 1992500,
+    "totalRemainingBudget": 107500
+  },
+  "discrepancyNotes": [
+    "Verified Identity Confirmations: Bikram and Rahul are the same person (Captain, Japan FC); Arghyadeep Das and Alu/Aloo are the same person (Captain, Bloodbath Boys FC); Akash Jr and Ayon Roy are the same person (Prime player, Strawhat FC); Anirudhya is a Prime player (₹95,000, 8zilla); Rony and Monty were non-squad designations and removed from active rosters.",
+    "Match 5 (Casual United FC vs Amigos FC) official score is 0-2; source event log contains 3 recorded goal actions (Arjo, Ritam, Arjo). All source events are accurately recorded.",
+    "Final (Japan FC vs 8zilla) official score is 2-0; source event log contains 3 recorded goal actions (Supratim, Arkapal, Arkapal). All source events are accurately recorded."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "We Are Eleven",
+  "description": "Football community portal for tournament fixtures, live scores, football auctions, player stats, and media gallery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

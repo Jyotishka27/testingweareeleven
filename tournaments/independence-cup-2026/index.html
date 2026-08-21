@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Independence Cup 2026 — We Are Eleven</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../../assets/group-logo/we_are_eleven_logo.jpg" />
+
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+    
+    .tab-btn.active {
+      background: #0f172a;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+
+    .tab-btn:not(.active):hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.25s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="flex flex-col min-h-screen antialiased">
+
+  <!-- Shared Global Header -->
+  <div id="site-header"></div>
+
+  <!-- Tournament Hero -->
+  <header class="relative bg-slate-950 text-white overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 opacity-90"></div>
+    <div class="relative max-w-7xl mx-auto space-y-6">
+      
+      <!-- Top meta badges -->
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-2">
+          <a href="../../pages/tournament.html" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition font-medium">
+            ← Tournaments Hub
+          </a>
+          <span class="text-slate-600">•</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-semibold uppercase tracking-wider">
+            🏆 Completed Tournament
+          </span>
+        </div>
+        <div class="text-xs text-slate-400 font-medium">
+          📅 16th August 2026 &nbsp;|&nbsp; 📍 GODs Turf, Kolkata
+        </div>
+      </div>
+
+      <!-- Main Headline & Champion Highlight -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-8 space-y-3">
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            Independence Cup 2026
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Official tournament center, verified match logs, player auction sheets, league standings, and individual player performance statistics.
+          </p>
+          
+          <!-- Key Metrics Badges -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <div class="bg-slate-900/80 border border-slate-800 rounded-xl px-3.5 py-2">
+              <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Teams</div>
+              <div class="text-lg font-bold text-white">6 Squads</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-xl px-3.5 py-2">
+              <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Matches</div>
+              <div class="text-lg font-bold text-white">15 Fixtures</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-xl px-3.5 py-2">
+              <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Total Goals</div>
+              <div class="text-lg font-bold text-emerald-400">18 Goals</div>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 rounded-xl px-3.5 py-2">
+              <div class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Auction Spend</div>
+              <div class="text-lg font-bold text-amber-400">₹19.92 Lakhs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Champion Podium Card -->
+        <div class="lg:col-span-4 bg-gradient-to-br from-slate-900 to-slate-900/90 border border-amber-500/30 rounded-2xl p-5 shadow-2xl relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 text-7xl opacity-10 select-none">🏆</div>
+          <div class="text-xs uppercase font-bold tracking-widest text-amber-400 mb-2 flex items-center gap-1.5">
+            <span>👑 Official Champions</span>
+          </div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-2xl">
+              🇯🇵
+            </div>
+            <div>
+              <div class="text-xl font-extrabold text-white">Japan FC</div>
+              <div class="text-xs text-emerald-400 font-medium">Grand Final Winners (2 - 0)</div>
+            </div>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-300">
+            <span>Runner-up: <strong class="text-white">8zilla 🦖</strong></span>
+            <span class="text-amber-400/90 font-medium">POTM: Arkapal</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Sticky Tournament Tab Navigation -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 py-2.5 overflow-x-auto no-scrollbar" id="tourTabs">
+        <button class="tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition" data-target="overview">Overview</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="teams">Teams & Squads (6)</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="auction">Auction Results</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="matches">Matches (15)</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="standings">Standings</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="statistics">Statistics</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="gallery">Gallery</button>
+        <button class="tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 transition" data-target="videos">Videos</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- TAB 1: OVERVIEW -->
+    <section id="overview" class="tab-panel active space-y-10">
+      
+      <!-- Source Reconciliation & Verification Badge -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 rounded-2xl p-4 sm:p-5 flex items-start gap-3.5 shadow-sm">
+        <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center flex-shrink-0 text-lg font-bold">
+          📋
+        </div>
+        <div class="text-xs text-amber-950 leading-relaxed space-y-1">
+          <div class="font-bold text-amber-900 uppercase tracking-wider text-[11px] flex items-center gap-2">
+            <span>Verified Tournament Center & Official Match Sheet Reconciliation</span>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">100% Audit Complete</span>
+          </div>
+          <p class="text-slate-700">
+            All match events, auction bids, squad rosters, group standings, disciplinary logs, and player statistics have been compiled directly from verified matchday records and official score sheets from GODs Turf.
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Exploration Hub (Interactive Jump Cards) -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <span>⚡</span> Tournament Quick Navigation
+          </h2>
+          <span class="text-xs text-slate-500 font-medium">Click any card to jump directly into the full section</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- Quick Card 1: Teams -->
+          <button data-tab-jump="teams" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 border border-blue-100 flex items-center justify-center text-xl">
+                  👥
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-blue-50 group-hover:text-blue-700 transition">
+                  6 Teams
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition">Teams & Squad Rosters</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                48 total athletes across 6 squads (1 Captain + 7 auction players per team) with category tiers.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
+              <span>Explore Squads</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+          <!-- Quick Card 2: Auction -->
+          <button data-tab-jump="auction" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-100 flex items-center justify-center text-xl">
+                  💰
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-100">
+                  ₹19.92L Spent
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-emerald-600 transition">Auction Central</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Complete bids and purse allocations across 6 captains, tracking 42 auctioned players across 4 tiers.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-emerald-600">
+              <span>View Auction Data</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+          <!-- Quick Card 3: Matches -->
+          <button data-tab-jump="matches" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-700 border border-purple-100 flex items-center justify-center text-xl">
+                  ⚽
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-purple-50 group-hover:text-purple-700 transition">
+                  15 Fixtures
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-purple-600 transition">Match Center & Results</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Chronological timeline with exact match scores, goalscorers, assists, bookings, and POTM awards.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-purple-600">
+              <span>Browse 15 Match Logs</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+          <!-- Quick Card 4: Standings -->
+          <button data-tab-jump="standings" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 border border-amber-100 flex items-center justify-center text-xl">
+                  📊
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-amber-50 group-hover:text-amber-700 transition">
+                  Groups A & B
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-amber-600 transition">Standings & Knockouts</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Double round-robin league tables, qualification outcomes, penalty shootouts, and tournament tree.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-amber-700">
+              <span>View Points Tables</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+          <!-- Quick Card 5: Statistics -->
+          <button data-tab-jump="statistics" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-700 border border-rose-100 flex items-center justify-center text-xl">
+                  📈
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-rose-50 group-hover:text-rose-700 transition">
+                  18 Goals
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-rose-600 transition">Player Leaderboards</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Golden Boot (Arjo - 4G), Top Playmakers (Arkapal - 3A), Player of the Match honors, and card charts.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-rose-600">
+              <span>View Leaderboards</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+          <!-- Quick Card 6: Gallery & Media -->
+          <button data-tab-jump="gallery" class="group text-left bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition flex flex-col justify-between cursor-pointer">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 border border-teal-100 flex items-center justify-center text-xl">
+                  📸
+                </div>
+                <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 group-hover:bg-teal-50 group-hover:text-teal-700 transition">
+                  Media Hub
+                </span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-teal-600 transition">Photo & Video Gallery</h3>
+              <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                Dedicated media repositories structured for matchday photography, penalty clips, and team celebrations.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-teal-600">
+              <span>Browse Media</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Tournament Honor Roll & Key Accolades -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+            <span>🏆</span> Official Honor Roll & Tournament Awards
+          </h2>
+          <span class="text-xs text-slate-500 font-medium">Verified by We Are Eleven Committee</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- 1. Champions Card -->
+          <div class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white rounded-2xl border border-amber-500/40 p-6 shadow-xl relative overflow-hidden flex flex-col justify-between">
+            <div class="absolute -right-6 -bottom-6 text-8xl opacity-10 select-none pointer-events-none">🏆</div>
+            <div>
+              <div class="text-[10px] font-extrabold uppercase tracking-widest text-amber-400 mb-3 flex items-center gap-1.5">
+                <span>👑 Tournament Champions</span>
+              </div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-3xl">
+                  🇯🇵
+                </div>
+                <div>
+                  <h3 class="text-2xl font-extrabold text-white">Japan FC</h3>
+                  <p class="text-xs text-emerald-400 font-semibold">Independence Cup 2026 Winners</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Undefeated tournament run: topped Group B with 8 points (2W, 2D), triumphed 2-0 on penalty shootout in Semifinal 1 vs Amigos FC, and secured the championship with a clinical 2-0 victory in the Grand Final against 8zilla.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+              <span class="text-slate-400">Captain: <strong class="text-white">Rahul (Bikram)</strong></span>
+              <span class="text-amber-400 font-bold">Record: 4W - 2D - 0L</span>
+            </div>
+          </div>
+
+          <!-- 2. Golden Boot -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-1.5">
+                <span>⚽ Golden Boot (Top Goalscorer)</span>
+              </div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-900 border border-amber-200 flex items-center justify-center text-2xl font-black">
+                  4
+                </div>
+                <div>
+                  <h3 class="text-xl font-extrabold text-slate-900">Arjo</h3>
+                  <p class="text-xs text-amber-700 font-bold">Casual United FC</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Led the tournament scoring charts with 4 goals across the league phase, featuring clinical braces against Strawhat FC and Amigos FC, accompanied by 1 assist and 2 Player of the Match awards.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-500">Runner-up: <strong class="text-slate-800">Supratim (3G)</strong></span>
+              <span class="text-slate-500 font-medium">POTM Awards: <strong class="text-slate-900">2 ★</strong></span>
+            </div>
+          </div>
+
+          <!-- 3. Top Playmaker & Final MVP -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div class="text-[10px] font-extrabold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-1.5">
+                <span>🎯 Top Playmaker & Finals MVP</span>
+              </div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-900 border border-purple-200 flex items-center justify-center text-2xl font-black">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-xl font-extrabold text-slate-900">Arkapal</h3>
+                  <p class="text-xs text-purple-700 font-bold">Japan FC</p>
+                </div>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Crucial playmaker with a tournament-high 3 assists, culminating in a legendary Grand Final display where he scored both championship-winning goals to claim the Final Player of the Match honor.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-500">Runner-up: <strong class="text-slate-800">Ritam (2A)</strong></span>
+              <span class="text-purple-700 font-bold">Final Decider MVP ⭐</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Key Event Logistics & Specifications -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-4">
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-900">Event Details & Matchday Specifications</h2>
+            <p class="text-xs text-slate-500">Official tournament framework organized by the We Are Eleven Community.</p>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=GODs+Turf+Kolkata" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition self-start sm:self-auto">
+            <span>📍 Open GODs Turf in Maps</span>
+            <span class="text-[10px]">↗</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">📅 Date</div>
+            <div class="text-sm font-extrabold text-slate-900">16 August 2026</div>
+            <div class="text-[11px] text-slate-500">Sunday Matchday</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">📍 Venue</div>
+            <div class="text-sm font-extrabold text-slate-900">GODs Turf</div>
+            <div class="text-[11px] text-slate-500">Kolkata, WB</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">⏰ Timing</div>
+            <div class="text-sm font-extrabold text-slate-900">9:00 AM – 3:00 PM</div>
+            <div class="text-[11px] text-slate-500">15 Total Matches</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">👥 Total Clubs</div>
+            <div class="text-sm font-extrabold text-slate-900">6 Franchises</div>
+            <div class="text-[11px] text-slate-500">2 Groups of 3</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">⏱️ Match Duration</div>
+            <div class="text-sm font-extrabold text-slate-900">16 Minutes</div>
+            <div class="text-[11px] text-slate-500">8+8 min + 2m Break</div>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">💰 Auction Spend</div>
+            <div class="text-sm font-extrabold text-emerald-600">₹19,92,500</div>
+            <div class="text-[11px] text-slate-500">94.88% Purse Used</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Participating Captains & Squads Overview -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+              <span>👑</span> Competing Clubs & Captains (6 Squads)
+            </h2>
+            <p class="text-xs text-slate-500">Official club captains and final tournament standings.</p>
+          </div>
+          <button data-tab-jump="teams" class="text-xs font-semibold text-slate-700 hover:text-slate-900 flex items-center gap-1">
+            <span>View All Rosters</span> →
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          
+          <!-- Club 1: Japan FC -->
+          <div class="bg-white rounded-2xl border border-amber-300 ring-1 ring-amber-300/30 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🇯🇵</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">Japan FC</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group B Winner</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+                Champion 🏆
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Rahul (Bikram)</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,47,500</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Arkapal, Supratim, Soham</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-amber-800 bg-amber-50 hover:bg-amber-100 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+          <!-- Club 2: 8zilla -->
+          <div class="bg-white rounded-2xl border border-indigo-200 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🦖</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">8zilla</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group B Runner-Up</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-900 border border-indigo-200">
+                Runner-Up 🥈
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Ankit Aich</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,15,000</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Gourav, Anirudhya, Debrup</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-indigo-800 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+          <!-- Club 3: Casual United FC -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">⚡</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">Casual United FC</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group A Winner</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">
+                Semifinalist (10 pts)
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Subhojit</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,27,500</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Arjo, Ritam, Soumyadeep</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+          <!-- Club 4: Amigos FC -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🤝</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">Amigos FC</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group A Runner-Up</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">
+                Semifinalist (3 pts)
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Ritam</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,40,000</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Srijon, Sourav Nandy, Soham</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+          <!-- Club 5: Bloodbath Boys FC -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">🩸</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">Bloodbath Boys FC</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group B (3rd Place)</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                Group Stage (4 pts)
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Arghyadeep (Alu)</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,27,500</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Anurag Paul, Debaditya, Koushik</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+          <!-- Club 6: Strawhat FC -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <span class="text-2xl">👒</span>
+                <div>
+                  <h3 class="font-extrabold text-slate-900 text-sm">Strawhat FC</h3>
+                  <span class="text-[11px] text-slate-500 font-medium">Group A (3rd Place)</span>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                Group Stage (2 pts)
+              </span>
+            </div>
+            <div class="text-xs text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1">
+              <div class="flex justify-between"><span>Captain:</span> <strong class="text-slate-900">Shubham</strong></div>
+              <div class="flex justify-between"><span>Auction Spend:</span> <strong class="text-emerald-700">₹3,35,000</strong></div>
+              <div class="flex justify-between"><span>Key Stars:</span> <span class="text-slate-800 font-semibold">Akash Jr (Ayon), Shobhan, Sayan</span></div>
+            </div>
+            <button data-tab-jump="teams" class="w-full py-1.5 text-center text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition">
+              View Squad Roster →
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tournament Structure & Knockout Pipeline -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <h2 class="text-base font-extrabold text-slate-900">Tournament Format & Progression Pathway</h2>
+            <p class="text-xs text-slate-500">From the live auction floor to the championship podium.</p>
+          </div>
+          <button data-tab-jump="standings" class="text-xs font-semibold text-emerald-700 hover:text-emerald-900">
+            View Full Knockout Tree →
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-slate-900 text-sm">1. Player Auction</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">Phase 1</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              6 Captains bid from a ₹3.50L budget across Elite, Prime, Core, and Developing tiers, drafting 42 athletes into 8-man squads.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-slate-900 text-sm">2. Group Stage (12)</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">Phase 2</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Double round-robin league play in Groups A & B (4 games each). Casual United topped Group A and Japan FC topped Group B.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-slate-900 text-sm">3. Cross Semifinals</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-800">Phase 3</span>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+              Both cross-group semifinals finished 0-0 and went to sudden-death penalty shootouts. Japan FC (2-0) and 8zilla (2-1) advanced.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-50/60 border border-amber-200 space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-amber-950 text-sm">4. Grand Final</span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-200 text-amber-900">Champion</span>
+            </div>
+            <p class="text-amber-900/90 leading-relaxed">
+              Japan FC defeated 8zilla 2-0 with an Arkapal masterclass to hoist the Independence Cup 2026 trophy undefeated.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Organizing Committee Section -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-5">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 border-b border-slate-100 pb-3">
+          <div>
+            <h2 class="text-base font-extrabold text-slate-900">Tournament Organizing Committee</h2>
+            <p class="text-xs text-slate-500">We Are Eleven leadership team responsible for tournament planning and execution.</p>
+          </div>
+          <span class="text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-1 rounded-full self-start sm:self-auto">
+            WAE Executive Committee
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <!-- Organizer 1: Debayan -->
+          <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+            <img src="../../assets/organiser/Debayan.jpg" alt="Debayan" class="w-12 h-12 rounded-xl object-cover border border-slate-200 shadow-sm" onerror="this.src='../../assets/group-logo/we_are_eleven_logo.jpg'"/>
+            <div>
+              <h3 class="text-sm font-extrabold text-slate-900">Debayan</h3>
+              <p class="text-xs text-slate-500">Lead Organizer & Operations</p>
+            </div>
+          </div>
+
+          <!-- Organizer 2: Gourav -->
+          <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+            <img src="../../assets/organiser/Gourav.jpg" alt="Gourav" class="w-12 h-12 rounded-xl object-cover border border-slate-200 shadow-sm" onerror="this.src='../../assets/group-logo/we_are_eleven_logo.jpg'"/>
+            <div>
+              <h3 class="text-sm font-extrabold text-slate-900">Gourav</h3>
+              <p class="text-xs text-slate-500">Tournament Coordinator</p>
+            </div>
+          </div>
+
+          <!-- Organizer 3: Jyotishka -->
+          <div class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-50 border border-slate-100">
+            <img src="../../assets/organiser/Jyotishka.jpg" alt="Jyotishka" class="w-12 h-12 rounded-xl object-cover border border-slate-200 shadow-sm" onerror="this.src='../../assets/group-logo/we_are_eleven_logo.jpg'"/>
+            <div>
+              <h3 class="text-sm font-extrabold text-slate-900">Jyotishka</h3>
+              <p class="text-xs text-slate-500">Technical & Fixture Management</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tournament Official Rules & Regulations -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm space-y-6">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <h2 class="text-base font-extrabold text-slate-900">Official Tournament Rules & Match Regulations</h2>
+            <p class="text-xs text-slate-500">Standard operating guidelines enforced across Independence Cup 2026 fixtures.</p>
+          </div>
+          <span class="text-[11px] font-bold px-2.5 py-1 rounded bg-slate-100 text-slate-700">Official WAE Manual</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-700">
+          
+          <!-- Box 1: Team & Pitch -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+              <span>🏟️</span> Field, Equipment & Team Structure
+            </h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-slate-600 leading-relaxed">
+              <li><strong>Pitch:</strong> 70 × 110 ft synthetic turf arena at GODs Turf with official marked sidelines.</li>
+              <li><strong>Football:</strong> Standard FIFA-approved Size 5 match ball.</li>
+              <li><strong>Squad Size:</strong> 8 players registered per franchise (1 Captain + 7 Auction picks).</li>
+              <li><strong>On-Pitch Format:</strong> 6 players active on field at once (1 Goalkeeper + 5 Outfield players).</li>
+              <li><strong>Substitutions:</strong> Rolling substitutions permitted during dead-ball stoppages.</li>
+            </ul>
+          </div>
+
+          <!-- Box 2: Match Timing & Standings -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+              <span>⏱️</span> Timing, Points & Tie-Breakers
+            </h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-slate-600 leading-relaxed">
+              <li><strong>Match Duration:</strong> 16 minutes per fixture (8-minute halves with 2-minute interval).</li>
+              <li><strong>Points System:</strong> Win = 3 points, Draw = 1 point, Loss = 0 points.</li>
+              <li><strong>Group Ranking Criteria:</strong> Points → Goal Difference (GD) → Goals For (GF) → Head-to-Head.</li>
+              <li><strong>Knockout Ties:</strong> Any draw at the end of regulation time proceeds immediately to a sudden-death penalty shootout.</li>
+            </ul>
+          </div>
+
+          <!-- Box 3: Discipline & Cards -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
+            <h3 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
+              <span>🟨</span> Discipline & Referee Authority
+            </h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-slate-600 leading-relaxed">
+              <li><strong>Yellow Cards:</strong> Serves as an official caution; logged on tournament match sheets.</li>
+              <li><strong>Red Cards:</strong> Automatic dismissal from current match plus a mandatory 1-match suspension.</li>
+              <li><strong>Referee Decisiveness:</strong> The referee's on-pitch decisions regarding fouls, handballs, and goals are strictly final.</li>
+            </ul>
+          </div>
+
+          <!-- Box 4: Safety & Medical -->
+          <div class="p-4 rounded-xl bg-rose-50/50 border border-rose-200 space-y-2">
+            <h3 class="font-bold text-rose-900 text-sm flex items-center gap-1.5">
+              <span>⚠️</span> Safety, Footwear & Medical Advisory
+            </h3>
+            <ul class="space-y-1.5 list-disc pl-4 text-rose-800 leading-relaxed">
+              <li><strong>Footwear:</strong> Turf shoes, multi-ground studs, or athletic sports joggers only. No metal studs allowed.</li>
+              <li><strong>Safety:</strong> No jewelry or sharp accessories during active play.</li>
+              <li><strong>Hydration & First-Aid:</strong> Teams must maintain individual water bottles and basic personal medical kits.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Verified Data Notes & Audit Reference -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-3 text-xs">
+        <h2 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+          <span>🔍</span> Verified Historical Audit & Identity Disclosures
+        </h2>
+        <div class="space-y-2 text-slate-600 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
+          <p>
+            • <strong>Captain & Player Identity Confirmations:</strong> <em>Rahul</em> and <em>Bikram</em> are confirmed as the same individual (Captain, Japan FC); <em>Arghyadeep Das</em> and <em>Alu / Aloo</em> are confirmed as the same individual (Captain, Bloodbath Boys FC); <em>Akash Jr</em> and <em>Ayon Roy</em> are confirmed as the same individual (Prime category, Strawhat FC); <em>Anirudhya</em> is recorded as a Prime tier acquisition (₹95,000, 8zilla). Non-squad placeholder designations (Rony and Monty) have been removed.
+          </p>
+          <p>
+            • <strong>Match Event Logs vs Score Reconciliation:</strong> In Match 5 (Casual United FC vs Amigos FC), the official final scoreline is 0-2 (source sheet contains 3 recorded goal actions: Arjo, Ritam, Arjo). In the Grand Final (Japan FC vs 8zilla), the official score is 2-0 (source sheet contains 3 goal events: Supratim, Arkapal, Arkapal). All raw event logs have been faithfully retained in the match timeline.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- TAB 2: TEAMS & SQUADS -->
+    <section id="teams" class="tab-panel space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Participating Teams & Squad Allocations</h2>
+          <p class="text-xs text-slate-500 mt-1">All 6 competing clubs, squad rosters, and verified auction values.</p>
+        </div>
+        <div class="text-xs text-slate-500 bg-white px-3 py-1.5 rounded-lg border border-slate-200">
+          Squad Size: <strong>8 Players / Team (1 Captain + 7 Auction)</strong>
+        </div>
+      </div>
+
+      <div id="teamsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically via JavaScript from data/teams.json -->
+      </div>
+    </section>
+
+
+    <!-- TAB 3: AUCTION RESULTS -->
+    <section id="auction" class="tab-panel space-y-8">
+      
+      <!-- Auction Overview Cards -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-1">Official Auction Results</h2>
+        <p class="text-xs text-slate-500 mb-6">Complete player purchases, categories, prices, and captain budget allocations.</p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Captains</div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1">6 Captains</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">₹3.50L Purse each</div>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Players Sold</div>
+            <div class="text-2xl font-extrabold text-slate-900 mt-1">42 Players</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">7 Players per squad</div>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Total Spent</div>
+            <div class="text-2xl font-extrabold text-emerald-600 mt-1">₹19,92,500</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">94.88% of purse utilized</div>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm">
+            <div class="text-xs font-semibold uppercase tracking-wider text-slate-400">Remaining Budget</div>
+            <div class="text-2xl font-extrabold text-slate-700 mt-1">₹1,07,500</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">Across all captains</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Captain Auction Cards Grid -->
+      <div id="auctionCaptainsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Rendered dynamically from data/auction.json -->
+      </div>
+    </section>
+
+
+    <!-- TAB 4: MATCHES & FIXTURES -->
+    <section id="matches" class="tab-panel space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Matches & Results</h2>
+          <p class="text-xs text-slate-500 mt-1">All 15 tournament matches with exact event logs, scores, and Player of the Match awards.</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button class="match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm transition" data-filter="all">All (15)</button>
+          <button class="match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition" data-filter="league">League Stage (12)</button>
+          <button class="match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition" data-filter="semifinal">Semifinals (2)</button>
+          <button class="match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition" data-filter="final">Final (1)</button>
+        </div>
+      </div>
+
+      <div id="matchesContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Rendered dynamically from data/matches.json -->
+      </div>
+    </section>
+
+
+    <!-- TAB 5: STANDINGS -->
+    <section id="standings" class="tab-panel space-y-8">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Tournament Group Standings</h2>
+          <p class="text-xs text-slate-500 mt-1">6 competing teams split into Group A and Group B (Double Round-Robin, W=3, D=1, L=0). Top 2 from each group advanced to the Knockout Semifinals.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Top 2 Advance to Semifinals
+          </span>
+        </div>
+      </div>
+
+      <!-- Group A & Group B Dual Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Group A Card -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 font-extrabold text-xs tracking-wider uppercase border border-amber-500/30">Group A</span>
+                <span class="text-xs text-slate-300">Strawhat FC, Amigos FC, Casual United FC</span>
+              </div>
+              <span class="text-[11px] text-slate-400 font-medium">Top 2 Qualify</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-100/90 text-slate-700 uppercase text-[10px] tracking-wider border-b border-slate-200">
+                    <th class="py-3 px-3 font-bold text-center w-10">#</th>
+                    <th class="py-3 px-3 font-bold">Team</th>
+                    <th class="py-3 px-2 font-bold text-center">P</th>
+                    <th class="py-3 px-2 font-bold text-center">W</th>
+                    <th class="py-3 px-2 font-bold text-center">D</th>
+                    <th class="py-3 px-2 font-bold text-center">L</th>
+                    <th class="py-3 px-2 font-bold text-center">GF</th>
+                    <th class="py-3 px-2 font-bold text-center">GA</th>
+                    <th class="py-3 px-2 font-bold text-center">GD</th>
+                    <th class="py-3 px-3 font-bold text-center bg-slate-200/80 text-slate-900">PTS</th>
+                    <th class="py-3 px-3 font-bold">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="groupATableBody" class="divide-y divide-slate-100">
+                  <!-- Rendered dynamically from data/statistics.json -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span>Winner: <strong>Casual United FC (10 pts)</strong></span>
+            <span>Runner-Up: <strong>Amigos FC (3 pts)</strong></span>
+          </div>
+        </div>
+
+        <!-- Group B Card -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="p-4 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+              <div class="flex items-center gap-2.5">
+                <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-300 font-extrabold text-xs tracking-wider uppercase border border-emerald-500/30">Group B</span>
+                <span class="text-xs text-slate-300">Bloodbath Boys FC, Japan FC, 8zilla</span>
+              </div>
+              <span class="text-[11px] text-slate-400 font-medium">Top 2 Qualify</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-slate-100/90 text-slate-700 uppercase text-[10px] tracking-wider border-b border-slate-200">
+                    <th class="py-3 px-3 font-bold text-center w-10">#</th>
+                    <th class="py-3 px-3 font-bold">Team</th>
+                    <th class="py-3 px-2 font-bold text-center">P</th>
+                    <th class="py-3 px-2 font-bold text-center">W</th>
+                    <th class="py-3 px-2 font-bold text-center">D</th>
+                    <th class="py-3 px-2 font-bold text-center">L</th>
+                    <th class="py-3 px-2 font-bold text-center">GF</th>
+                    <th class="py-3 px-2 font-bold text-center">GA</th>
+                    <th class="py-3 px-2 font-bold text-center">GD</th>
+                    <th class="py-3 px-3 font-bold text-center bg-slate-200/80 text-slate-900">PTS</th>
+                    <th class="py-3 px-3 font-bold">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="groupBTableBody" class="divide-y divide-slate-100">
+                  <!-- Rendered dynamically from data/statistics.json -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+            <span>Winner: <strong>Japan FC (8 pts) 🏆</strong></span>
+            <span>Runner-Up: <strong>8zilla (4 pts) 🥈</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Knockout Progression Diagram -->
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">Knockout Stage Progression & Cross-Semifinals</h3>
+            <p class="text-xs text-slate-500">How the top 2 teams from Group A and Group B progressed into the final stage.</p>
+          </div>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">Official Results</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          
+          <!-- SF 1 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 relative">
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-slate-500">
+              <span>Semifinal 1 (1:00 PM)</span>
+              <span class="text-emerald-700">Pens: 2 - 0</span>
+            </div>
+            <div class="space-y-1.5 font-semibold text-slate-900">
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
+                <span class="flex items-center gap-1.5"><span>🇯🇵</span> Japan FC <span class="text-[10px] text-slate-400 font-normal">(1st Group B)</span></span>
+                <span class="font-extrabold text-emerald-600">0 (2) ✓</span>
+              </div>
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200 opacity-70">
+                <span class="flex items-center gap-1.5"><span>🤝</span> Amigos FC <span class="text-[10px] text-slate-400 font-normal">(2nd Group A)</span></span>
+                <span class="font-bold text-slate-500">0 (0)</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-emerald-800 bg-emerald-50 px-2 py-1 rounded font-medium text-center">
+              Japan FC advanced to Grand Final
+            </div>
+          </div>
+
+          <!-- SF 2 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 relative">
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-slate-500">
+              <span>Semifinal 2 (1:20 PM)</span>
+              <span class="text-indigo-700">Pens: 1 - 2</span>
+            </div>
+            <div class="space-y-1.5 font-semibold text-slate-900">
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200 opacity-70">
+                <span class="flex items-center gap-1.5"><span>⚡</span> Casual United <span class="text-[10px] text-slate-400 font-normal">(1st Group A)</span></span>
+                <span class="font-bold text-slate-500">0 (1)</span>
+              </div>
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200">
+                <span class="flex items-center gap-1.5"><span>🦖</span> 8zilla <span class="text-[10px] text-slate-400 font-normal">(2nd Group B)</span></span>
+                <span class="font-extrabold text-indigo-600">0 (2) ✓</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-indigo-800 bg-indigo-50 px-2 py-1 rounded font-medium text-center">
+              8zilla advanced to Grand Final
+            </div>
+          </div>
+
+          <!-- Grand Final -->
+          <div class="p-4 rounded-xl bg-amber-50/50 border-2 border-amber-300 space-y-2.5 relative">
+            <div class="flex items-center justify-between text-[11px] font-bold uppercase tracking-wider text-amber-900">
+              <span class="flex items-center gap-1">🏆 Grand Final (1:40 PM)</span>
+              <span class="text-amber-800">FT: 2 - 0</span>
+            </div>
+            <div class="space-y-1.5 font-semibold text-slate-900">
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-amber-200 ring-1 ring-amber-400">
+                <span class="flex items-center gap-1.5"><span>🇯🇵</span> Japan FC <span class="text-[10px] text-amber-700 font-bold">🏆 Champion</span></span>
+                <span class="font-extrabold text-emerald-700 text-sm">2</span>
+              </div>
+              <div class="flex items-center justify-between bg-white p-2 rounded-lg border border-slate-200 opacity-80">
+                <span class="flex items-center gap-1.5"><span>🦖</span> 8zilla <span class="text-[10px] text-indigo-700 font-bold">🥈 Runner-Up</span></span>
+                <span class="font-bold text-slate-500 text-sm">0</span>
+              </div>
+            </div>
+            <div class="text-[11px] text-amber-900 bg-amber-100/80 px-2 py-1 rounded font-bold text-center">
+              Japan FC crowned Independence Cup Champions!
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Combined 6-Team League Overview -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="p-4 bg-slate-900 text-white flex items-center justify-between">
+          <div>
+            <h3 class="text-sm font-bold">Overall 6-Team Standings Summary</h3>
+            <p class="text-[11px] text-slate-400">Cumulative league record across both groups.</p>
+          </div>
+          <span class="text-[11px] text-slate-400 font-medium">12 Matches Played</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-100 text-slate-700 uppercase text-[10px] tracking-wider border-b border-slate-200">
+                <th class="py-3 px-4 font-bold text-center w-12">#</th>
+                <th class="py-3 px-4 font-bold">Team</th>
+                <th class="py-3 px-3 font-bold text-center">Group</th>
+                <th class="py-3 px-3 font-bold text-center">P</th>
+                <th class="py-3 px-3 font-bold text-center">W</th>
+                <th class="py-3 px-3 font-bold text-center">D</th>
+                <th class="py-3 px-3 font-bold text-center">L</th>
+                <th class="py-3 px-3 font-bold text-center">GF</th>
+                <th class="py-3 px-3 font-bold text-center">GA</th>
+                <th class="py-3 px-3 font-bold text-center">GD</th>
+                <th class="py-3 px-4 font-bold text-center bg-slate-200 text-slate-900">PTS</th>
+                <th class="py-3 px-4 font-bold">Progression Result</th>
+              </tr>
+            </thead>
+            <tbody id="standingsTableBody" class="divide-y divide-slate-100">
+              <!-- Rendered dynamically from data/statistics.json -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="text-[11px] text-slate-400 italic">
+        * Note: League standings strictly reflect the 12 round-robin group stage matches (3 matches per round-robin pair). Semifinal and Grand Final results are tracked in the Knockout stage.
+      </p>
+    </section>
+
+
+    <!-- TAB 6: STATISTICS -->
+    <section id="statistics" class="tab-panel space-y-8">
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900">Player & Tournament Statistics</h2>
+        <p class="text-xs text-slate-500 mt-1">Verified leaderboards derived exclusively from recorded match events.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Top Goalscorers -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span>⚽</span> Top Goalscorers
+            </h3>
+            <span class="text-[11px] text-slate-400 font-semibold">Goals</span>
+          </div>
+          <div id="topScorersList" class="space-y-2.5 text-xs">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Top Playmakers (Assists) -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span>🎯</span> Top Playmakers
+            </h3>
+            <span class="text-[11px] text-slate-400 font-semibold">Assists</span>
+          </div>
+          <div id="topPlaymakersList" class="space-y-2.5 text-xs">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Player of the Match (POTM) -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span>⭐</span> Player of the Match
+            </h3>
+            <span class="text-[11px] text-slate-400 font-semibold">Awards</span>
+          </div>
+          <div id="potmList" class="space-y-2.5 text-xs">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Disciplinary & Cards -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span>🟨</span> Disciplinary Records
+            </h3>
+            <span class="text-[11px] text-slate-400 font-semibold">Yellow Cards</span>
+          </div>
+          <div id="cardsList" class="space-y-2.5 text-xs">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Own Goals Recorded -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-100">
+            <h3 class="text-sm font-bold text-slate-900 flex items-center gap-2">
+              <span>🔄</span> Recorded Own Goals
+            </h3>
+            <span class="text-[11px] text-slate-400 font-semibold">Count</span>
+          </div>
+          <div id="ownGoalsList" class="space-y-2.5 text-xs">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TAB 7: GALLERY -->
+    <section id="gallery" class="tab-panel space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Tournament Photo Gallery</h2>
+          <p class="text-xs text-slate-500 mt-1">Dedicated media directory ready for Independence Cup 2026 photo uploads.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-dashed border-slate-300 p-12 text-center max-w-2xl mx-auto space-y-4">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-3xl mx-auto text-slate-400">
+          📸
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-slate-800">Media Upload Directory Ready</h3>
+          <p class="text-xs text-slate-500 max-w-md mx-auto mt-1 leading-relaxed">
+            The tournament media repository is structured at <code class="bg-slate-100 px-2 py-0.5 rounded text-slate-700">tournaments/independence-cup-2026/assets/images/</code> ready for high-definition team portraits, trophy celebrations, and match action photographs.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-500">
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">teams/</span>
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">players/</span>
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">matches/</span>
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">organizers/</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TAB 8: VIDEOS -->
+    <section id="videos" class="tab-panel space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900">Match Highlights & Video Replays</h2>
+          <p class="text-xs text-slate-500 mt-1">Dedicated video repository ready for matchday clips, penalty shootouts, and celebration highlights.</p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-dashed border-slate-300 p-12 text-center max-w-2xl mx-auto space-y-4">
+        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-3xl mx-auto text-slate-400">
+          🎥
+        </div>
+        <div>
+          <h3 class="text-lg font-bold text-slate-800">Video Highlights Directory Ready</h3>
+          <p class="text-xs text-slate-500 max-w-md mx-auto mt-1 leading-relaxed">
+            The video archive is structured at <code class="bg-slate-100 px-2 py-0.5 rounded text-slate-700">tournaments/independence-cup-2026/assets/videos/</code> ready for highlights, penalty shootouts, and player interviews.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-2 text-[11px] text-slate-500">
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">highlights/</span>
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">matches/</span>
+          <span class="px-2.5 py-1 bg-slate-100 rounded-md">interviews/</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 py-8 text-center text-slate-400 text-xs border-t border-slate-800 mt-12">
+    <p>© 2026 We Are Eleven Community — Independence Cup 2026 Official Center. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script Modules -->
+  <script type="module">
+    import { injectHeader } from "../../scripts/header.js";
+    injectHeader("#site-header", { active: "tournaments" });
+
+    // Currency Formatter (Indian Rupee)
+    function formatINR(val) {
+      return "₹" + Number(val).toLocaleString("en-IN");
+    }
+
+    // Category Badge Helper
+    function getCategoryBadge(cat) {
+      switch ((cat || "").toLowerCase()) {
+        case "elite":
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-purple-100 text-purple-800 border border-purple-200">Elite</span>`;
+        case "prime":
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-100 text-blue-800 border border-blue-200">Prime</span>`;
+        case "core":
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">Core</span>`;
+        case "developing":
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">Developing</span>`;
+        case "unsold":
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-slate-600 border border-slate-200">Unsold Pickup</span>`;
+        default:
+          return `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700">${cat}</span>`;
+      }
+    }
+
+    // Tab Switching Logic
+    const tabBtns = document.querySelectorAll("#tourTabs .tab-btn");
+    const tabPanels = document.querySelectorAll(".tab-panel");
+
+    function switchTab(target, shouldScroll = false) {
+      if (!target) return;
+      let found = false;
+      tabPanels.forEach(p => {
+        if (p.id === target) {
+          p.classList.add("active");
+          found = true;
+        } else {
+          p.classList.remove("active");
+        }
+      });
+
+      if (!found) return;
+
+      tabBtns.forEach(b => {
+        if (b.dataset.target === target) {
+          b.classList.add("active");
+          b.classList.remove("text-slate-600");
+        } else {
+          b.classList.remove("active");
+          b.classList.add("text-slate-600");
+        }
+      });
+
+      if (window.location.hash.replace("#", "") !== target) {
+        history.replaceState(null, "", `#${target}`);
+      }
+
+      if (shouldScroll) {
+        const nav = document.getElementById("tourTabs");
+        if (nav) {
+          nav.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        switchTab(btn.dataset.target, false);
+      });
+    });
+
+    // Global listener for jump buttons
+    document.addEventListener("click", (e) => {
+      const jumpBtn = e.target.closest("[data-tab-jump]");
+      if (jumpBtn) {
+        e.preventDefault();
+        const target = jumpBtn.getAttribute("data-tab-jump");
+        switchTab(target, true);
+      }
+    });
+
+    // Hash on load
+    const hash = window.location.hash.replace("#", "");
+    if (hash && document.getElementById(hash)) {
+      switchTab(hash, false);
+    }
+
+    // Match Filter Logic
+    let allMatchesData = [];
+    function setupMatchFilters() {
+      const filterBtns = document.querySelectorAll(".match-filter-btn");
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => {
+            b.className = "match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition";
+          });
+          btn.className = "match-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm transition";
+          renderMatches(btn.dataset.filter);
+        });
+      });
+    }
+
+    function renderMatches(filter = "all") {
+      const container = document.getElementById("matchesContainer");
+      if (!container) return;
+
+      const filtered = allMatchesData.filter(m => {
+        if (filter === "all") return true;
+        return m.stage === filter;
+      });
+
+      if (!filtered.length) {
+        container.innerHTML = `<div class="p-8 text-center text-xs text-slate-500 bg-white rounded-2xl col-span-2">No matches found for selected stage.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(m => {
+        const isKnockout = m.stage === "semifinal" || m.stage === "final";
+        const stageBadgeCls = m.stage === "final" ? "bg-amber-100 text-amber-900 border-amber-300" :
+                              m.stage === "semifinal" ? "bg-purple-100 text-purple-900 border-purple-300" :
+                              "bg-slate-100 text-slate-800 border-slate-200";
+
+        return `
+          <div class="bg-white rounded-2xl border ${m.stage === 'final' ? 'border-amber-400 ring-2 ring-amber-400/20' : 'border-slate-200'} p-5 shadow-sm hover:shadow-md transition space-y-4">
+            
+            <!-- Match Header -->
+            <div class="flex items-center justify-between pb-3 border-b border-slate-100 text-xs">
+              <span class="px-2.5 py-0.5 rounded-full font-bold uppercase tracking-wider text-[10px] border ${stageBadgeCls}">
+                ${m.stageLabel}
+              </span>
+              <span class="text-slate-500 font-semibold flex items-center gap-1">
+                ⏱️ ${m.time}
+              </span>
+            </div>
+
+            <!-- Scoreline Display -->
+            <div class="flex items-center justify-between gap-4 py-2 px-3 bg-slate-50 rounded-xl">
+              <div class="flex-1 text-right">
+                <span class="font-extrabold text-sm sm:text-base text-slate-900">${m.team1.name}</span>
+              </div>
+              <div class="px-4 py-1.5 rounded-lg bg-slate-900 text-white font-extrabold text-base tracking-wider shadow-sm flex items-center gap-2">
+                <span>${m.team1.score}</span>
+                <span class="text-slate-400 font-normal">-</span>
+                <span>${m.team2.score}</span>
+              </div>
+              <div class="flex-1 text-left">
+                <span class="font-extrabold text-sm sm:text-base text-slate-900">${m.team2.name}</span>
+              </div>
+            </div>
+
+            <!-- Penalty Shootout Notice if applicable -->
+            ${m.penalties ? `
+              <div class="text-center p-2 rounded-lg bg-purple-50 border border-purple-200 text-purple-900 text-xs font-bold">
+                🎯 ${m.penalties.summary}
+              </div>
+            ` : ''}
+
+            <!-- Match Events -->
+            ${m.events && m.events.length ? `
+              <div class="pt-2 border-t border-slate-100 space-y-1.5">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Match Events</div>
+                <div class="space-y-1 text-xs">
+                  ${m.events.map(ev => {
+                    let icon = '⚽';
+                    let text = `<strong>${ev.player}</strong> (${ev.team})`;
+                    if (ev.assist) text += ` <span class="text-slate-400 font-normal">| Assist: ${ev.assist}</span>`;
+                    if (ev.type === 'yellow_card') {
+                      icon = '🟨';
+                      text = `Yellow Card: <strong>${ev.player}</strong> (${ev.team})`;
+                    } else if (ev.type === 'own_goal') {
+                      icon = '🔄';
+                      text = `Own Goal: <strong>${ev.player}</strong> (${ev.team})`;
+                    }
+                    return `<div class="flex items-center gap-1.5 text-slate-700"><span>${icon}</span> <span>${text}</span></div>`;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Player of the Match -->
+            <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-slate-500 font-medium">Player of the Match:</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 font-bold border border-amber-200">
+                ⭐ ${m.playerOfTheMatch} <span class="text-amber-700/80 font-normal">(${m.potmTeam})</span>
+              </span>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Main Data Loading & Hydration
+    async function loadTournamentData() {
+      try {
+        const [teamsRes, auctionRes, matchesRes, statsRes] = await Promise.all([
+          fetch('./data/teams.json'),
+          fetch('./data/auction.json'),
+          fetch('./data/matches.json'),
+          fetch('./data/statistics.json')
+        ]);
+
+        const teamsData = await teamsRes.json();
+        const auctionData = await auctionRes.json();
+        const matchesData = await matchesRes.json();
+        const statsData = await statsRes.json();
+
+        // 1. Render Teams
+        const teamsContainer = document.getElementById("teamsContainer");
+        if (teamsContainer && teamsData.teams) {
+          teamsContainer.innerHTML = teamsData.teams.map(t => `
+            <div class="bg-white rounded-2xl border ${t.isChampion ? 'border-amber-400 ring-2 ring-amber-400/20' : 'border-slate-200'} p-5 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="text-2xl">${t.badge}</span>
+                    <div>
+                      <h3 class="text-lg font-bold text-slate-900">${t.name}</h3>
+                      ${t.group ? `<span class="text-[10px] font-semibold text-slate-500">${t.group}</span>` : ''}
+                    </div>
+                  </div>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${t.isChampion ? 'bg-amber-100 text-amber-900' : 'bg-slate-100 text-slate-700'}">
+                    ${t.result}
+                  </span>
+                </div>
+
+                <div class="bg-slate-50 p-2.5 rounded-xl text-xs space-y-1 mb-4 border border-slate-100">
+                  <div class="flex justify-between"><span class="text-slate-500">Captain:</span> <strong class="text-slate-800">${t.captain}</strong></div>
+                </div>
+
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2">Squad Members (${t.players.length})</div>
+                <div class="space-y-1.5 text-xs">
+                  ${t.players.map(p => `
+                    <div class="flex items-center justify-between py-1 px-2 rounded-lg hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                      <div class="flex items-center gap-1.5 truncate">
+                        <span class="font-semibold text-slate-800 truncate">${p.name}</span>
+                        ${p.alias ? `<span class="text-[10px] text-slate-400 font-normal">(${p.alias})</span>` : ''}
+                      </div>
+                      <div class="flex items-center gap-2 flex-shrink-0">
+                        ${getCategoryBadge(p.category)}
+                        ${p.price ? `<span class="text-[11px] font-bold text-slate-700">${formatINR(p.price)}</span>` : ''}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          `).join('');
+        }
+
+        // 2. Render Auction Captains
+        const auctionContainer = document.getElementById("auctionCaptainsContainer");
+        if (auctionContainer && auctionData.captains) {
+          auctionContainer.innerHTML = auctionData.captains.map(c => `
+            <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition space-y-4">
+              
+              <!-- Header -->
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="text-base font-bold text-slate-900">${c.name}</h3>
+                  <span class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">${c.squadSize} Players</span>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs pt-2">
+                  <div class="bg-emerald-50 border border-emerald-100 p-2 rounded-xl">
+                    <div class="text-[10px] text-emerald-800 uppercase font-semibold">Spent</div>
+                    <div class="font-extrabold text-emerald-900 text-sm">${formatINR(c.spent)}</div>
+                  </div>
+                  <div class="bg-slate-50 border border-slate-100 p-2 rounded-xl">
+                    <div class="text-[10px] text-slate-500 uppercase font-semibold">Remaining</div>
+                    <div class="font-extrabold text-slate-800 text-sm">${formatINR(c.remaining)}</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Players list -->
+              <div class="pt-2 border-t border-slate-100 space-y-1.5">
+                <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400">Purchased Players</div>
+                <div class="space-y-1 text-xs">
+                  ${c.players.map(p => `
+                    <div class="flex items-center justify-between py-1.5 px-2 rounded-lg bg-slate-50/70 border border-slate-100">
+                      <div class="truncate">
+                        <span class="font-medium text-slate-800">${p.name}</span>
+                      </div>
+                      <div class="flex items-center gap-1.5 flex-shrink-0">
+                        ${getCategoryBadge(p.category)}
+                        <span class="font-bold text-slate-900 text-xs">${formatINR(p.price)}</span>
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+
+            </div>
+          `).join('');
+        }
+
+        // 3. Render Matches
+        allMatchesData = matchesData.matches || [];
+        setupMatchFilters();
+        renderMatches("all");
+
+        // Helper to render group rows
+        const renderGroupRows = (items) => {
+          if (!items) return '';
+          return items.map(s => {
+            const isQualified = s.isQualified;
+            return `
+              <tr class="hover:bg-slate-50 transition ${isQualified ? 'bg-emerald-50/20 font-medium' : ''}">
+                <td class="py-3 px-3 font-bold text-center text-slate-700">${s.rank}</td>
+                <td class="py-3 px-3 font-bold text-slate-900 flex items-center gap-2">
+                  <span>${s.badge}</span>
+                  <span class="truncate">${s.team}</span>
+                </td>
+                <td class="py-3 px-2 text-center text-slate-600 font-semibold">${s.played}</td>
+                <td class="py-3 px-2 text-center text-emerald-700 font-bold">${s.won}</td>
+                <td class="py-3 px-2 text-center text-slate-600">${s.drawn}</td>
+                <td class="py-3 px-2 text-center text-rose-600 font-semibold">${s.lost}</td>
+                <td class="py-3 px-2 text-center text-slate-700 font-semibold">${s.goalsFor}</td>
+                <td class="py-3 px-2 text-center text-slate-500">${s.goalsAgainst}</td>
+                <td class="py-3 px-2 text-center font-bold ${s.goalDifference > 0 ? 'text-emerald-600' : s.goalDifference < 0 ? 'text-rose-600' : 'text-slate-600'}">
+                  ${s.goalDifference > 0 ? '+' + s.goalDifference : s.goalDifference}
+                </td>
+                <td class="py-3 px-3 text-center font-extrabold text-slate-950 bg-slate-100/90">${s.points}</td>
+                <td class="py-3 px-3 text-[11px] font-semibold ${isQualified ? 'text-emerald-700' : 'text-slate-400'}">
+                  ${s.status}
+                </td>
+              </tr>
+            `;
+          }).join('');
+        };
+
+        // 4. Render Standings Tables (Group A, Group B, and Overall)
+        const groupABody = document.getElementById("groupATableBody");
+        if (groupABody && statsData.groups && statsData.groups.groupA) {
+          groupABody.innerHTML = renderGroupRows(statsData.groups.groupA.standings);
+        }
+
+        const groupBBody = document.getElementById("groupBTableBody");
+        if (groupBBody && statsData.groups && statsData.groups.groupB) {
+          groupBBody.innerHTML = renderGroupRows(statsData.groups.groupB.standings);
+        }
+
+        const standingsBody = document.getElementById("standingsTableBody");
+        if (standingsBody && statsData.standings) {
+          standingsBody.innerHTML = statsData.standings.map(s => {
+            const isTop4 = s.rank <= 4;
+            return `
+              <tr class="hover:bg-slate-50 transition ${isTop4 ? 'bg-emerald-50/20' : ''}">
+                <td class="py-3 px-4 font-bold text-center text-slate-700">${s.rank}</td>
+                <td class="py-3 px-4 font-bold text-slate-900 flex items-center gap-2">
+                  <span>${s.badge}</span>
+                  <span>${s.team}</span>
+                </td>
+                <td class="py-3 px-3 text-center text-xs font-semibold text-slate-600">
+                  <span class="px-2 py-0.5 rounded-full ${s.group === 'Group A' ? 'bg-amber-100 text-amber-900' : 'bg-emerald-100 text-emerald-900'}">${s.group || '-'}</span>
+                </td>
+                <td class="py-3 px-3 text-center text-slate-600 font-semibold">${s.played}</td>
+                <td class="py-3 px-3 text-center text-emerald-700 font-bold">${s.won}</td>
+                <td class="py-3 px-3 text-center text-slate-600">${s.drawn}</td>
+                <td class="py-3 px-3 text-center text-rose-600 font-semibold">${s.lost}</td>
+                <td class="py-3 px-3 text-center text-slate-700 font-semibold">${s.goalsFor}</td>
+                <td class="py-3 px-3 text-center text-slate-500">${s.goalsAgainst}</td>
+                <td class="py-3 px-3 text-center font-bold ${s.goalDifference > 0 ? 'text-emerald-600' : s.goalDifference < 0 ? 'text-rose-600' : 'text-slate-600'}">
+                  ${s.goalDifference > 0 ? '+' + s.goalDifference : s.goalDifference}
+                </td>
+                <td class="py-3 px-4 text-center font-extrabold text-slate-950 bg-slate-100/80">${s.points}</td>
+                <td class="py-3 px-4 text-xs font-semibold ${isTop4 ? 'text-emerald-700' : 'text-slate-400'}">
+                  ${s.status}
+                </td>
+              </tr>
+            `;
+          }).join('');
+        }
+
+        // 5. Render Statistics Lists
+        const scorersList = document.getElementById("topScorersList");
+        if (scorersList && statsData.topScorers) {
+          scorersList.innerHTML = statsData.topScorers.map((s, idx) => `
+            <div class="flex items-center justify-between p-2 rounded-lg ${idx === 0 ? 'bg-amber-50 border border-amber-200' : 'bg-slate-50 border border-slate-100'}">
+              <div class="flex items-center gap-2">
+                <span class="font-bold ${idx === 0 ? 'text-amber-700 font-extrabold' : 'text-slate-500'}">#${s.rank}</span>
+                <span class="font-bold text-slate-900">${s.player}</span>
+                <span class="text-[11px] text-slate-500">(${s.team})</span>
+              </div>
+              <span class="px-2 py-0.5 rounded-full font-extrabold ${idx === 0 ? 'bg-amber-500 text-slate-950' : 'bg-slate-200 text-slate-800'} text-xs">
+                ${s.goals}
+              </span>
+            </div>
+          `).join('');
+        }
+
+        const playmakersList = document.getElementById("topPlaymakersList");
+        if (playmakersList && statsData.topPlaymakers) {
+          playmakersList.innerHTML = statsData.topPlaymakers.map((s, idx) => `
+            <div class="flex items-center justify-between p-2 rounded-lg ${idx === 0 ? 'bg-purple-50 border border-purple-200' : 'bg-slate-50 border border-slate-100'}">
+              <div class="flex items-center gap-2">
+                <span class="font-bold ${idx === 0 ? 'text-purple-700 font-extrabold' : 'text-slate-500'}">#${s.rank}</span>
+                <span class="font-bold text-slate-900">${s.player}</span>
+                <span class="text-[11px] text-slate-500">(${s.team})</span>
+              </div>
+              <span class="px-2 py-0.5 rounded-full font-extrabold ${idx === 0 ? 'bg-purple-600 text-white' : 'bg-slate-200 text-slate-800'} text-xs">
+                ${s.assists}
+              </span>
+            </div>
+          `).join('');
+        }
+
+        const potmList = document.getElementById("potmList");
+        if (potmList && statsData.potmAwards) {
+          potmList.innerHTML = statsData.potmAwards.map(p => `
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
+              <div>
+                <span class="font-bold text-slate-900">${p.player}</span>
+                <span class="text-[11px] text-slate-500">(${p.team})</span>
+                <div class="text-[10px] text-slate-400 mt-0.5">${p.matches.join(', ')}</div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full font-bold bg-amber-100 text-amber-900 text-xs">
+                ${p.awards} ★
+              </span>
+            </div>
+          `).join('');
+        }
+
+        const cardsList = document.getElementById("cardsList");
+        if (cardsList && statsData.yellowCards) {
+          cardsList.innerHTML = statsData.yellowCards.map(c => `
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
+              <div>
+                <span class="font-bold text-slate-900">${c.player}</span>
+                <span class="text-[11px] text-slate-500">(${c.team})</span>
+                <div class="text-[10px] text-slate-400 mt-0.5">${c.match}</div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full font-bold bg-amber-100 text-amber-800 text-xs">
+                🟨 ${c.cards}
+              </span>
+            </div>
+          `).join('');
+        }
+
+        const ownGoalsList = document.getElementById("ownGoalsList");
+        if (ownGoalsList && statsData.ownGoals) {
+          ownGoalsList.innerHTML = statsData.ownGoals.map(o => `
+            <div class="flex items-center justify-between p-2 rounded-lg bg-slate-50 border border-slate-100">
+              <div>
+                <span class="font-bold text-slate-900">${o.player}</span>
+                <span class="text-[11px] text-slate-500">(${o.team})</span>
+                <div class="text-[10px] text-slate-400 mt-0.5">${o.match}</div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full font-bold bg-slate-200 text-slate-700 text-xs">
+                🔄 ${o.count}
+              </span>
+            </div>
+          `).join('');
+        }
+
+      } catch (err) {
+        console.error("Failed to load Independence Cup 2026 tournament data:", err);
+      }
+    }
+
+    loadTournamentData();
+  </script>
+
+</body>
+</html>

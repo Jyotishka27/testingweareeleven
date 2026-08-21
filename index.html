@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Home - We Are Eleven</title>
+  <title>We Are Eleven — Football Tournament & Community Platform</title>
 
   <link rel="canonical" href="https://weareeleven.example/home" />
   <link rel="me" href="https://www.instagram.com/we.are.eleven.official/" />
@@ -13,7 +13,7 @@
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="We Are Eleven — Uniting Football Enthusiasts, One Goal at a Time" />
-  <meta property="og:description" content="Join a growing community of players, fans, and organizers. Fixtures, highlights, photos, and more." />
+  <meta property="og:description" content="Join a growing community of players, fans, and organizers. Fixtures, highlights, live auctions, photos, and tournament standings." />
   <meta property="og:image" content="./assets/group-logo/we_are_eleven_logo.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -23,73 +23,344 @@
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: white;
+      background: #f8fafc;
+      color: #0f172a;
     }
-    .nav-link{color:#4b5563;font-weight:500;text-decoration:none;transition:color .2s ease;}
-    .nav-link:hover{color:#374151}
-    .nav-link.active{color:#dc2626}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-    .watermark{position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:2rem}
-    .watermark img{opacity:.06;width:500px;max-width:90%}
   </style>
 </head>
 
-<body class="text-black">
+<body class="min-h-screen flex flex-col antialiased">
 
-  <!-- Header -->
+  <!-- Global Header -->
   <div id="site-header"></div>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.35),rgba(0,0,0,0.8))] z-0"></div>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-slate-950 text-white">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950 z-0"></div>
 
-    <!-- BASE_PATH driven background -->
     <div
       id="hero-bg"
-      class="absolute inset-0 bg-cover bg-center z-[-1]">
+      class="absolute inset-0 bg-cover bg-center z-[-1] opacity-25 filter blur-[1px]">
     </div>
 
-    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 text-center text-white">
-      <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-        Uniting Football Enthusiasts, One Goal at a Time
+    <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
+        <span>⚽ Official Football Community & League Hub</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto">
+        Uniting Football Enthusiasts, <span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">One Goal at a Time</span>
       </h1>
-      <p class="mt-4 text-lg text-gray-200">
-        Join a growing community of players, fans, and organizers.
+
+      <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-normal">
+        From intense one-day knockouts to full premier league tournaments and live player auctions — experience grassroots football at its finest.
       </p>
 
-      <div class="mt-8 flex items-center justify-center gap-3">
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
         <a href="./pages/join.html"
-           class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-green-500 hover:bg-green-600 shadow-lg text-white text-lg font-semibold transition">
-          Join Us
+           class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-base transition duration-200 shadow-lg shadow-emerald-500/20">
+          Join the Community
+        </a>
+
+        <a href="./pages/tournament.html"
+           class="inline-flex items-center justify-center px-8 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-white font-semibold text-base border border-slate-700 transition duration-200">
+          Browse Tournaments
         </a>
 
         <a href="https://www.instagram.com/we.are.eleven.official/"
            target="_blank"
            rel="noopener"
-           aria-label="Follow us on Instagram"
-           class="inline-flex items-center justify-center px-5 py-4 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-white text-base font-semibold transition">
+           class="inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-base font-medium border border-white/10 transition">
           <span class="mr-2">📸</span> @we.are.eleven.official
         </a>
       </div>
 
-      <!-- Tournament banner -->
-      <div class="mt-10 inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-2xl px-5 py-3 border border-white/20">
-        <span class="text-xl">🏆</span>
-        <div class="text-left">
-          <div class="font-semibold">Independence Cup 2025</div>
-          <div class="text-sm text-gray-200">Official results & highlights</div>
+      <!-- Quick Highlights Bar -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-2xl backdrop-blur-sm">
+          <div class="text-3xl font-extrabold text-white">4+</div>
+          <div class="text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">Major Tournaments</div>
         </div>
-        <a href="./pages/team_results.html"
-           class="ml-4 text-sm font-semibold underline decoration-2 underline-offset-4">
-          View Results
-        </a>
+        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-2xl backdrop-blur-sm">
+          <div class="text-3xl font-extrabold text-emerald-400">120+</div>
+          <div class="text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">Matches Hosted</div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-2xl backdrop-blur-sm">
+          <div class="text-3xl font-extrabold text-white">150+</div>
+          <div class="text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">Registered Players</div>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800 p-4 rounded-2xl backdrop-blur-sm">
+          <div class="text-3xl font-extrabold text-teal-400">7+</div>
+          <div class="text-xs font-medium text-slate-400 mt-1 uppercase tracking-wider">Elite Squads</div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Featured Tournaments Section -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20 w-full">
+
+    <section>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Explore Events</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Featured Tournaments</h2>
+          <p class="text-slate-600 mt-1 text-base">Check out our latest tournaments, complete match fixtures, and results.</p>
+        </div>
+        <a href="./pages/tournament.html"
+           class="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-700">
+          View all tournaments <span class="ml-1">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Tournament 1: Independence Cup 2026 -->
+        <div class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+          <div class="relative h-48 bg-slate-900 overflow-hidden">
+            <img
+              src="./assets/group-logo/independence_cup_logo.jpg"
+              alt="Independence Cup 2026"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-emerald-500 text-slate-950 text-xs font-extrabold uppercase px-2.5 py-1 rounded-full shadow">
+              Completed Recap
+            </span>
+            <div class="absolute bottom-3 left-3 text-white">
+              <span class="text-xs text-slate-300 font-medium">16th August 2026</span>
+              <div class="font-bold text-lg leading-snug">Independence Cup 2026</div>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <p class="text-sm text-slate-600">
+                Hosted at GODs Turf. The latest edition featuring high-voltage 6-team knockout and round-robin matches.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">GODs Turf</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">6 Teams</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">One-Day</span>
+              </div>
+            </div>
+            <a href="./tournaments/independence-cup-2026/index.html"
+               class="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-slate-900 text-white hover:bg-emerald-600 text-sm font-semibold transition">
+              Explore Tournament Details
+            </a>
+          </div>
+        </div>
+
+        <!-- Tournament 2: Winter Carnival 2026 -->
+        <div class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+          <div class="relative h-48 bg-slate-900 overflow-hidden">
+            <img
+              src="./assets/winter-carnival-2026/winter_carnival_poster_logo.jpeg"
+              alt="Winter Carnival Cup 2026"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-blue-500 text-white text-xs font-extrabold uppercase px-2.5 py-1 rounded-full shadow">
+              Full League
+            </span>
+            <div class="absolute bottom-3 left-3 text-white">
+              <span class="text-xs text-slate-300 font-medium">18th January 2026</span>
+              <div class="font-bold text-lg leading-snug">Winter Carnival Cup 2026</div>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <p class="text-sm text-slate-600">
+                Premier 7-team round robin tournament with 21 matches, live auctions, top-scorer leaderboards, and simultaneous grounds.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">21 Matches</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">7 Teams</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">Refereed</span>
+              </div>
+            </div>
+            <a href="./tournaments/winter-carnival-cup-2026/winter-carnival-cup-2026.html"
+               class="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-slate-900 text-white hover:bg-blue-600 text-sm font-semibold transition">
+              Explore League & Standings
+            </a>
+          </div>
+        </div>
+
+        <!-- Tournament 3: Independence Cup 2025 -->
+        <div class="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col">
+          <div class="relative h-48 bg-slate-900 overflow-hidden">
+            <img
+              src="./assets/independence-cup-25/gallery/independence_cup_poster.jpg"
+              alt="Independence Cup 2025"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <span class="absolute top-3 left-3 bg-amber-500 text-slate-950 text-xs font-extrabold uppercase px-2.5 py-1 rounded-full shadow">
+              Archive & Results
+            </span>
+            <div class="absolute bottom-3 left-3 text-white">
+              <span class="text-xs text-slate-300 font-medium">24th August 2025</span>
+              <div class="font-bold text-lg leading-snug">Independence Cup 2025</div>
+            </div>
+          </div>
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <p class="text-sm text-slate-600">
+                Official knockout results, player rosters, goalscorer records, and photo archives from Turf XL.
+              </p>
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">Turf XL</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">6 Teams</span>
+                <span class="text-xs px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-700 font-medium">Knockouts</span>
+              </div>
+            </div>
+            <a href="./tournaments/independence_cup_2025/independence_cup_2025.html"
+               class="inline-flex items-center justify-center w-full py-2.5 rounded-xl bg-slate-900 text-white hover:bg-amber-600 text-sm font-semibold transition">
+              View Results & Gallery
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Modules / Features -->
+    <section class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-sm">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-extrabold text-slate-900">Everything Grassroots Football Needs</h2>
+        <p class="text-slate-600 mt-2 text-base">Comprehensive digital tools designed specifically for local leagues, players, and matchday organizers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-4">🏆</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-1">Multi-Cup System</h3>
+          <p class="text-sm text-slate-600">Support for round-robin leagues, knockout cups, and one-day tournament brackets.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 transition">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mb-4">🔨</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-1">Live Player Auction</h3>
+          <p class="text-sm text-slate-600">Real-time auctioneer portal with captain budgets, player tiers, and live team bidding.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl mb-4">📸</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-1">Media Archive</h3>
+          <p class="text-sm text-slate-600">High-resolution tournament photography, squad photos, and champion podium galleries.</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 hover:border-slate-300 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl mb-4">🗳️</div>
+          <h3 class="font-bold text-lg text-slate-900 mb-1">Matchday Polls</h3>
+          <p class="text-sm text-slate-600">Community match polls, RSVP confirmation, and member participation tracking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Champions Wall of Fame Spotlight -->
+    <section>
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Legacy of Glory</div>
+          <h2 class="text-3xl font-extrabold text-slate-900">Wall of Champions</h2>
+          <p class="text-slate-600 mt-1">Celebrating our tournament winners and podium finishers.</p>
+        </div>
+        <a href="./pages/about_us.html" class="text-sm font-semibold text-emerald-600 hover:text-emerald-700">
+          Learn about our journey →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <img src="./assets/wall-of-frame/Winner2022.jpg" alt="2022 Champions" class="w-full h-48 object-cover rounded-xl mb-3">
+          <div class="font-bold text-slate-900">2022 Champions</div>
+          <p class="text-xs text-slate-500">Inaugural Edition Winners</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <img src="./assets/wall-of-frame/Winner2023.jpg" alt="2023 Champions" class="w-full h-48 object-cover rounded-xl mb-3">
+          <div class="font-bold text-slate-900">2023 Champions</div>
+          <p class="text-xs text-slate-500">Independence Cup Winners</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm text-center">
+          <img src="./assets/independence-cup-25/gallery/winner_runnersup.jpg" alt="2025 Champions & Finalists" class="w-full h-48 object-cover rounded-xl mb-3">
+          <div class="font-bold text-slate-900">2025 Podium Squads</div>
+          <p class="text-xs text-slate-500">Winners & Runners-up</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 sm:p-12 text-white text-center relative overflow-hidden shadow-xl">
+      <div class="relative z-10 max-w-2xl mx-auto space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold">Ready to lace up your boots?</h2>
+        <p class="text-slate-300 text-base">
+          Join We Are Eleven today. Pick a membership tier to access weekly community matches, vote on fixtures, and compete for trophies.
+        </p>
+        <div class="pt-4 flex flex-wrap justify-center gap-4">
+          <a href="./pages/join.html"
+             class="px-8 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold transition">
+            View Memberships
+          </a>
+          <a href="./pages/about_us.html"
+             class="px-8 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium border border-white/20 transition">
+            Meet the Organizers
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
   <!-- Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-400 mt-0">
-    <p>© 2025 Football Community. All Rights Reserved.</p>
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <img src="./assets/group-logo/we_are_eleven_logo.jpg" alt="Logo" class="h-8 w-8 rounded-full object-cover" />
+            <span class="text-white font-bold text-lg">We Are Eleven</span>
+          </div>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Uniting football enthusiasts, organizing premier tournaments, and cultivating community sportsmanship.
+          </p>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold text-sm mb-3">Tournaments</div>
+          <ul class="space-y-2 text-sm">
+            <li><a href="./tournaments/independence-cup-2026/index.html" class="hover:text-white transition">Independence Cup 2026</a></li>
+            <li><a href="./tournaments/winter-carnival-cup-2026/winter-carnival-cup-2026.html" class="hover:text-white transition">Winter Carnival 2026</a></li>
+            <li><a href="./tournaments/independence_cup_2025/independence_cup_2025.html" class="hover:text-white transition">Independence Cup 2025</a></li>
+            <li><a href="./pages/tournament.html" class="hover:text-white transition">All Tournaments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold text-sm mb-3">Community & Features</div>
+          <ul class="space-y-2 text-sm">
+            <li><a href="./pages/football_auctioneer.html" class="hover:text-white transition">Player Auction Portal</a></li>
+            <li><a href="./pages/gallery.html" class="hover:text-white transition">Photo Gallery</a></li>
+            <li><a href="./pages/join.html" class="hover:text-white transition">Membership Plans</a></li>
+            <li><a href="./pages/about_us.html" class="hover:text-white transition">About the Organizers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-white font-semibold text-sm mb-3">Account & Admin</div>
+          <ul class="space-y-2 text-sm">
+            <li><a href="./pages/login.html" class="hover:text-white transition">Member Login</a></li>
+            <li><a href="./pages/register.html" class="hover:text-white transition">Register</a></li>
+            <li><a href="./pages/admin.html" class="hover:text-white transition">Admin Portal</a></li>
+            <li><a href="https://www.instagram.com/we.are.eleven.official/" target="_blank" rel="noopener" class="hover:text-white transition">Instagram Official</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+        <p>© 2026 We Are Eleven Community. All rights reserved.</p>
+        <p class="mt-2 sm:mt-0">Designed for Football Lovers & Tournament Organizers</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
@@ -114,3 +385,4 @@
 
 </body>
 </html>
+

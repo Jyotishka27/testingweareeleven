@@ -8,62 +8,76 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Favicon -->
-  <link rel="icon" href="./assets/group-logo/we_are_eleven_logo.jpg" />
+  <link rel="icon" href="../assets/group-logo/we_are_eleven_logo.jpg" />
   
-  <!-- Project styles -->
-  <link rel="stylesheet" href="../css/wae-colors.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+  </style>
 </head>
 
-<body class="bg-white text-[#0b1220] flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen antialiased">
 
   <!-- Shared Header -->
-  <div id="site-header" class="wae-nav"></div>
+  <div id="site-header"></div>
 
-  <main class="flex-grow max-w-md mx-auto py-20 px-6">
-    <div class="wae-panel rounded-xl">
-      <h1 class="text-2xl font-bold mb-2">Welcome back</h1>
-      <p class="wae-muted mb-4">
-        Login to access your profile, manage membership, and vote in polls.
-      </p>
+  <main class="flex-grow flex items-center justify-center py-16 px-4 sm:px-6">
+    <div class="bg-white border border-slate-200 shadow-xl rounded-3xl p-8 max-w-md w-full">
+      <div class="text-center mb-6">
+        <img src="../assets/group-logo/we_are_eleven_logo.jpg" alt="We Are Eleven" class="w-16 h-16 rounded-full mx-auto mb-3 ring-4 ring-emerald-50 shadow-sm object-cover">
+        <h1 class="text-2xl font-extrabold text-slate-900">Welcome Back</h1>
+        <p class="text-xs text-slate-500 mt-1">
+          Login to access your profile, manage membership, and participate in community votes.
+        </p>
+      </div>
 
       <form id="loginForm" class="space-y-4" autocomplete="on">
-        <input
-          id="email"
-          type="email"
-          placeholder="Email"
-          class="wae-input-light"
-          required />
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" for="email">Email Address</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 transition"
+            required />
+        </div>
 
-        <input
-          id="password"
-          type="password"
-          placeholder="Password"
-          class="wae-input-light"
-          required />
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="••••••••"
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-slate-900 transition"
+            required />
+        </div>
 
         <button
           id="loginBtn"
-          class="wae-btn wae-btn-primary w-full"
+          class="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition"
           type="submit">
-          Login
+          Sign In
         </button>
       </form>
 
-      <div class="mt-4 flex items-center justify-between text-sm">
-        <a href="../pages/join.html" class="wae-link">
-          Create account
+      <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-600">
+        <a href="../pages/join.html" class="hover:text-emerald-600 font-semibold transition">
+          Create an account
         </a>
-        <a href="../pages/reset_password.html" id="forgotLink" class="wae-link">
+        <a href="../pages/forgetpassword.html" id="forgotLink" class="hover:text-slate-900 transition">
           Forgot password?
         </a>
       </div>
 
-      <p id="authMessage" class="text-center text-sm mt-4"></p>
+      <p id="authMessage" class="text-center text-xs mt-4"></p>
     </div>
   </main>
 
-  <footer class="py-8 text-center wae-muted">
-    © 2025 We Are Eleven
+  <footer class="bg-slate-950 py-8 text-center text-slate-400 text-sm border-t border-slate-800">
+    © 2026 We Are Eleven Community. All Rights Reserved.
   </footer>
 
   <script type="module">
@@ -94,11 +108,11 @@
 
     function setMessage(text, kind = "info") {
       authMessage.textContent = text;
-      authMessage.className = "text-center text-sm mt-4";
+      authMessage.className = "text-center text-xs mt-4 font-medium";
 
-      if (kind === "error") authMessage.classList.add("wae-error");
-      if (kind === "success") authMessage.classList.add("wae-success");
-      if (kind === "info") authMessage.classList.add("wae-muted");
+      if (kind === "error") authMessage.classList.add("text-rose-600");
+      if (kind === "success") authMessage.classList.add("text-emerald-600");
+      if (kind === "info") authMessage.classList.add("text-slate-500");
     }
 
     loginForm.addEventListener("submit", async (e) => {
@@ -132,7 +146,7 @@
 
       const email = document.getElementById("email").value.trim();
       if (!email) {
-        setMessage("❌ Enter your email above to reset password.", "error");
+        window.location.href = "../pages/forgetpassword.html";
         return;
       }
 

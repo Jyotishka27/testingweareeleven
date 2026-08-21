@@ -1,0 +1,254 @@
+{
+  "matches": [
+    {
+      "id": "match-1",
+      "matchNumber": 1,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 1",
+      "time": "9:00 AM",
+      "team1": { "id": "strawhat-fc", "name": "Strawhat FC", "score": 0 },
+      "team2": { "id": "amigos-fc", "name": "Amigos FC", "score": 0 },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Akash Jr (Ayon Roy)",
+      "potmTeam": "Strawhat FC"
+    },
+    {
+      "id": "match-2",
+      "matchNumber": 2,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 1",
+      "time": "9:20 AM",
+      "team1": { "id": "bloodbath-boys-fc", "name": "Bloodbath Boys FC", "score": 1 },
+      "team2": { "id": "japan-fc", "name": "Japan FC", "score": 1 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "Bloodbath Boys FC", "player": "Alu", "assist": "Jeff" },
+        { "type": "yellow_card", "team": "Bloodbath Boys FC", "player": "Alu" },
+        { "type": "goal", "team": "Japan FC", "player": "Rishov", "assist": null }
+      ],
+      "playerOfTheMatch": "Alu (Arghyadeep Das)",
+      "potmTeam": "Bloodbath Boys FC"
+    },
+    {
+      "id": "match-3",
+      "matchNumber": 3,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 1",
+      "time": "9:40 AM",
+      "team1": { "id": "strawhat-fc", "name": "Strawhat FC", "score": 0 },
+      "team2": { "id": "casual-united-fc", "name": "Casual United FC", "score": 2 },
+      "status": "completed",
+      "events": [
+        { "type": "yellow_card", "team": "Strawhat FC", "player": "Akash Mukherjee" },
+        { "type": "goal", "team": "Casual United FC", "player": "Arjo", "assist": "Suman Kumir" },
+        { "type": "goal", "team": "Casual United FC", "player": "Arjo", "assist": "Ritam" }
+      ],
+      "playerOfTheMatch": "Arjo",
+      "potmTeam": "Casual United FC"
+    },
+    {
+      "id": "match-4",
+      "matchNumber": 4,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 1",
+      "time": "10:00 AM",
+      "team1": { "id": "bloodbath-boys-fc", "name": "Bloodbath Boys FC", "score": 0 },
+      "team2": { "id": "8zilla", "name": "8zilla", "score": 2 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "8zilla", "player": "Levin", "assist": "Anirudhya" },
+        { "type": "goal", "team": "8zilla", "player": "Anirudhya", "assist": "Hrishi" }
+      ],
+      "playerOfTheMatch": "Anirudhya",
+      "potmTeam": "8zilla"
+    },
+    {
+      "id": "match-5",
+      "matchNumber": 5,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 1",
+      "time": "10:20 AM",
+      "team1": { "id": "amigos-fc", "name": "Amigos FC", "score": 0 },
+      "team2": { "id": "casual-united-fc", "name": "Casual United FC", "score": 2 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "Casual United FC", "player": "Arjo", "assist": "Ritam" },
+        { "type": "goal", "team": "Casual United FC", "player": "Ritam", "assist": null },
+        { "type": "yellow_card", "team": "Casual United FC", "player": "Dipanjan" },
+        { "type": "goal", "team": "Casual United FC", "player": "Arjo", "assist": "Sabyasachi", "note": "Recorded in source event log" }
+      ],
+      "playerOfTheMatch": "Arjo",
+      "potmTeam": "Casual United FC"
+    },
+    {
+      "id": "match-6",
+      "matchNumber": 6,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 1",
+      "time": "10:40 AM",
+      "team1": { "id": "8zilla", "name": "8zilla", "score": 1 },
+      "team2": { "id": "japan-fc", "name": "Japan FC", "score": 2 },
+      "status": "completed",
+      "events": [
+        { "type": "own_goal", "team": "8zilla", "player": "Rahul", "note": "Own Goal credited against 8zilla" },
+        { "type": "goal", "team": "Japan FC", "player": "Supratim", "assist": "Arkapal" },
+        { "type": "goal", "team": "Japan FC", "player": "Supratim", "assist": "Arkapal" }
+      ],
+      "playerOfTheMatch": "Supratim",
+      "potmTeam": "Japan FC"
+    },
+    {
+      "id": "match-7",
+      "matchNumber": 7,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 2",
+      "time": "11:00 AM",
+      "team1": { "id": "amigos-fc", "name": "Amigos FC", "score": 0 },
+      "team2": { "id": "strawhat-fc", "name": "Strawhat FC", "score": 0 },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Suvam",
+      "potmTeam": "Amigos FC"
+    },
+    {
+      "id": "match-8",
+      "matchNumber": 8,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 2",
+      "time": "11:20 AM",
+      "team1": { "id": "japan-fc", "name": "Japan FC", "score": 0 },
+      "team2": { "id": "bloodbath-boys-fc", "name": "Bloodbath Boys FC", "score": 0 },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Krishnendu",
+      "potmTeam": "Japan FC"
+    },
+    {
+      "id": "match-9",
+      "matchNumber": 9,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 2",
+      "time": "11:40 AM",
+      "team1": { "id": "casual-united-fc", "name": "Casual United FC", "score": 1 },
+      "team2": { "id": "strawhat-fc", "name": "Strawhat FC", "score": 0 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "Casual United FC", "player": "Sabyasachi", "assist": "Arjo" }
+      ],
+      "playerOfTheMatch": "Ritam",
+      "potmTeam": "Casual United FC"
+    },
+    {
+      "id": "match-10",
+      "matchNumber": 10,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 2",
+      "time": "12:00 PM",
+      "team1": { "id": "8zilla", "name": "8zilla", "score": 1 },
+      "team2": { "id": "bloodbath-boys-fc", "name": "Bloodbath Boys FC", "score": 1 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "8zilla", "player": "Hrishi", "assist": "Levin" },
+        { "type": "goal", "team": "Bloodbath Boys FC", "player": "Santanu", "assist": null }
+      ],
+      "playerOfTheMatch": "Hrishi",
+      "potmTeam": "8zilla"
+    },
+    {
+      "id": "match-11",
+      "matchNumber": 11,
+      "stage": "league",
+      "group": "Group A",
+      "stageLabel": "Group A • Round 2",
+      "time": "12:20 PM",
+      "team1": { "id": "casual-united-fc", "name": "Casual United FC", "score": 0 },
+      "team2": { "id": "amigos-fc", "name": "Amigos FC", "score": 0 },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Vasu",
+      "potmTeam": "Amigos FC"
+    },
+    {
+      "id": "match-12",
+      "matchNumber": 12,
+      "stage": "league",
+      "group": "Group B",
+      "stageLabel": "Group B • Round 2",
+      "time": "12:40 PM",
+      "team1": { "id": "japan-fc", "name": "Japan FC", "score": 1 },
+      "team2": { "id": "8zilla", "name": "8zilla", "score": 0 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "Japan FC", "player": "Rishov", "assist": null }
+      ],
+      "playerOfTheMatch": "Rishov",
+      "potmTeam": "Japan FC"
+    },
+    {
+      "id": "match-13",
+      "matchNumber": 13,
+      "stage": "semifinal",
+      "stageLabel": "Semifinal 1 (1st Group B vs 2nd Group A)",
+      "time": "1:00 PM",
+      "team1": { "id": "japan-fc", "name": "Japan FC", "score": 0 },
+      "team2": { "id": "amigos-fc", "name": "Amigos FC", "score": 0 },
+      "penalties": {
+        "team1Score": 2,
+        "team2Score": 0,
+        "winner": "Japan FC",
+        "summary": "Japan FC win 2 - 0 on penalties"
+      },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Rahul (Bikram)",
+      "potmTeam": "Japan FC"
+    },
+    {
+      "id": "match-14",
+      "matchNumber": 14,
+      "stage": "semifinal",
+      "stageLabel": "Semifinal 2 (1st Group A vs 2nd Group B)",
+      "time": "1:20 PM",
+      "team1": { "id": "casual-united-fc", "name": "Casual United FC", "score": 0 },
+      "team2": { "id": "8zilla", "name": "8zilla", "score": 0 },
+      "penalties": {
+        "team1Score": 1,
+        "team2Score": 2,
+        "winner": "8zilla",
+        "summary": "8zilla win 2 - 1 on penalties"
+      },
+      "status": "completed",
+      "events": [],
+      "playerOfTheMatch": "Thomas",
+      "potmTeam": "8zilla"
+    },
+    {
+      "id": "match-15",
+      "matchNumber": 15,
+      "stage": "final",
+      "stageLabel": "Grand Final (Winner SF1 vs Winner SF2)",
+      "time": "1:40 PM",
+      "team1": { "id": "japan-fc", "name": "Japan FC", "score": 2 },
+      "team2": { "id": "8zilla", "name": "8zilla", "score": 0 },
+      "status": "completed",
+      "events": [
+        { "type": "goal", "team": "Japan FC", "player": "Supratim", "assist": "Arkapal" },
+        { "type": "goal", "team": "Japan FC", "player": "Arkapal", "assist": null },
+        { "type": "goal", "team": "Japan FC", "player": "Arkapal", "assist": "Rishov", "note": "Source log event" }
+      ],
+      "playerOfTheMatch": "Arkapal",
+      "potmTeam": "Japan FC"
+    }
+  ]
+}

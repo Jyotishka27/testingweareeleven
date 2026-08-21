@@ -1,0 +1,121 @@
+{
+  "summary": {
+    "totalCaptains": 6,
+    "totalPlayers": 42,
+    "totalSpend": 1992500,
+    "totalRemainingBudget": 107500,
+    "totalBudget": 2100000,
+    "maxBudgetPerCaptain": 350000,
+    "categories": [
+      { "name": "Elite", "badge": "bg-purple-100 text-purple-800 border-purple-200" },
+      { "name": "Prime", "badge": "bg-blue-100 text-blue-800 border-blue-200" },
+      { "name": "Core", "badge": "bg-emerald-100 text-emerald-800 border-emerald-200" },
+      { "name": "Developing", "badge": "bg-amber-100 text-amber-800 border-amber-200" },
+      { "name": "Unsold", "badge": "bg-slate-100 text-slate-700 border-slate-200" }
+    ]
+  },
+  "captains": [
+    {
+      "id": "ritam-chowdhury",
+      "name": "Ritam Chowdhury",
+      "spent": 317500,
+      "remaining": 32500,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Suman Kumir", "category": "Elite", "price": 55000, "isUnsold": false },
+        { "name": "Arjo", "category": "Prime", "price": 130000, "isUnsold": false },
+        { "name": "Biswajit", "category": "Core", "price": 40000, "isUnsold": false },
+        { "name": "Priyanshu Das", "category": "Developing", "price": 20000, "isUnsold": false },
+        { "name": "Rajan Kumar Singh", "category": "Developing", "price": 20000, "isUnsold": false },
+        { "name": "Dipanjan Majumder", "category": "Developing", "price": 42500, "isUnsold": false },
+        { "name": "Sabyasachi Bose", "category": "Unsold", "price": 10000, "isUnsold": true, "note": "Unsold category pickup" }
+      ]
+    },
+    {
+      "id": "bikram",
+      "name": "Bikram (Rahul)",
+      "spent": 327500,
+      "remaining": 22500,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Shrish Mukherjee", "category": "Elite", "price": 30000, "isUnsold": false },
+        { "name": "Supratim Sengupta", "category": "Prime", "price": 62500, "isUnsold": false },
+        { "name": "Risove Show", "category": "Prime", "price": 130000, "isUnsold": false },
+        { "name": "Arkapal Chakraborty", "category": "Core", "price": 32500, "isUnsold": false },
+        { "name": "Krishnendu Mondal", "category": "Developing", "price": 52500, "isUnsold": false },
+        { "name": "Aritra Adhikari", "category": "Unsold", "price": 10000, "isUnsold": true, "note": "Unsold category pickup" },
+        { "name": "Akash Mondal", "category": "Unsold", "price": 10000, "isUnsold": true, "note": "Unsold category pickup" }
+      ]
+    },
+    {
+      "id": "arghyadeep-das",
+      "name": "Arghyadeep Das (Aloo)",
+      "spent": 327500,
+      "remaining": 22500,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Arnab Talukdar", "category": "Elite", "price": 40000, "isUnsold": false },
+        { "name": "China", "category": "Prime", "price": 90000, "isUnsold": false },
+        { "name": "Jeff", "category": "Core", "price": 57500, "isUnsold": false },
+        { "name": "Dibyo", "category": "Core", "price": 67500, "isUnsold": false },
+        { "name": "Siddhant", "category": "Core", "price": 40000, "isUnsold": false },
+        { "name": "Raja", "category": "Developing", "price": 20000, "isUnsold": false },
+        { "name": "Santanu Purkait", "category": "Developing", "price": 12500, "isUnsold": false }
+      ]
+    },
+    {
+      "id": "thomas-joseph",
+      "name": "THOMAS JOSEPH",
+      "spent": 320000,
+      "remaining": 30000,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Rupayan", "category": "Elite", "price": 37500, "isUnsold": false },
+        { "name": "Anirudhya", "category": "Prime", "price": 95000, "isUnsold": false },
+        { "name": "Levin", "category": "Core", "price": 52500, "isUnsold": false },
+        { "name": "Hrishikesh", "category": "Core", "price": 50000, "isUnsold": false },
+        { "name": "Subhayan Banerjee", "category": "Developing", "price": 40000, "isUnsold": false },
+        { "name": "Rohan Chaudhuri", "category": "Unsold", "price": 10000, "isUnsold": true, "note": "Unsold category pickup" },
+        { "name": "Abhishek", "category": "Unsold", "price": 35000, "isUnsold": true, "note": "Unsold category pickup" }
+      ]
+    },
+    {
+      "id": "subhamoy-das",
+      "name": "Subhamoy Das",
+      "spent": 350000,
+      "remaining": 0,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Addy", "category": "Elite", "price": 25000, "isUnsold": false },
+        { "name": "Vasu Gupta", "category": "Prime", "price": 132500, "isUnsold": false },
+        { "name": "Suvam Chakraborty", "category": "Core", "price": 87500, "isUnsold": false },
+        { "name": "Satadeep", "category": "Developing", "price": 10000, "isUnsold": false },
+        { "name": "Santu", "category": "Developing", "price": 42500, "isUnsold": false },
+        { "name": "Sany", "category": "Developing", "price": 42500, "isUnsold": false },
+        { "name": "Sourav Acharjee", "category": "Unsold", "price": 10000, "isUnsold": true, "note": "Unsold category pickup" }
+      ]
+    },
+    {
+      "id": "srinjoy-kundu",
+      "name": "Srinjoy Kundu",
+      "spent": 350000,
+      "remaining": 0,
+      "totalBudget": 350000,
+      "squadSize": 7,
+      "players": [
+        { "name": "Arka Dutta", "category": "Elite", "price": 42500, "isUnsold": false },
+        { "name": "Nilanjan Chowdhury", "category": "Prime", "price": 40000, "isUnsold": false },
+        { "name": "Ayon Roy", "category": "Prime", "price": 112500, "isUnsold": false },
+        { "name": "Sayan Dhar", "category": "Core", "price": 62500, "isUnsold": false },
+        { "name": "Shubhanjan Basu", "category": "Developing", "price": 20000, "isUnsold": false },
+        { "name": "Akash Mukherjee", "category": "Developing", "price": 35000, "isUnsold": false },
+        { "name": "Rohan Khatri", "category": "Developing", "price": 37500, "isUnsold": false }
+      ]
+    }
+  ]
+}

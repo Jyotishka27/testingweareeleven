@@ -3,48 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>We Are Eleven — Community Photos</title>
+  <title>Community & Tournament Photos — We Are Eleven</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Favicon -->
-  <link rel="icon" href="./assets/group-logo/we_are_eleven_logo.jpg" />
+  <link rel="icon" href="../assets/group-logo/we_are_eleven_logo.jpg" />
   
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      color: #1e293b;
-    }
-    .section-header {
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-      border: 1px solid #e2e8f0;
-      position: relative;
-      overflow: hidden;
-    }
-    .section-header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #64748b, transparent);
-      animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
+      background: #f8fafc;
+      color: #0f172a;
     }
     .photo-card {
       border-radius: 1rem;
-      border: 1px solid #e5e7eb;
+      border: 1px solid #e2e8f0;
       overflow: hidden;
       background: #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
       cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .photo-card:hover {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
     }
     .photo-img {
       width: 100%;
@@ -52,132 +37,162 @@
       object-fit: cover;
       transition: transform .35s ease;
     }
-    .photo-card:hover .photo-img { transform: scale(1.03); }
-    .photo-meta {
-      padding: .85rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .75rem;
-    }
-    .chip {
-      font-size: .72rem;
-      padding: .2rem .55rem;
-      border-radius: 9999px;
-      border: 1px solid #cbd5e1;
-      background:#f8fafc;
-      white-space: nowrap;
-    }
-    .lightbox-open { overflow: hidden; }
+    .photo-card:hover .photo-img { transform: scale(1.04); }
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen antialiased">
 
   <!-- Shared Header -->
   <div id="site-header"></div>
 
   <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.35),rgba(0,0,0,0.8))] z-0"></div>
-    <div
-      class="absolute inset-0 bg-cover bg-center z-[-1]"
-      style="background-image:url('../assets/img/hero-community.jpg');">
-    </div>
-
-    <div class="relative z-10 mx-auto max-w-7xl px-6 py-20 text-center text-white">
-      <h1 class="text-4xl sm:text-5xl font-extrabold">
+  <section class="relative overflow-hidden bg-slate-950 text-white py-16">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 z-0"></div>
+    <div class="relative z-10 mx-auto max-w-7xl px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+        📸 Visual Archives & Matchday Action
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
         We Are Eleven — Community Gallery
       </h1>
-      <p class="mt-3 text-lg text-gray-200">
-        Meetups, volunteers, watch parties, and off-pitch memories.
+      <p class="mt-3 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto">
+        Celebrating champions, matchday highlights, squad photos, and memories from the pitch.
       </p>
     </div>
   </section>
 
-  <main class="flex-grow max-w-7xl mx-auto p-6 space-y-10">
+  <main class="flex-grow max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-8 w-full">
 
     <!-- Header + Filters -->
-    <section class="section-header rounded-2xl shadow-lg p-8">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h2 class="text-3xl font-bold">Community Photos</h2>
-          <p class="mt-2 text-gray-600">
-            Day-to-day moments from the We Are Eleven community.
+          <h2 class="text-2xl font-bold text-slate-900">Photo Moments</h2>
+          <p class="mt-1 text-sm text-slate-600">
+            Click on any photo to view in high definition.
           </p>
         </div>
-        <div class="flex items-center gap-3">
-          <button id="downloadAllBtn"
-            class="px-3 py-2 rounded-xl border bg-white hover:bg-slate-50 text-sm">
-            Download selected
-          </button>
-          <label class="px-3 py-2 rounded-xl border bg-white hover:bg-slate-50 text-sm cursor-pointer">
-            <input type="file" id="uploader" accept="image/*" class="hidden" multiple>
-            Upload
-          </label>
-        </div>
-      </div>
 
-      <div class="mt-6 flex flex-wrap gap-2">
-        <button class="filter-btn chip" data-filter="all" aria-pressed="true">All</button>
-        <button class="filter-btn chip" data-filter="tournament">Tournaments</button>
-        <button class="filter-btn chip" data-filter="meetup">Meetups</button>
-        <button class="filter-btn chip" data-filter="volunteer">Volunteering</button>
-        <button class="filter-btn chip" data-filter="watch">Watch Parties</button>
-        <button class="filter-btn chip" data-filter="bts">Behind the Scenes</button>
+        <div class="flex flex-wrap gap-2">
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm transition" data-filter="all">All Photos</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="champions">🏆 Champions</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="squads">👥 Squads</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="action">⚡ Match Action</button>
+          <button class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition" data-filter="community">🎉 Community</button>
+        </div>
       </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="section-header rounded-2xl shadow-lg p-6">
-      <div id="gallery"
-        class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <!-- Gallery Grid -->
+    <section>
+      <div id="gallery" class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
-        <figure class="photo-card" data-category="tournament" data-title="Independence Cup 2025 Squad">
-          <img class="photo-img" src="../assets/group-logo/groupphoto.jpg" alt="Tournament squad" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Tournament Day</span>
-            <span class="chip">Tournament</span>
+        <!-- 1. Winner & Runners Up 2025 -->
+        <figure class="photo-card" data-category="champions" data-title="Independence Cup 2025 Champions & Finalists">
+          <img class="photo-img" src="../assets/independence-cup-25/gallery/winner_runnersup.jpg" alt="Independence Cup 2025 Champions & Finalists" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">2025 Champions & Finalists</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium">Champions</span>
           </figcaption>
         </figure>
 
-        <figure class="photo-card" data-category="tournament" data-title="Organizers with Winners">
-          <img class="photo-img" src="../assets/group-logo/gallery/organisers_winners_runnersup.jpg" alt="Organizers and winners" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Winners</span>
-            <span class="chip">Tournament</span>
+        <!-- 2. Organizers & Winners -->
+        <figure class="photo-card" data-category="champions" data-title="Organizers & Podium Ceremony">
+          <img class="photo-img" src="../assets/independence-cup-25/organisers_winners_runnersup.jpg" alt="Organizers and Winners Ceremony" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Podium Ceremony</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium">Ceremony</span>
           </figcaption>
         </figure>
 
-        <figure class="photo-card" data-category="meetup" data-title="Weekend Meetup">
-          <img class="photo-img" src="../assets/group-logo/squad.jpg" alt="Weekend meetup" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Meetup</span>
-            <span class="chip">Meetups</span>
+        <!-- 3. Squad Community Meetup -->
+        <figure class="photo-card" data-category="community" data-title="We Are Eleven Squad & Members">
+          <img class="photo-img" src="../assets/group-logo/squad.jpg" alt="We Are Eleven Squad & Members" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Community Squad</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-medium">Community</span>
           </figcaption>
         </figure>
 
-        <figure class="photo-card" data-category="watch" data-title="Watch Party">
-          <img class="photo-img" src="../assets/photos/community/watch-1.jpg" alt="Watch party" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Watch Party</span>
-            <span class="chip">Watch</span>
+        <!-- 4. Winter Carnival Action -->
+        <figure class="photo-card" data-category="action" data-title="Winter Carnival Cup 2026 Matchday">
+          <img class="photo-img" src="../assets/winter-carnival-2026/winter-carnival-2026.jpeg" alt="Winter Carnival Cup 2026 Matchday" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Winter Carnival 2026</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-medium">Matchday</span>
           </figcaption>
         </figure>
 
-        <figure class="photo-card" data-category="volunteer" data-title="Volunteers">
-          <img class="photo-img" src="../assets/photos/community/volunteer-1.jpg" alt="Volunteers" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Volunteers</span>
-            <span class="chip">Volunteering</span>
+        <!-- 5. 2022 Champions -->
+        <figure class="photo-card" data-category="champions" data-title="2022 Inaugural Cup Champions">
+          <img class="photo-img" src="../assets/wall-of-frame/Winner2022.jpg" alt="2022 Inaugural Cup Champions" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">2022 Champions</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium">Champions</span>
           </figcaption>
         </figure>
 
-        <figure class="photo-card" data-category="bts" data-title="Organizers BTS">
-          <img class="photo-img" src="../assets/photos/community/bts-1.jpg" alt="Behind the scenes" loading="lazy">
-          <figcaption class="photo-meta">
-            <span class="text-sm font-medium truncate">Behind the Scenes</span>
-            <span class="chip">BTS</span>
+        <!-- 6. 2023 Champions -->
+        <figure class="photo-card" data-category="champions" data-title="2023 Independence Cup Champions">
+          <img class="photo-img" src="../assets/wall-of-frame/Winner2023.jpg" alt="2023 Independence Cup Champions" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">2023 Champions</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 font-medium">Champions</span>
+          </figcaption>
+        </figure>
+
+        <!-- 7. Thunderbolt Squad -->
+        <figure class="photo-card" data-category="squads" data-title="Thunderbolt Squad Photo">
+          <img class="photo-img" src="../assets/independence-cup-25/gallery/team-photo/Thunderbolt.jpg" alt="Thunderbolt Squad" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Thunderbolt</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-medium">Squad</span>
+          </figcaption>
+        </figure>
+
+        <!-- 8. Red Bulls Eleven Squad -->
+        <figure class="photo-card" data-category="squads" data-title="Red Bulls Eleven Squad Photo">
+          <img class="photo-img" src="../assets/independence-cup-25/gallery/team-photo/Red-Bulls-Eleven.jpg" alt="Red Bulls Eleven Squad" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Red Bulls Eleven</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-medium">Squad</span>
+          </figcaption>
+        </figure>
+
+        <!-- 9. Messiah FC Squad -->
+        <figure class="photo-card" data-category="squads" data-title="Messiah FC Squad Photo">
+          <img class="photo-img" src="../assets/independence-cup-25/gallery/team-photo/Messiah-FC.jpg" alt="Messiah FC Squad" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Messiah FC</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-medium">Squad</span>
+          </figcaption>
+        </figure>
+
+        <!-- 10. Strawhat Pirates Squad -->
+        <figure class="photo-card" data-category="squads" data-title="Strawhat Pirates Squad Photo">
+          <img class="photo-img" src="../assets/independence-cup-25/gallery/team-photo/Strawhat-Pirates.jpg" alt="Strawhat Pirates Squad" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Strawhat Pirates</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 font-medium">Squad</span>
+          </figcaption>
+        </figure>
+
+        <!-- 11. Match Action Shot 1 -->
+        <figure class="photo-card" data-category="action" data-title="Match Action Duel">
+          <img class="photo-img" src="../tournaments/winter-carnival-cup-2026/exports/picture%20(1%20of%2041).jpg" alt="Match Action" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Midfield Battle</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-medium">Action</span>
+          </figcaption>
+        </figure>
+
+        <!-- 12. Match Action Shot 2 -->
+        <figure class="photo-card" data-category="action" data-title="Goal Attempt & Defense">
+          <img class="photo-img" src="../tournaments/winter-carnival-cup-2026/exports/picture%20(5%20of%2041).jpg" alt="Goal Attempt" loading="lazy">
+          <figcaption class="p-3.5 flex items-center justify-between gap-2 border-t border-slate-100">
+            <span class="text-xs font-bold text-slate-800 truncate">Goalmouth Defense</span>
+            <span class="text-[11px] px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 font-medium">Action</span>
           </figcaption>
         </figure>
 
@@ -186,9 +201,18 @@
 
   </main>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm">
+    <button id="closeLightbox" class="absolute top-4 right-4 text-white text-3xl font-bold p-2 hover:text-emerald-400 transition">&times;</button>
+    <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+      <img id="lightboxImg" src="" alt="Full view" class="max-w-full max-h-[80vh] rounded-xl object-contain shadow-2xl">
+      <div id="lightboxTitle" class="mt-4 text-white font-semibold text-lg text-center"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
-  <footer class="bg-gray-950 py-8 text-center text-gray-400">
-    © 2025 Football Community. All Rights Reserved.
+  <footer class="bg-slate-950 py-8 text-center text-slate-400 text-sm border-t border-slate-800 mt-12">
+    <p>© 2026 We Are Eleven Community. All Rights Reserved.</p>
   </footer>
 
   <!-- Header injection -->
@@ -197,10 +221,14 @@
     injectHeader("#site-header", { active: "photos" });
   </script>
 
-  <!-- Gallery JS (unchanged logic, only paths fixed) -->
+  <!-- Gallery & Lightbox Logic -->
   <script>
     const filterBtns = [...document.querySelectorAll('.filter-btn')];
     const cards = [...document.querySelectorAll('.photo-card')];
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const closeLightbox = document.getElementById('closeLightbox');
 
     function applyFilter(cat){
       cards.forEach(c => {
@@ -211,12 +239,48 @@
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.setAttribute('aria-pressed','false'));
-        btn.setAttribute('aria-pressed','true');
+        filterBtns.forEach(b => {
+          b.className = "filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+        });
+        btn.className = "filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white shadow-sm transition";
         applyFilter(btn.dataset.filter);
       });
+    });
+
+    // Lightbox modal logic
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const img = card.querySelector('.photo-img');
+        const title = card.dataset.title || img.alt;
+        if (img) {
+          lightboxImg.src = img.src;
+          lightboxTitle.textContent = title;
+          lightbox.classList.remove('hidden');
+          lightbox.classList.add('flex');
+        }
+      });
+    });
+
+    closeLightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.add('hidden');
+        lightbox.classList.remove('flex');
+      }
     });
   </script>
 
 </body>
 </html>
+

@@ -1,0 +1,156 @@
+{
+  "teams": [
+    {
+      "id": "japan-fc",
+      "name": "Japan FC",
+      "group": "Group B",
+      "shortName": "JAP",
+      "captain": "Bikram (Rahul)",
+      "badge": "🇯🇵",
+      "theme": {
+        "primary": "#059669",
+        "bg": "bg-emerald-50",
+        "border": "border-emerald-200",
+        "text": "text-emerald-800"
+      },
+      "result": "Champion 🏆 (1st in Group B)",
+      "isChampion": true,
+      "players": [
+        { "name": "Bikram (Rahul)", "role": "Captain", "category": "Captain", "alias": "Rahul / Bikram" },
+        { "name": "Supratim Sengupta", "role": "Forward / Midfielder", "category": "Prime", "price": 62500, "alias": "Supratim" },
+        { "name": "Risove Show", "role": "Forward", "category": "Prime", "price": 130000, "alias": "Rishov" },
+        { "name": "Arkapal Chakraborty", "role": "Midfielder", "category": "Core", "price": 32500, "alias": "Arkapal" },
+        { "name": "Shrish Mukherjee", "role": "Defender", "category": "Elite", "price": 30000 },
+        { "name": "Krishnendu Mondal", "role": "Defender / Goalkeeper", "category": "Developing", "price": 52500, "alias": "Krishnendu" },
+        { "name": "Aritra Adhikari", "role": "Squad Player", "category": "Unsold", "price": 10000 },
+        { "name": "Akash Mondal", "role": "Squad Player", "category": "Unsold", "price": 10000 }
+      ]
+    },
+    {
+      "id": "8zilla",
+      "name": "8zilla",
+      "group": "Group B",
+      "shortName": "8ZL",
+      "captain": "Thomas Joseph",
+      "badge": "🦖",
+      "theme": {
+        "primary": "#4f46e5",
+        "bg": "bg-indigo-50",
+        "border": "border-indigo-200",
+        "text": "text-indigo-800"
+      },
+      "result": "Runner-Up 🥈 (2nd in Group B)",
+      "isRunnerUp": true,
+      "players": [
+        { "name": "Thomas", "role": "Captain", "category": "Captain", "alias": "THOMAS JOSEPH" },
+        { "name": "Rupayan", "role": "Midfielder", "category": "Elite", "price": 37500 },
+        { "name": "Anirudhya", "role": "Forward / Midfielder", "category": "Prime", "price": 95000 },
+        { "name": "Levin", "role": "Midfielder", "category": "Core", "price": 52500 },
+        { "name": "Hrishikesh", "role": "Defender / Midfielder", "category": "Core", "price": 50000, "alias": "Hrishi" },
+        { "name": "Subhayan Banerjee", "role": "Defender", "category": "Developing", "price": 40000 },
+        { "name": "Rohan Chaudhuri", "role": "Squad Player", "category": "Unsold", "price": 10000 },
+        { "name": "Abhishek", "role": "Squad Player", "category": "Unsold", "price": 35000 }
+      ]
+    },
+    {
+      "id": "casual-united-fc",
+      "name": "Casual United FC",
+      "group": "Group A",
+      "shortName": "CUFC",
+      "captain": "Ritam Chowdhury",
+      "badge": "⚡",
+      "theme": {
+        "primary": "#d97706",
+        "bg": "bg-amber-50",
+        "border": "border-amber-200",
+        "text": "text-amber-800"
+      },
+      "result": "Semifinalist (1st in Group A)",
+      "players": [
+        { "name": "Ritam Chowdhury", "role": "Captain / Midfielder", "category": "Captain", "alias": "Ritam" },
+        { "name": "Arjo", "role": "Striker (Top Scorer)", "category": "Prime", "price": 130000 },
+        { "name": "Suman Kumir", "role": "Playmaker", "category": "Elite", "price": 55000 },
+        { "name": "Biswajit", "role": "Defender", "category": "Core", "price": 40000 },
+        { "name": "Dipanjan Majumder", "role": "Defender", "category": "Developing", "price": 42500, "alias": "Dipanjan" },
+        { "name": "Priyanshu Das", "role": "Midfielder", "category": "Developing", "price": 20000 },
+        { "name": "Rajan Kumar Singh", "role": "Midfielder", "category": "Developing", "price": 20000 },
+        { "name": "Sabyasachi Bose", "role": "Forward", "category": "Unsold", "price": 10000, "alias": "Sabyasachi" }
+      ]
+    },
+    {
+      "id": "bloodbath-boys-fc",
+      "name": "Bloodbath Boys FC",
+      "group": "Group B",
+      "shortName": "BBB",
+      "captain": "Arghyadeep Das (Aloo)",
+      "badge": "🩸",
+      "theme": {
+        "primary": "#e11d48",
+        "bg": "bg-rose-50",
+        "border": "border-rose-200",
+        "text": "text-rose-800"
+      },
+      "result": "Group Stage (3rd in Group B)",
+      "players": [
+        { "name": "Arghyadeep Das", "role": "Captain / Forward", "category": "Captain", "alias": "Aloo / Alu" },
+        { "name": "Arnab Talukdar", "role": "Defender", "category": "Elite", "price": 40000 },
+        { "name": "China", "role": "Midfielder", "category": "Prime", "price": 90000 },
+        { "name": "Jeff", "role": "Playmaker", "category": "Core", "price": 57500 },
+        { "name": "Dibyo", "role": "Midfielder", "category": "Core", "price": 67500 },
+        { "name": "Siddhant", "role": "Defender", "category": "Core", "price": 40000 },
+        { "name": "Raja", "role": "Developing", "category": "Developing", "price": 20000 },
+        { "name": "Santanu Purkait", "role": "Forward", "category": "Developing", "price": 12500, "alias": "Santanu" }
+      ]
+    },
+    {
+      "id": "amigos-fc",
+      "name": "Amigos FC",
+      "group": "Group A",
+      "shortName": "AMG",
+      "captain": "Subhamoy Das",
+      "badge": "🤝",
+      "theme": {
+        "primary": "#0284c7",
+        "bg": "bg-sky-50",
+        "border": "border-sky-200",
+        "text": "text-sky-800"
+      },
+      "result": "Semifinalist (2nd in Group A)",
+      "players": [
+        { "name": "Subhamoy Das", "role": "Captain", "category": "Captain" },
+        { "name": "Vasu Gupta", "role": "Playmaker / Midfielder", "category": "Prime", "price": 132500, "alias": "Vasu" },
+        { "name": "Suvam Chakraborty", "role": "Midfielder", "category": "Core", "price": 87500, "alias": "Suvam" },
+        { "name": "Addy", "role": "Defender", "category": "Elite", "price": 25000 },
+        { "name": "Santu", "role": "Developing", "category": "Developing", "price": 42500 },
+        { "name": "Sany", "role": "Developing", "category": "Developing", "price": 42500 },
+        { "name": "Satadeep", "role": "Developing", "category": "Developing", "price": 10000 },
+        { "name": "Sourav Acharjee", "role": "Squad Player", "category": "Unsold", "price": 10000 }
+      ]
+    },
+    {
+      "id": "strawhat-fc",
+      "name": "Strawhat FC",
+      "group": "Group A",
+      "shortName": "SHF",
+      "captain": "Srinjoy Kundu",
+      "badge": "👒",
+      "theme": {
+        "primary": "#8b5cf6",
+        "bg": "bg-purple-50",
+        "border": "border-purple-200",
+        "text": "text-purple-800"
+      },
+      "result": "Group Stage (3rd in Group A)",
+      "players": [
+        { "name": "Srinjoy Kundu", "role": "Captain", "category": "Captain" },
+        { "name": "Ayon Roy", "role": "Midfielder / Forward", "category": "Prime", "price": 112500, "alias": "Akash Jr" },
+        { "name": "Sayan Dhar", "role": "Core", "category": "Core", "price": 62500 },
+        { "name": "Arka Dutta", "role": "Elite", "category": "Elite", "price": 42500 },
+        { "name": "Nilanjan Chowdhury", "role": "Prime", "category": "Prime", "price": 40000 },
+        { "name": "Rohan Khatri", "role": "Developing", "category": "Developing", "price": 37500 },
+        { "name": "Akash Mukherjee", "role": "Defender", "category": "Developing", "price": 35000 },
+        { "name": "Shubhanjan Basu", "role": "Developing", "category": "Developing", "price": 20000 }
+      ]
+    }
+  ]
+}

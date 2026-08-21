@@ -2,31 +2,32 @@
   {
     "id": "thunderbolt",
     "name": "Thunderbolt",
-    "logo": "assets/independence-cup-25/gallery/thunderbolt.jpg"
+    "logo": "assets/independence-cup-25/gallery/team-photo/Thunderbolt.jpg"
   },
   {
     "id": "red-bulls-eleven",
     "name": "Red Bulls Eleven",
-    "logo": "assets/independence-cup-25/gallery/red-bulls-eleven.jpg"
+    "logo": "assets/independence-cup-25/gallery/team-photo/Red-Bulls-Eleven.jpg"
   },
   {
     "id": "messiah-fc",
     "name": "Messiah FC",
-    "logo": "assets/independence-cup-25/gallery/messiah-fc.jpg"
+    "logo": "assets/independence-cup-25/gallery/team-photo/Messiah-FC.jpg"
   },
   {
     "id": "white-panthers",
     "name": "White Panthers",
-    "logo": "assets/independence-cup-25/gallery/white-panthers.jpg"
+    "logo": "assets/teams/terminators_emblem.png"
   },
   {
     "id": "strawhat-pirates",
     "name": "Strawhat Pirates",
-    "logo": "assets/independence-cup-25/gallery/strawhat-pirates.jpg"
+    "logo": "assets/independence-cup-25/gallery/team-photo/Strawhat-Pirates.jpg"
   },
   {
     "id": "amigos-fc",
     "name": "Amigos FC",
-    "logo": "assets/independence-cup-25/gallery/amigos-fc.jpg"
+    "logo": "assets/teams/inferno_fc_emblem.png"
   }
 ]
+

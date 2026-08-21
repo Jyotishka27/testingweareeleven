@@ -8,52 +8,53 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Favicon -->
-  <link rel="icon" href="./assets/group-logo/we_are_eleven_logo.jpg" />
+  <link rel="icon" href="../assets/group-logo/we_are_eleven_logo.jpg" />
   
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: #ffffff;
+      background: #f8fafc;
       color: #0f172a;
     }
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col antialiased">
 
   <!-- Header -->
   <div id="site-header"></div>
 
-  <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+  <main class="flex-grow mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 w-full">
     <header class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
       <div>
-        <h1 class="text-3xl font-extrabold tracking-tight">Tournaments</h1>
-        <p class="text-slate-600 mt-1">Browse upcoming, ongoing, and past events.</p>
+        <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Official Tournament Archive</div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">Tournament Hub</h1>
+        <p class="text-slate-600 mt-1">Browse all past, ongoing, and upcoming tournaments, schedules, and recap centres.</p>
       </div>
 
       <!-- Controls -->
       <div class="flex flex-wrap items-center gap-3">
-        <div class="inline-flex rounded-xl border bg-white shadow-sm overflow-hidden">
-          <button data-tab="upcoming" class="tab-btn px-4 py-2 text-sm font-medium">Upcoming</button>
-          <button data-tab="ongoing"  class="tab-btn px-4 py-2 text-sm font-medium border-l">Ongoing</button>
-          <button data-tab="past"     class="tab-btn px-4 py-2 text-sm font-medium border-l">Past</button>
+        <div class="inline-flex rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden p-0.5">
+          <button data-tab="all"      class="tab-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg transition">All</button>
+          <button data-tab="past"     class="tab-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg transition">Past</button>
+          <button data-tab="ongoing"  class="tab-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg transition">Ongoing</button>
+          <button data-tab="upcoming" class="tab-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg transition">Upcoming</button>
         </div>
 
         <label class="relative">
           <input id="search" type="text" placeholder="Search tournaments..."
-            class="w-64 rounded-xl border bg-white px-4 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200"/>
-          <span class="absolute right-3 top-2.5 text-slate-400">⌘K</span>
+            class="w-56 sm:w-64 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"/>
         </label>
 
         <select id="yearFilter"
-          class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
           <option value="">All years</option>
         </select>
 
         <select id="sortBy"
-          class="rounded-xl border bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring focus:ring-blue-200">
-          <option value="start-asc">Start date ↑</option>
-          <option value="start-desc">Start date ↓</option>
+          class="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <option value="start-desc">Latest first ↓</option>
+          <option value="start-asc">Oldest first ↑</option>
           <option value="name-asc">Name A–Z</option>
           <option value="name-desc">Name Z–A</option>
         </select>
@@ -64,31 +65,32 @@
     <section id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></section>
 
     <!-- Empty state -->
-    <div id="empty" class="hidden rounded-2xl border border-dashed bg-slate-50 p-10 text-center text-slate-600">
-      <p class="text-lg font-semibold mb-1">No tournaments found</p>
-      <p class="text-sm">Try a different tab, year, or search term.</p>
+    <div id="empty" class="hidden rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-12 text-center text-slate-600">
+      <div class="text-4xl mb-2">⚽</div>
+      <p class="text-lg font-semibold text-slate-800 mb-1">No tournaments found</p>
+      <p class="text-sm">Try a different filter tab, year, or search keyword.</p>
     </div>
 
     <!-- Error state -->
-    <div id="error" class="hidden rounded-2xl border bg-rose-50 p-6 text-rose-700 mt-6">
-      Couldn’t load tournaments. Make sure
-      <code>/data/tournaments.json</code> exists and the site is served via HTTP.
+    <div id="error" class="hidden rounded-2xl border border-rose-200 bg-rose-50 p-6 text-rose-700 mt-6 text-center">
+      Couldn’t load tournament data. Please ensure <code>/data/tournaments.json</code> exists.
     </div>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-400">
-    <p>© 2025 We Are Eleven. All Rights Reserved.</p>
+  <footer class="bg-slate-950 py-8 text-center text-slate-400 text-sm border-t border-slate-800">
+    <p>© 2026 We Are Eleven Football Community. All Rights Reserved.</p>
   </footer>
 
   <script type="module">
-    /* ---------- Header ---------- */
+    /* ---------- Header & Base ---------- */
+    import { BASE_PATH } from "../scripts/basePath.js";
     import { injectHeader } from "../scripts/header.js";
     injectHeader("#site-header", { active: "tournaments" });
 
     /* ---------- Fetch data ---------- */
     async function getTournaments() {
-      const res = await fetch("../data/tournaments.json", {
+      const res = await fetch(`${BASE_PATH}/data/tournaments.json`, {
         headers: { "Accept": "application/json" }
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
@@ -111,7 +113,7 @@
     }
 
     function uniqueYears(list) {
-      return [...new Set(list.map(t => parseISO(t.start).getFullYear()))].sort();
+      return [...new Set(list.map(t => parseISO(t.start).getFullYear()))].sort().reverse();
     }
 
     /* ---------- DOM ---------- */
@@ -124,11 +126,12 @@
     const sortBy = document.getElementById("sortBy");
 
     /* ---------- State ---------- */
+    const initialHash = location.hash.replace("#", "");
     const state = {
-      tab: location.hash.replace("#", "") || "upcoming",
+      tab: initialHash || "all",
       query: "",
       year: "",
-      sort: "start-asc",
+      sort: "start-desc",
       raw: []
     };
 
@@ -136,15 +139,17 @@
       tabs.forEach(b => {
         const active = b.dataset.tab === state.tab;
         b.className =
-          "tab-btn px-4 py-2 text-sm font-medium " +
-          (active ? "bg-gray-900 text-white" : "bg-white text-slate-700 hover:bg-slate-50");
+          "tab-btn px-3.5 py-1.5 text-xs font-semibold rounded-lg transition " +
+          (active ? "bg-slate-900 text-white shadow-sm" : "bg-transparent text-slate-600 hover:text-slate-900 hover:bg-slate-100");
       });
     }
 
     function compute() {
-      let list = state.raw
-        .map(t => ({ ...t, _status: statusFor(t) }))
-        .filter(t => t._status === state.tab);
+      let list = state.raw.map(t => ({ ...t, _status: statusFor(t) }));
+
+      if (state.tab !== "all") {
+        list = list.filter(t => t._status === state.tab);
+      }
 
       if (state.query) {
         const q = state.query.toLowerCase();
@@ -169,6 +174,12 @@
       return list;
     }
 
+    function resolvePath(p) {
+      if (!p) return "";
+      if (p.startsWith("http") || p.startsWith("/")) return p;
+      return `${BASE_PATH}/${p.replace(/^\.?\//, "")}`;
+    }
+
     function render() {
       const list = compute();
       grid.innerHTML = "";
@@ -183,37 +194,48 @@
       empty.classList.add("hidden");
 
       list.forEach(t => {
-        const badge =
-          t._status === "upcoming" ? "bg-emerald-100 text-emerald-700" :
-          t._status === "ongoing"  ? "bg-amber-100 text-amber-700" :
-                                     "bg-slate-200 text-slate-700";
+        const badgeCls =
+          t._status === "upcoming" ? "bg-emerald-500 text-slate-950" :
+          t._status === "ongoing"  ? "bg-amber-500 text-slate-950" :
+                                     "bg-slate-800 text-slate-200";
 
         const dateStr = t.end && t.end !== t.start
           ? `${fmt(t.start)} – ${fmt(t.end)}`
           : fmt(t.start);
 
-        const cover = t.cover
-          ? `<img src="${t.cover}" class="h-40 w-full object-cover rounded-xl">`
-          : `<div class="h-40 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400">No Image</div>`;
+        const coverSrc = resolvePath(t.cover);
+        const linkHref = resolvePath(t.href);
+
+        const coverHtml = coverSrc
+          ? `<img src="${coverSrc}" alt="${t.name}" class="h-48 w-full object-cover group-hover:scale-105 transition duration-500">`
+          : `<div class="h-48 rounded-t-2xl bg-slate-800 flex items-center justify-center text-slate-400">No Image</div>`;
 
         const card = document.createElement("a");
-        card.href = t.href || "#";
-        card.className = "group block rounded-2xl border bg-white p-3 shadow-sm hover:shadow-md transition";
+        card.href = linkHref || "#";
+        card.className = "group block rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col";
         card.innerHTML = `
-          <div class="relative">
-            ${cover}
-            <span class="absolute left-3 top-3 rounded-full ${badge} px-2 py-0.5 text-xs font-medium">
-              ${t._status.toUpperCase()}
+          <div class="relative overflow-hidden bg-slate-950">
+            ${coverHtml}
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <span class="absolute left-3 top-3 rounded-full ${badgeCls} px-2.5 py-0.5 text-xs font-extrabold uppercase tracking-wide shadow">
+              ${t._status}
             </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <span class="text-xs text-slate-300 font-medium">${dateStr}</span>
+              <h3 class="text-lg font-bold truncate group-hover:text-emerald-400 transition">${t.name}</h3>
+            </div>
           </div>
-          <div class="p-3">
-            <h3 class="text-lg font-semibold group-hover:underline">${t.name}</h3>
-            <p class="text-sm text-slate-600 mt-1"><strong>${dateStr}</strong></p>
-            <p class="text-sm text-slate-600">${t.venue || ""}</p>
-            <div class="mt-3 flex flex-wrap gap-2">
+          <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+            <div class="flex items-center gap-1.5 text-xs text-slate-600">
+              <span>📍</span> <strong>${t.venue || "Venue TBA"}</strong>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
               ${(t.tags||[]).map(tag =>
-                `<span class="rounded-full bg-slate-100 px-2 py-0.5 text-xs">${tag}</span>`
+                `<span class="rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-700">${tag}</span>`
               ).join("")}
+            </div>
+            <div class="pt-2 text-xs font-bold text-emerald-600 group-hover:translate-x-1 transition flex items-center gap-1">
+              View Tournament Center <span>→</span>
             </div>
           </div>
         `;
@@ -259,3 +281,4 @@
   </script>
 </body>
 </html>
+

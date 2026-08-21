@@ -3,111 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - We Are Eleven</title>
+  <title>About Us — We Are Eleven</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   
   <!-- Favicon -->
-  <link rel="icon" href="./assets/group-logo/we_are_eleven_logo.jpg" />
+  <link rel="icon" href="../assets/group-logo/we_are_eleven_logo.jpg" />
   
   <style>
     body {
       font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background: white;
-      color: #1e293b;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      object-fit: cover;
-      border: 4px solid #e2e8f0;
-    }
-
-    .winner-photo {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.04);
-      margin: 0 auto;
-    }
-
-    .card:hover,
-    .winner-card:hover {
-      transform: translateY(-4px);
-      transition: transform 0.2s ease;
+      background: #f8fafc;
+      color: #0f172a;
     }
   </style>
 </head>
 
-<body class="text-black flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen antialiased">
 
   <!-- Header -->
   <div id="site-header"></div>
 
-  <main class="flex-grow max-w-6xl mx-auto p-4">
+  <!-- Hero Header -->
+  <section class="bg-slate-950 text-white py-16 px-4 text-center relative overflow-hidden">
+    <div class="max-w-3xl mx-auto space-y-3 relative z-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        🤝 Our Mission & Core Team
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+        Behind We Are Eleven
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto">
+        Built by passionate players and organizers who believe grassroots football brings people together like nothing else.
+      </p>
+    </div>
+  </section>
+
+  <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16 w-full">
 
     <!-- Organizers -->
-    <h1 class="text-3xl font-bold mb-10 text-center">Meet The Organizers</h1>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="card bg-white rounded-2xl shadow-lg p-6 text-center">
-        <img src="../assets/organiser/Debayan.jpg" alt="Debayan" class="avatar" />
-        <h2 class="text-xl font-semibold mb-1">Debayan</h2>
-        <p class="text-gray-700 text-sm">Co-Organizer</p>
+    <section>
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Meet The Organizing Team</h2>
+        <p class="text-slate-600 mt-2 text-sm">The dedicated members managing tournaments, referee coordination, live scores, and community matchdays.</p>
       </div>
 
-      <div class="card bg-white rounded-2xl shadow-lg p-6 text-center">
-        <img src="../assets/organiser/Gourav.jpg" alt="Gourav" class="avatar" />
-        <h2 class="text-xl font-semibold mb-1">Gourav</h2>
-        <p class="text-gray-700 text-sm">Co-Organizer</p>
-      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <!-- Debayan -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 text-center hover:shadow-md transition">
+          <img src="../assets/organiser/Debayan.jpg" alt="Debayan" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-slate-100 shadow" />
+          <h3 class="text-lg font-bold text-slate-900">Debayan</h3>
+          <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mt-0.5">Co-Organizer & Match Operations</p>
+          <p class="text-xs text-slate-500 mt-3 leading-relaxed">Overseeing tournament fixtures, ground scheduling, and player welfare.</p>
+        </div>
 
-      <div class="card bg-white rounded-2xl shadow-lg p-6 text-center">
-        <img src="../assets/organiser/Jyotishka.jpg" alt="Jyotishka" class="avatar" />
-        <h2 class="text-xl font-semibold mb-1">Jyotishka</h2>
-        <p class="text-gray-700 text-sm">Co-Organizer</p>
-      </div>
-    </div>
+        <!-- Gourav -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 text-center hover:shadow-md transition">
+          <img src="../assets/organiser/Gourav.jpg" alt="Gourav" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-slate-100 shadow" />
+          <h3 class="text-lg font-bold text-slate-900">Gourav</h3>
+          <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mt-0.5">Co-Organizer & Logistics</p>
+          <p class="text-xs text-slate-500 mt-3 leading-relaxed">Coordinating venue arrangements, equipment, refereeing, and awards.</p>
+        </div>
 
-    <!-- About text -->
-    <section class="bg-white rounded-2xl shadow-lg p-6 mt-12 text-gray-700 leading-relaxed text-justify">
-      <p class="mt-4">
-        Founded on the belief that football is more than just a game, our community
-        brings together players, organizers, and supporters who share one mission:
-        to celebrate the beautiful game.
-      </p>
-      <p class="mt-4">
-        We are more than just eleven players; we are a family united by passion,
-        resilience, and sportsmanship.
-      </p>
-      <p class="mt-4">
-        Together, we play, we conquer, we are eleven.
-      </p>
+        <!-- Jyotishka -->
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 text-center hover:shadow-md transition">
+          <img src="../assets/organiser/Jyotishka.jpg" alt="Jyotishka" class="w-28 h-28 rounded-full object-cover mx-auto mb-4 ring-4 ring-slate-100 shadow" />
+          <h3 class="text-lg font-bold text-slate-900">Jyotishka</h3>
+          <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mt-0.5">Co-Organizer & Tech Architect</p>
+          <p class="text-xs text-slate-500 mt-3 leading-relaxed">Leading digital platform development, auction systems, and tournament analytics.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- Champions Gallery -->
-    <section class="bg-white rounded-2xl shadow-lg p-6 mt-12">
-      <h2 class="text-2xl font-bold mb-8 text-center">Champions Gallery</h2>
+    <!-- Community Mission -->
+    <section class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 sm:p-10">
+      <div class="max-w-3xl mx-auto space-y-4 text-slate-700 leading-relaxed">
+        <h2 class="text-2xl font-bold text-slate-900 mb-2">Our Story & Ethos</h2>
+        <p>
+          Founded on the conviction that football is more than 90 minutes of competition, <strong class="text-slate-900">We Are Eleven</strong> unites players, organizers, and supporters across Kolkata and beyond to celebrate the beautiful game.
+        </p>
+        <p>
+          What began as casual weekend turf matches has evolved into an official grassroots football league ecosystem with structured annual tournaments, competitive player auctions, certified refereeing, and an active digital community.
+        </p>
+        <p class="font-medium text-slate-900 border-l-4 border-emerald-500 pl-4 py-1 italic bg-slate-50 rounded-r-lg">
+          "We are more than just eleven players on the pitch; we are a family united by passion, resilience, and sportsmanship. Together, we play, we conquer, We Are Eleven."
+        </p>
+      </div>
+    </section>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="winner-card text-center">
-          <img src="../assets/wall-of-frame/Winner2024.jpg" alt="2024 Winners" class="winner-photo" />
-          <h3 class="text-lg font-semibold mt-4">2024 Champions</h3>
+    <!-- Champions Wall of Fame -->
+    <section class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 sm:p-10">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Champions Wall of Fame</h2>
+        <p class="text-slate-600 mt-1 text-sm">Honoring the champions who etched their names into We Are Eleven tournament history.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="text-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
+          <img src="../assets/wall-of-frame/Winner2022.jpg" alt="2022 Winners" class="w-full h-48 object-cover rounded-xl shadow-sm mb-3" />
+          <h3 class="text-base font-bold text-slate-900">2022 Champions</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Inaugural Cup Winners</p>
         </div>
 
-        <div class="winner-card text-center">
-          <img src="../assets/wall-of-frame/Winner2023.jpg" alt="2023 Winners" class="winner-photo" />
-          <h3 class="text-lg font-semibold mt-4">2023 Champions</h3>
+        <div class="text-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
+          <img src="../assets/wall-of-frame/Winner2023.jpg" alt="2023 Winners" class="w-full h-48 object-cover rounded-xl shadow-sm mb-3" />
+          <h3 class="text-base font-bold text-slate-900">2023 Champions</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Independence Cup Winners</p>
         </div>
 
-        <div class="winner-card text-center">
-          <img src="../assets/wall-of-frame/Winner2022.jpg" alt="2022 Winners" class="winner-photo" />
-          <h3 class="text-lg font-semibold mt-4">2022 Champions</h3>
+        <div class="text-center bg-slate-50 p-4 rounded-2xl border border-slate-100">
+          <img src="../assets/independence-cup-25/gallery/winner_runnersup.jpg" alt="2025 Winners & Finalists" class="w-full h-48 object-cover rounded-xl shadow-sm mb-3" />
+          <h3 class="text-base font-bold text-slate-900">2025 Podium Finishers</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Independence Cup Winners & Runners-up</p>
         </div>
       </div>
     </section>
@@ -115,25 +122,16 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-950 py-6 text-center text-gray-400 mt-12">
-    <p>© 2025 Football Community. All Rights Reserved.</p>
+  <footer class="bg-slate-950 py-8 text-center text-slate-400 text-sm border-t border-slate-800 mt-12">
+    <p>© 2026 We Are Eleven Community. All Rights Reserved.</p>
   </footer>
 
   <!-- Scripts -->
   <script type="module">
-    import { BASE_PATH } from "../scripts/basePath.js";
     import { injectHeader } from "../scripts/header.js";
-    import { loadTeams, hydrateTeamLogos } from "../scripts/teams-util.js";
-
     injectHeader("#site-header", { active: "about" });
-
-    try {
-      const maps = await loadTeams();
-      hydrateTeamLogos(document, maps);
-    } catch (e) {
-      console.warn("Teams JSON load failed:", e);
-    }
   </script>
 
 </body>
 </html>
+
